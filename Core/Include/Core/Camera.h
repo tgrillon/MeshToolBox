@@ -11,6 +11,7 @@
 #include "Core/MathHelpers.h"
 
 #include <GLFW/glfw3.h>
+#include <glad/gl.h>
 
 namespace Core
 {
@@ -59,7 +60,7 @@ public:
 	/// @brief Changes the camera mode, only three valid modes, Ortho, Free, and Spherical
 	void SetMode(CameraMode cam_mode);
 	/// @brief Set the position of the camera
-	void SetPosition(BaseType::Vec3 pos);
+	void SetPosition(Core::BaseType::Vec3 pos);
 	/// @brief Set's the look at point for the camera
 	void SetLookAt(BaseType::Vec3 pos);
 	/// @brief Changes the Field of View (FOV) for the camera
@@ -77,7 +78,7 @@ public:
 	/// @brief Get viewport dimensions.
 	void GetViewport(int& loc_x, int& loc_y, int& width, int& height);
 	/// @brief Get Projection (P), View (V) and Model (M) matrices.
-	void GetMatricies(BaseType::Mat4& P, BaseType::Mat4& V, BaseType::Mat4& M);
+	void GetMatricies(Core::BaseType::Mat4& P, Core::BaseType::Mat4& V, Core::BaseType::Mat4& M);
 
 private:
 	CameraMode m_CameraMode;
@@ -101,17 +102,17 @@ private:
 	float m_MaxHeadingRate;
 	bool m_MoveCamera;
 
-	BaseType::Vec3 m_CameraPosition;
-	BaseType::Vec3 m_CameraPositionDelta;
-	BaseType::Vec3 m_CameraLookAt;
-	BaseType::Vec3 m_CameraDirection;
+	Core::BaseType::Vec3 m_CameraPosition;
+	Core::BaseType::Vec3 m_CameraPositionDelta;
+	Core::BaseType::Vec3 m_CameraLookAt;
+	Core::BaseType::Vec3 m_CameraDirection;
 
-	BaseType::Vec3 m_CameraUp;
-	BaseType::Vec3 m_MousePosition;
+	Core::BaseType::Vec3 m_CameraUp;
+	Core::BaseType::Vec3 m_MousePosition;
 
-	BaseType::Mat4 m_Projection;
-	BaseType::Mat4 m_View;
-	BaseType::Mat4 m_Model;
-	BaseType::Mat4 m_MVP;
+	Core::BaseType::Mat4 m_Projection;
+	Core::BaseType::Mat4 m_View;
+	Core::BaseType::Mat4 m_Model;
+	Core::BaseType::Mat4 m_MVP;
 };
 } // namespace Core

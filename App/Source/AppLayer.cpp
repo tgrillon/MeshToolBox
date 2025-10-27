@@ -10,6 +10,8 @@
 
 #include <glm/glm.hpp>
 
+using namespace Core::BaseType;
+
 namespace Application
 {
 AppLayer::AppLayer()
@@ -23,8 +25,8 @@ AppLayer::AppLayer()
 
 	struct Vertex
 	{
-		glm::vec2 Position;
-		glm::vec2 TexCoord;
+		Vec2 Position;
+		Vec2 TexCoord;
 	};
 
 	Vertex vertices[] = {
@@ -50,13 +52,11 @@ AppLayer::AppLayer()
 	glVertexArrayAttribBinding(m_VertexArray, 0, 0);
 	glVertexArrayAttribBinding(m_VertexArray, 1, 0);
 
-	m_Camera.
-
-		// Print various OpenGL informations to stdout
-		Info(
-			"{} {}",
-			reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
-			reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+	// Print various OpenGL informations to stdout
+	Info(
+		"{} {}",
+		reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
+		reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
 	Info("GLFW \t {}", glfwGetVersionString());
 	Info("OpenGL\t {}", reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 	Info("GLSL\t {}", reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));

@@ -2,6 +2,7 @@
 
 namespace Core
 {
+
 using namespace BaseType;
 using namespace Math::Geometry;
 

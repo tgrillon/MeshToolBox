@@ -111,13 +111,13 @@ inline BaseType::Quat AngleAxis(const BaseType::ScalarValue angle, const BaseTyp
 }
 
 /// @brief Builds a rotation 3 * 3 matrix created from an angle.
-BaseType::Vec3 Rotate(const BaseType::Quat& q, const BaseType::Vec3& v)
+inline BaseType::Vec3 Rotate(const BaseType::Quat& q, const BaseType::Vec3& v)
 {
 	return glm::rotate(q, v);
 }
 
 /// @brief Creates a matrix for a symetric perspective-view frustum based on the default handedness and default near and far clip planes definition.
-BaseType::Mat4 Perspective(
+inline BaseType::Mat4 Perspective(
 	const BaseType::ScalarValue fov,
 	const BaseType::ScalarValue aspect,
 	const BaseType::ScalarValue zNear,
@@ -127,13 +127,13 @@ BaseType::Mat4 Perspective(
 }
 
 /// @brief Build a look at view matrix based on the default handedness.
-BaseType::Mat4 LookAt(const BaseType::Vec3& eye, const BaseType::Vec3& center, const BaseType::Vec3& up)
+inline BaseType::Mat4 LookAt(const BaseType::Vec3& eye, const BaseType::Vec3& center, const BaseType::Vec3& up)
 {
 	return glm::lookAt(eye, center, up);
 }
 
 /// @brief Build a look at view matrix based on the default handedness.
-BaseType::Mat4 Ortho(
+inline BaseType::Mat4 Ortho(
 	const BaseType::ScalarValue& left,
 	const BaseType::ScalarValue right,
 	const BaseType::ScalarValue bottom,
