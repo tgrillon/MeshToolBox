@@ -71,7 +71,7 @@ void InfoImpl(const std::source_location& loc, std::format_string<Args...> fmt, 
 {
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cout << std::format(
-		"{}[INFO]{} {}[{}]{} {}\n",
+		"{}[INFO]{} {}[{}()]{} {}\n",
 		Color::Cyan,
 		Color::Reset,
 		Color::Blue,
@@ -85,7 +85,7 @@ void SuccessImpl(const std::source_location& loc, std::format_string<Args...> fm
 {
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cout << std::format(
-		"{}[SUCCESS]{} {}[{}]{} {}\n",
+		"{}[SUCCESS]{} {}[{}()]{} {}\n",
 		Color::Green,
 		Color::Reset,
 		Color::Blue,
@@ -99,7 +99,7 @@ void WarningImpl(const std::source_location& loc, std::format_string<Args...> fm
 {
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cerr << std::format(
-		"{}[WARNING]{} {}[{}]{} {}\n",
+		"{}[WARNING]{} {}[{}()]{} {}\n",
 		Color::Yellow,
 		Color::Reset,
 		Color::Blue,
@@ -113,7 +113,7 @@ void ErrorImpl(const std::source_location& loc, std::format_string<Args...> fmt,
 {
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cerr << std::format(
-		"{}[ERROR]{} {}[{}]{} {}\n",
+		"{}[ERROR]{} {}[{}()]{} {}\n",
 		Color::BrightRed,
 		Color::Reset,
 		Color::Blue,
@@ -130,7 +130,7 @@ void DebugImpl(const std::source_location& loc, std::format_string<Args...> fmt,
 #else
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cout << std::format(
-		"{}[DEBUG]{} {}[{}]{} {}\n",
+		"{}[DEBUG]{} {}[{}()]{} {}\n",
 		Color::Gray,
 		Color::Reset,
 		Color::Blue,
@@ -148,7 +148,7 @@ void TraceImpl(const std::source_location& loc, std::format_string<Args...> fmt,
 #else
 	auto func_name = ExtractFunctionName(loc.function_name());
 	std::cout << std::format(
-		"{}[TRACE]{} {}[{}]{} {}\n",
+		"{}[TRACE]{} {}[{}()]{} {}\n",
 		Color::Magenta,
 		Color::Reset,
 		Color::Blue,

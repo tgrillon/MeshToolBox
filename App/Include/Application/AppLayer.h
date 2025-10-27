@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core/Camera.h"
 #include "Core/Layer.h"
 
 #include <stdint.h>
@@ -24,5 +25,7 @@ private:
 	uint32_t m_Shader = 0;
 	uint32_t m_VertexArray = 0;
 	uint32_t m_VertexBuffer = 0;
+
+	Core::Camera m_Camera;
 };
 } // namespace Application

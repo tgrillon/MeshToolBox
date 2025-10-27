@@ -15,7 +15,7 @@ namespace Application
 AppLayer::AppLayer()
 {
 	// Create shaders
-	m_Shader = Renderer::CreateGraphicsShader("Data/Shaders/Vertex.glsl", "Data/Shaders/Fragment.glsl");
+	m_Shader = Renderer::CreateGraphicsShader("Data/Shaders/BaseVertex.glsl", "Data/Shaders/BaseFragment.glsl");
 
 	// Create geometry
 	glCreateVertexArrays(1, &m_VertexArray);
@@ -50,11 +50,13 @@ AppLayer::AppLayer()
 	glVertexArrayAttribBinding(m_VertexArray, 0, 0);
 	glVertexArrayAttribBinding(m_VertexArray, 1, 0);
 
-	// Print various OpenGL informations to stdout
-	Info(
-		"{} {}",
-		reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
-		reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+	m_Camera.
+
+		// Print various OpenGL informations to stdout
+		Info(
+			"{} {}",
+			reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
+			reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
 	Info("GLFW \t {}", glfwGetVersionString());
 	Info("OpenGL\t {}", reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 	Info("GLSL\t {}", reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));

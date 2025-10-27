@@ -7,26 +7,23 @@
  */
 #pragma once
 
+#include "Core/BaseType.h"
+#include "Core/MathHelpers.h"
+
 #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/quaternion.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtx/quaternion.hpp>
-#include <glm/gtx/transform.hpp>
 
 namespace Core
 {
 
-enum CameraType
+enum struct CameraMode : uint8_t
 {
-	ORTHO,
+	ORTHO = 0,
 	FREE
 };
 
-enum CameraDirection
+enum struct CameraDirection : uint8_t
 {
-	UP,
+	UP = 0,
 	DOWN,
 	LEFT,
 	RIGHT,
@@ -34,6 +31,7 @@ enum CameraDirection
 	BACK
 };
 
+/// @brief A quaternion based camera.
 class Camera
 {
 public:
@@ -41,77 +39,79 @@ public:
 	~Camera();
 
 	void Reset();
-	//This function updates the camera
-	//Depending on the current camera mode, the projection and viewport matricies are computed
-	//Then the position and location of the camera is updated
+	/// @brief This function updates the camera depending on the current camera mode, the m_Projection and viewport matricies are computed, then the position and location of the camera is updated.
 	void Update();
 
-	//Given a specific moving direction, the camera will be moved in the appropriate direction
-	//For a spherical camera this will be around the look_at point
-	//For a free camera a delta will be computed for the direction of movement.
+	/// @brief Given a specific moving direction, the camera will be moved in the appropriate direction
+	/// @brief - for a spherical camera this will be around the look_at point
+	/// @brief - for a free camera a delta will be computed for the direction of movement.
 	void Move(CameraDirection dir);
-	//Change the pitch (up, down) for the free camera
+
+	/// @brief Change the pitch (up, down) for the free camera
 	void ChangePitch(float degrees);
-	//Change heading (left, right) for the free camera
+
+	/// @brief Change heading (left, right) for the free camera
 	void ChangeHeading(float degrees);
 
-	//Change the heading and pitch of the camera based on the 2d movement of the mouse
+	/// @brief Change the heading and pitch of the camera based on the 2d movement of the mouse
 	void Move2D(int x, int y);
 
-	//Setting Functions
-	//Changes the camera mode, only three valid modes, Ortho, Free, and Spherical
-	void SetMode(CameraType cam_mode);
-	//Set the position of the camera
-	void SetPosition(glm::vec3 pos);
-	//Set's the look at point for the camera
-	void SetLookAt(glm::vec3 pos);
-	//Changes the Field of View (FOV) for the camera
+	/// @brief Changes the camera mode, only three valid modes, Ortho, Free, and Spherical
+	void SetMode(CameraMode cam_mode);
+	/// @brief Set the position of the camera
+	void SetPosition(BaseType::Vec3 pos);
+	/// @brief Set's the look at point for the camera
+	void SetLookAt(BaseType::Vec3 pos);
+	/// @brief Changes the Field of View (FOV) for the camera
 	void SetFOV(double fov);
-	//Change the viewport location and size
+	/// @brief Change the viewport location and size
 	void SetViewport(int loc_x, int loc_y, int width, int height);
-	//Change the clipping distance for the camera
+	/// @brief Change the clipping distance for the camera
 	void SetClipping(double near_clip_distance, double far_clip_distance);
 
 	void SetDistance(double cam_dist);
 	void SetPos(int button, int state, int x, int y);
 
-	//Getting Functions
-	CameraType GetMode();
+	/// @brief Get active camera mode.
+	CameraMode GetMode();
+	/// @brief Get viewport dimensions.
 	void GetViewport(int& loc_x, int& loc_y, int& width, int& height);
-	void GetMatricies(glm::mat4& P, glm::mat4& V, glm::mat4& M);
+	/// @brief Get Projection (P), View (V) and Model (M) matrices.
+	void GetMatricies(BaseType::Mat4& P, BaseType::Mat4& V, BaseType::Mat4& M);
 
-	CameraType camera_mode;
+private:
+	CameraMode m_CameraMode;
 
-	int viewport_x;
-	int viewport_y;
+	int m_ViewportX;
+	int m_ViewportY;
 
-	int window_width;
-	int window_height;
+	int m_WindowWidth;
+	int m_WindowHeight;
 
-	double aspect;
-	double field_of_view;
-	double near_clip;
-	double far_clip;
+	double m_AspectRatio;
+	double m_FOV;
+	double m_NearClip;
+	double m_FarClip;
 
-	float camera_scale;
-	float camera_heading;
-	float camera_pitch;
+	float m_CameraScale;
+	float m_CameraHeading;
+	float m_CameraPitch;
 
-	float max_pitch_rate;
-	float max_heading_rate;
-	bool move_camera;
+	float m_MaxPitchRate;
+	float m_MaxHeadingRate;
+	bool m_MoveCamera;
 
-	glm::vec3 camera_position;
-	glm::vec3 camera_position_delta;
-	glm::vec3 camera_look_at;
-	glm::vec3 camera_direction;
+	BaseType::Vec3 m_CameraPosition;
+	BaseType::Vec3 m_CameraPositionDelta;
+	BaseType::Vec3 m_CameraLookAt;
+	BaseType::Vec3 m_CameraDirection;
 
-	glm::vec3 camera_up;
-	glm::vec3 mouse_position;
+	BaseType::Vec3 m_CameraUp;
+	BaseType::Vec3 m_MousePosition;
 
-	glm::mat4 projection;
-	glm::mat4 view;
-	glm::mat4 model;
-	glm::mat4 MVP;
+	BaseType::Mat4 m_Projection;
+	BaseType::Mat4 m_View;
+	BaseType::Mat4 m_Model;
+	BaseType::Mat4 m_MVP;
 };
 } // namespace Core

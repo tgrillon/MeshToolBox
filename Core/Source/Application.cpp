@@ -100,7 +100,8 @@ void Application::Run()
 	{
 		glfwPollEvents();
 
-		if(m_Window->ShouldClose())
+		GLFWwindow* window = GetWindow();
+		if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS || m_Window->ShouldClose())
 		{
 			Stop();
 			break;
