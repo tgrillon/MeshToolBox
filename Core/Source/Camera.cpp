@@ -7,7 +7,7 @@ using namespace BaseType;
 using namespace Math::Geometry;
 
 Camera::Camera()
-	: m_CameraMode(CameraMode::FREE)
+	: m_CameraMode(CameraMode::Free)
 	, m_CameraUp(Vec3(0, 1, 0))
 	, m_FOV(45)
 	, m_CameraPositionDelta(Vec3(0, 0, 0))
@@ -31,14 +31,14 @@ void Camera::Update()
 	//need to set the matrix state. this is only important because lighting doesn't work if this isn't done
 	glViewport(m_ViewportX, m_ViewportY, m_WindowWidth, m_WindowHeight);
 
-	if(m_CameraMode == CameraMode::ORTHO)
+	if(m_CameraMode == CameraMode::Ortho)
 	{
 		//our m_Projection matrix will be an orthogonal one in this case
 		//if the values are not floating point, this command does not work properly
 		//need to multiply by m_AspectRatio!!! (otherise will not scale properly)
 		m_Projection = Ortho(-1.5f * float(m_AspectRatio), 1.5f * float(m_AspectRatio), -1.5f, 1.5f, -10.0f, 10.f);
 	}
-	else if(m_CameraMode == CameraMode::FREE)
+	else if(m_CameraMode == CameraMode::Free)
 	{
 		m_Projection = Perspective(m_FOV, m_AspectRatio, m_NearClip, m_FarClip);
 		//detmine axis for pitch rotation
@@ -108,26 +108,26 @@ void Camera::SetClipping(double near_clip_distance, double far_clip_distance)
 
 void Camera::Move(CameraDirection dir)
 {
-	if(m_CameraMode == CameraMode::FREE)
+	if(m_CameraMode == CameraMode::Free)
 	{
 		switch(dir)
 		{
-			case CameraDirection::UP:
+			case CameraDirection::Up:
 				m_CameraPositionDelta += m_CameraUp * m_CameraScale;
 				break;
-			case CameraDirection::DOWN:
+			case CameraDirection::Down:
 				m_CameraPositionDelta -= m_CameraUp * m_CameraScale;
 				break;
-			case CameraDirection::LEFT:
+			case CameraDirection::Left:
 				m_CameraPositionDelta -= Cross(m_CameraDirection, m_CameraUp) * m_CameraScale;
 				break;
-			case CameraDirection::RIGHT:
+			case CameraDirection::Right:
 				m_CameraPositionDelta += Cross(m_CameraDirection, m_CameraUp) * m_CameraScale;
 				break;
-			case CameraDirection::FORWARD:
+			case CameraDirection::Forward:
 				m_CameraPositionDelta += m_CameraDirection * m_CameraScale;
 				break;
-			case CameraDirection::BACK:
+			case CameraDirection::Back:
 				m_CameraPositionDelta -= m_CameraDirection * m_CameraScale;
 				break;
 		}

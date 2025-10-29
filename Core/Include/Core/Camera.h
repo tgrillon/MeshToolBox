@@ -18,18 +18,19 @@ namespace Core
 
 enum struct CameraMode : uint8_t
 {
-	ORTHO = 0,
-	FREE
+	Ortho = 0,
+	Orbiter,
+	Free
 };
 
 enum struct CameraDirection : uint8_t
 {
-	UP = 0,
-	DOWN,
-	LEFT,
-	RIGHT,
-	FORWARD,
-	BACK
+	Up = 0,
+	Down,
+	Left,
+	Right,
+	Forward,
+	Back
 };
 
 /// @brief A quaternion based camera.

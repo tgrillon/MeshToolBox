@@ -21,6 +21,7 @@ namespace Core
 
 using namespace BaseType;
 
+/// @brief Static singleton instance of the application.
 static Application* s_Application = nullptr;
 
 static void GLFWErrorCallback(int error, const char* description)

@@ -59,3 +59,12 @@ struct hash<Core::BaseType::Vec3>
 	}
 };
 } // namespace std
+
+namespace HashHelper
+{
+template<typename T>
+struct EnumStructHash
+{
+	bool operator()(T t) const { return static_cast<size_t>(t); }
+};
+} // namespace HashHelper
