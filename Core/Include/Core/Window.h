@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/BaseType.h"
+#include "Core/BaseTypes.h"
 
 #include <GLFW/glfw3.h>
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Application/Mesh.h"
-#include "Core/BaseType.h"
+#include "Core/BaseTypes.h"
 
 namespace Data::Primitive
 {

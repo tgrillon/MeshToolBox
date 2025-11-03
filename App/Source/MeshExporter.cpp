@@ -3,7 +3,7 @@
 #include "Application/ExtraDataContainer.h"
 #include "Application/ExtraDataType.h"
 #include "Application/PrimitiveProxy.h"
-#include "Core/BaseType.h"
+#include "Core/BaseTypes.h"
 #include "Core/PrintHelpers.h"
 
 using namespace Data::Surface;

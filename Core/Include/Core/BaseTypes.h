@@ -15,6 +15,12 @@
 
 namespace Core::BaseType
 {
+using EdgeIndex = uint8_t;
+using VertexLocalIndex = uint8_t;
+using VertexIndex = uint32_t;
+using TriangleIndex = uint32_t;
+using ScalarValue = float;
+
 using iVec2 = glm::ivec2;
 
 using Vec2 = glm::vec2;
