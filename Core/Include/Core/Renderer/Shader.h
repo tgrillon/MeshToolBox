@@ -12,4 +12,6 @@ uint32_t CreateGraphicsShader(const std::filesystem::path& vertexPath, const std
 uint32_t ReloadGraphicsShader(
 	uint32_t shaderHandle, const std::filesystem::path& vertexPath, const std::filesystem::path& fragmentPath);
 
+int GetUniformLocation(const char* name, int program);
+
 } // namespace Renderer

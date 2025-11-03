@@ -7,12 +7,11 @@
 namespace Core::Input
 {
 
-/// @brief Regular keys.
-enum struct RegularKey : int16_t
+/// @brief Key codes (From glfw3.h).
+enum struct KeyCode : int16_t
 {
 	Unknown = -1,
 
-	// From glfw3.h
 	Space = 32,
 	Apostrophe = 39, /* ' */
 	Comma = 44, /* , */
@@ -133,12 +132,7 @@ enum struct RegularKey : int16_t
 	KPAdd = 334,
 	KPEnter = 335,
 	KPEqual = 336,
-};
 
-/// @brief  @brief Modifier keys
-enum struct ModifierKey : int16_t
-{
-	Unknown = -1,
 	LeftShift = 340,
 	LeftControl = 341,
 	LeftAlt = 342,
@@ -184,104 +178,30 @@ enum struct MouseButton : int16_t
 	Middle = Button2
 };
 
-/// @brief Input source representing either a regular key, modifier key, or mouse button.
-struct InputSource
-{
-	enum struct InputType : uint8_t
-	{
-		RegularKeyType,
-		ModifierKeyType,
-		MouseButtonType
-	};
-
-	/// @brief Type of the input source.
-	InputType Type;
-
-	/// @brief The actual input value.
-	union
-	{
-		RegularKey Key;
-		ModifierKey Modifier;
-		MouseButton Button;
-	};
-
-	/// @brief Equality operator for InputSource.
-	bool operator==(const InputSource& other) const
-	{
-		if(Type != other.Type)
-		{
-			return false;
-		}
-
-		switch(Type)
-		{
-			case InputType::RegularKeyType:
-				return Key == other.Key;
-			case InputType::ModifierKeyType:
-				return Modifier == other.Modifier;
-			case InputType::MouseButtonType:
-				return Button == other.Button;
-		}
-
-		return false; // Should never reach here
-	}
-
-	// Optional but recommended for C++20
-	bool operator!=(const InputSource& other) const { return !(*this == other); }
-};
-
-enum struct KeyboardLayout
-{
-	Azerty,
-	Qwerty
-};
-
-/// @brief Returns the corresponding key in the AZERTY layout.
-inline RegularKey MapToAZERTY(const RegularKey key)
-{
-	switch(key)
-	{
-		case RegularKey::Q:
-			return RegularKey::A;
-		case RegularKey::A:
-			return RegularKey::Q;
-		case RegularKey::W:
-			return RegularKey::Z;
-		case RegularKey::Z:
-			return RegularKey::W;
-		case RegularKey::Semicolon:
-			return RegularKey::M;
-		case RegularKey::M:
-			return RegularKey::Comma;
-		default:
-			return key;
-	}
-}
-
 /// @brief Returns the corresponding key in the QWERTY layout.
-inline RegularKey MapToQWERTY(const RegularKey key)
+inline KeyCode MapToQWERTY(const KeyCode key)
 {
 	switch(key)
 	{
-		case RegularKey::Q:
-			return RegularKey::A;
-		case RegularKey::A:
-			return RegularKey::Q;
-		case RegularKey::W:
-			return RegularKey::Z;
-		case RegularKey::Z:
-			return RegularKey::W;
-		case RegularKey::M:
-			return RegularKey::Semicolon;
-		case RegularKey::Comma:
-			return RegularKey::M;
+		case KeyCode::Q:
+			return KeyCode::A;
+		case KeyCode::A:
+			return KeyCode::Q;
+		case KeyCode::W:
+			return KeyCode::Z;
+		case KeyCode::Z:
+			return KeyCode::W;
+		case KeyCode::M:
+			return KeyCode::Semicolon;
+		case KeyCode::Comma:
+			return KeyCode::M;
 		default:
 			return key;
 	}
 }
 
-/// @brief Returns the string representation of a RegularKey.
-inline std::string GetStrFromInput(RegularKey key)
+/// @brief Returns the string representation of a KeyCode.
+inline std::string GetStrFromInput(KeyCode key)
 {
 	if(static_cast<uint16_t>(key) >= 39 && static_cast<uint16_t>(key) <= 96)
 	{
@@ -290,157 +210,147 @@ inline std::string GetStrFromInput(RegularKey key)
 
 	switch(key)
 	{
-		case RegularKey::Space:
+		case KeyCode::Space:
 			return "SPACE";
-		case RegularKey::Escape:
+		case KeyCode::Escape:
 			return "ESCAPE";
-		case RegularKey::Enter:
+		case KeyCode::Enter:
 			return "ENTER";
-		case RegularKey::Tab:
+		case KeyCode::Tab:
 			return "TAB";
-		case RegularKey::Backspace:
+		case KeyCode::Backspace:
 			return "BACKSPACE";
-		case RegularKey::Insert:
+		case KeyCode::Insert:
 			return "INSERT";
-		case RegularKey::Delete:
+		case KeyCode::Delete:
 			return "DELETE";
-		case RegularKey::Right:
+		case KeyCode::Right:
 			return "RIGHT";
-		case RegularKey::Left:
+		case KeyCode::Left:
 			return "Left";
-		case RegularKey::Down:
+		case KeyCode::Down:
 			return "Down";
-		case RegularKey::Up:
+		case KeyCode::Up:
 			return "Up";
-		case RegularKey::PageUp:
+		case KeyCode::PageUp:
 			return "PAGE_UP";
-		case RegularKey::PageDown:
+		case KeyCode::PageDown:
 			return "PAGE_DOWN";
-		case RegularKey::Home:
+		case KeyCode::Home:
 			return "HOME";
-		case RegularKey::End:
+		case KeyCode::End:
 			return "END";
-		case RegularKey::CapsLock:
+		case KeyCode::CapsLock:
 			return "CAPS_LOCK";
-		case RegularKey::ScrollLock:
+		case KeyCode::ScrollLock:
 			return "SCROLL_LOCK";
-		case RegularKey::NumLock:
+		case KeyCode::NumLock:
 			return "NUM_LOCK";
-		case RegularKey::PrintScreen:
+		case KeyCode::PrintScreen:
 			return "PRINT_SCREEN";
-		case RegularKey::Pause:
+		case KeyCode::Pause:
 			return "PAUSE";
-		case RegularKey::F1:
+		case KeyCode::F1:
 			return "F1";
-		case RegularKey::F2:
+		case KeyCode::F2:
 			return "F2";
-		case RegularKey::F3:
+		case KeyCode::F3:
 			return "F3";
-		case RegularKey::F4:
+		case KeyCode::F4:
 			return "F4";
-		case RegularKey::F5:
+		case KeyCode::F5:
 			return "F5";
-		case RegularKey::F6:
+		case KeyCode::F6:
 			return "F6";
-		case RegularKey::F7:
+		case KeyCode::F7:
 			return "F7";
-		case RegularKey::F8:
+		case KeyCode::F8:
 			return "F8";
-		case RegularKey::F9:
+		case KeyCode::F9:
 			return "F9";
-		case RegularKey::F10:
+		case KeyCode::F10:
 			return "F10";
-		case RegularKey::F11:
+		case KeyCode::F11:
 			return "F11";
-		case RegularKey::F12:
+		case KeyCode::F12:
 			return "F12";
-		case RegularKey::F13:
+		case KeyCode::F13:
 			return "F13";
-		case RegularKey::F14:
+		case KeyCode::F14:
 			return "F14";
-		case RegularKey::F15:
+		case KeyCode::F15:
 			return "F15";
-		case RegularKey::F16:
+		case KeyCode::F16:
 			return "F16";
-		case RegularKey::F17:
+		case KeyCode::F17:
 			return "F17";
-		case RegularKey::F18:
+		case KeyCode::F18:
 			return "F18";
-		case RegularKey::F19:
+		case KeyCode::F19:
 			return "F19";
-		case RegularKey::F20:
+		case KeyCode::F20:
 			return "F20";
-		case RegularKey::F21:
+		case KeyCode::F21:
 			return "F21";
-		case RegularKey::F22:
+		case KeyCode::F22:
 			return "F22";
-		case RegularKey::F23:
+		case KeyCode::F23:
 			return "F23";
-		case RegularKey::F24:
+		case KeyCode::F24:
 			return "F24";
-		case RegularKey::F25:
+		case KeyCode::F25:
 			return "F25";
-		case RegularKey::KP0:
+		case KeyCode::KP0:
 			return "NUMP_0";
-		case RegularKey::KP1:
+		case KeyCode::KP1:
 			return "NUMP_1";
-		case RegularKey::KP2:
+		case KeyCode::KP2:
 			return "NUMP_2";
-		case RegularKey::KP3:
+		case KeyCode::KP3:
 			return "NUMP_3";
-		case RegularKey::KP4:
+		case KeyCode::KP4:
 			return "NUMP_4";
-		case RegularKey::KP5:
+		case KeyCode::KP5:
 			return "NUMP_5";
-		case RegularKey::KP6:
+		case KeyCode::KP6:
 			return "NUMP_6";
-		case RegularKey::KP7:
+		case KeyCode::KP7:
 			return "NUMP_7";
-		case RegularKey::KP8:
+		case KeyCode::KP8:
 			return "NUMP_8";
-		case RegularKey::KP9:
+		case KeyCode::KP9:
 			return "NUMP_9";
-		case RegularKey::KPDecimal:
+		case KeyCode::KPDecimal:
 			return "NUMP_DECIMAL";
-		case RegularKey::KPDivide:
+		case KeyCode::KPDivide:
 			return "NUMP_DIVIDE";
-		case RegularKey::KPMultiply:
+		case KeyCode::KPMultiply:
 			return "NUMP_MULTIPLY";
-		case RegularKey::KPSubtract:
+		case KeyCode::KPSubtract:
 			return "NUMP_SUBTRACT";
-		case RegularKey::KPAdd:
+		case KeyCode::KPAdd:
 			return "NUMP_ADD";
-		case RegularKey::KPEnter:
+		case KeyCode::KPEnter:
 			return "NUMP_ENTER";
-		case RegularKey::KPEqual:
+		case KeyCode::KPEqual:
 			return "NUMP_EQUAL";
-		default:
-			return "UNKNOWN";
-	}
-}
-
-/// @brief Returns the string representation of a ModifierKey.
-inline std::string GetStrFromInput(ModifierKey key)
-{
-	switch(key)
-	{
-		case ModifierKey::LeftShift:
+		case KeyCode::LeftShift:
 			return "LSHIFT";
-		case ModifierKey::LeftControl:
+		case KeyCode::LeftControl:
 			return "LCTRL";
-		case ModifierKey::LeftAlt:
+		case KeyCode::LeftAlt:
 			return "LALT";
-		case ModifierKey::LeftSuper:
+		case KeyCode::LeftSuper:
 			return "LSUPER";
-		case ModifierKey::RightShift:
+		case KeyCode::RightShift:
 			return "RSHIFT";
-		case ModifierKey::RightControl:
+		case KeyCode::RightControl:
 			return "RCTRL";
-		case ModifierKey::RightAlt:
+		case KeyCode::RightAlt:
 			return "RALT";
-		case ModifierKey::RightSuper:
+		case KeyCode::RightSuper:
 			return "RSUPER";
-		case ModifierKey::Menu:
+		case KeyCode::Menu:
 			return "MENU";
 		default:
 			return "UNKNOWN";
@@ -470,25 +380,3 @@ inline std::string GetStrFromInput(MouseButton button)
 }
 
 } // namespace Core::Input
-
-namespace std
-{
-template<>
-struct hash<Core::Input::InputSource>
-{
-	size_t operator()(Core::Input::InputSource input) const
-	{
-		switch(input.Type)
-		{
-			case Core::Input::InputSource::InputType::RegularKeyType:
-				return static_cast<size_t>(input.Key);
-			case Core::Input::InputSource::InputType::ModifierKeyType:
-				return static_cast<size_t>(input.Modifier);
-			case Core::Input::InputSource::InputType::MouseButtonType:
-				return static_cast<size_t>(input.Button);
-			default:
-				return 0;
-		}
-	}
-};
-} // namespace std

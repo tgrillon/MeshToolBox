@@ -237,6 +237,11 @@ void Camera::GetViewport(int& loc_x, int& loc_y, int& width, int& height)
 	height = m_WindowHeight;
 }
 
+double Camera::GetAspectRatio() const
+{
+	return m_AspectRatio;
+}
+
 void Camera::GetMatricies(Mat4& P, Mat4& V, Mat4& M)
 {
 	P = m_Projection;

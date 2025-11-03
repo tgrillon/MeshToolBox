@@ -7,7 +7,7 @@
  */
 #pragma once
 
-#include "Core/BaseType.h"
+#include "Core/BaseTypes.h"
 #include "Core/MathHelpers.h"
 
 #include <GLFW/glfw3.h>
@@ -76,8 +76,13 @@ public:
 
 	/// @brief Get active camera mode.
 	CameraMode GetMode();
+
 	/// @brief Get viewport dimensions.
 	void GetViewport(int& loc_x, int& loc_y, int& width, int& height);
+
+	/// @brief Returns aspect ratio.
+	double GetAspectRatio() const;
+
 	/// @brief Get Projection (P), View (V) and Model (M) matrices.
 	void GetMatricies(Core::BaseType::Mat4& P, Core::BaseType::Mat4& V, Core::BaseType::Mat4& M);
 

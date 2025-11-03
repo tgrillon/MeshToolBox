@@ -8,6 +8,7 @@ Source/Application.cpp
 Source/Window.cpp
 Source/Camera.cpp
 Source/Input.cpp
+Source/Renderer/Buffer.cpp
 Source/Renderer/Renderer.cpp
 Source/Renderer/Shader.cpp
 Source/Renderer/GLUtils.cpp
