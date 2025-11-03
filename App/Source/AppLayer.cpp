@@ -51,7 +51,6 @@ AppLayer::AppLayer()
 	glVertexArrayAttribBinding(m_VertexArray, 1, 0);
 
 	// Print various OpenGL informations to stdout
-
 	Info(
 		"{} {}",
 		reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
