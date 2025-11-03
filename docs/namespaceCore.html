@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('namespaceCore.html',''); initResizable
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Core Namespace Reference</div></div>
@@ -114,7 +116,13 @@ $(document).ready(function(){initNavTree('namespaceCore.html',''); initResizable
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceCore_1_1BaseType" id="r_namespaceCore_1_1BaseType"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore_1_1BaseType.html">BaseType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceCore_1_1Event" id="r_namespaceCore_1_1Event"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore_1_1Event.html">Event</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceCore_1_1Key" id="r_namespaceCore_1_1Key"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore_1_1Key.html">Key</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceCore_1_1Math" id="r_namespaceCore_1_1Math"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore_1_1Math.html">Math</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceCore_1_1Mouse" id="r_namespaceCore_1_1Mouse"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore_1_1Mouse.html">Mouse</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -124,6 +132,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1ApplicationSpecification.html">ApplicationSpecification</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html">Event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all events.  <a href="classCore_1_1Event.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1EventDispatcher.html">EventDispatcher</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches events to the appropriate handler based on their type.  <a href="classCore_1_1EventDispatcher.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Input.html">Input</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCore_1_1Input.html" title="Input handling class.">Input</a> handling class.  <a href="classCore_1_1Input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html">Layer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,10 +147,57 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1WindowSpecification.html">WindowSpecification</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6b35b59efae3c574e0dbaa9bd50163a4" id="r_a6b35b59efae3c574e0dbaa9bd50163a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">KeyCode</a> = uint16_t</td></tr>
+<tr class="separator:a6b35b59efae3c574e0dbaa9bd50163a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9654679101a927f0b936a8e40422e92" id="r_af9654679101a927f0b936a8e40422e92"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">MouseCode</a> = uint16_t</td></tr>
+<tr class="separator:af9654679101a927f0b936a8e40422e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac2acc0f2f1350d38961a94d0e1a26afa" id="r_ac2acc0f2f1350d38961a94d0e1a26afa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">EventType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07">WindowClose</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c">WindowResize</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca">WindowFocus</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c">WindowLostFocus</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda">WindowMoved</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca">KeyPressed</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab">KeyReleased</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e">KeyTyped</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c">MouseButtonPressed</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c">MouseButtonReleased</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08">MouseMoved</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1">MouseScrolled</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5">MouseDoubleClick</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac2acc0f2f1350d38961a94d0e1a26afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different types of events.  <a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">More...</a><br /></td></tr>
+<tr class="separator:ac2acc0f2f1350d38961a94d0e1a26afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f03ea688befde4f28dc1a922da88c42" id="r_a0f03ea688befde4f28dc1a922da88c42"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">EventCategory</a> { <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5">None</a> = 0
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180">EventCategoryApplication</a> = BIT(0)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588">EventCategoryInput</a> = BIT(1)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec">EventCategoryKeyboard</a> = BIT(2)
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f">EventCategoryMouse</a> = BIT(3)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272">EventCategoryMouseButton</a> = BIT(4)
+<br />
+ }</td></tr>
+<tr class="memdesc:a0f03ea688befde4f28dc1a922da88c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Categories for events, used for filtering.  <a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">More...</a><br /></td></tr>
+<tr class="separator:a0f03ea688befde4f28dc1a922da88c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5a6d0eb653b89c7c83a4514c47e58c3b" id="r_a5a6d0eb653b89c7c83a4514c47e58c3b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classCore_1_1Application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a5a6d0eb653b89c7c83a4514c47e58c3b">CreateApplication</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a5a6d0eb653b89c7c83a4514c47e58c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1edf4ed7625ee7abaf84831b2b24408e" id="r_a1edf4ed7625ee7abaf84831b2b24408e"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a1edf4ed7625ee7abaf84831b2b24408e">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classCore_1_1Event.html">Event</a> &amp;e)</td></tr>
+<tr class="memdesc:a1edf4ed7625ee7abaf84831b2b24408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the output stream operator for events.  <br /></td></tr>
+<tr class="separator:a1edf4ed7625ee7abaf84831b2b24408e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af19588f46bc826fa5f71de79f7ce9d99" id="r_af19588f46bc826fa5f71de79f7ce9d99"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#af19588f46bc826fa5f71de79f7ce9d99">GLFWErrorCallback</a> (int error, const char *description)</td></tr>
 <tr class="separator:af19588f46bc826fa5f71de79f7ce9d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,6 +206,154 @@ Variables</h2></td></tr>
 <tr class="memitem:a368c16922eb60842617d97c5a5bc6dcf" id="r_a368c16922eb60842617d97c5a5bc6dcf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCore_1_1Application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a> = nullptr</td></tr>
 <tr class="separator:a368c16922eb60842617d97c5a5bc6dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6b35b59efae3c574e0dbaa9bd50163a4" name="a6b35b59efae3c574e0dbaa9bd50163a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b35b59efae3c574e0dbaa9bd50163a4">&#9670;&#160;</a></span>KeyCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">Core::KeyCode</a> = typedef uint16_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="KeyCodes_8h_source.html#l00005">5</a> of file <a class="el" href="KeyCodes_8h_source.html">KeyCodes.h</a>.</p>
+
+</div>
+</div>
+<a id="af9654679101a927f0b936a8e40422e92" name="af9654679101a927f0b936a8e40422e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9654679101a927f0b936a8e40422e92">&#9670;&#160;</a></span>MouseCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">Core::MouseCode</a> = typedef uint16_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MouseCodes_8h_source.html#l00005">5</a> of file <a class="el" href="MouseCodes_8h_source.html">MouseCodes.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a0f03ea688befde4f28dc1a922da88c42" name="a0f03ea688befde4f28dc1a922da88c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f03ea688befde4f28dc1a922da88c42">&#9670;&#160;</a></span>EventCategory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">Core::EventCategory</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Categories for events, used for filtering. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5" name="a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180" name="a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180"></a>EventCategoryApplication&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588" name="a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588"></a>EventCategoryInput&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec" name="a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec"></a>EventCategoryKeyboard&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f" name="a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f"></a>EventCategoryMouse&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272" name="a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272"></a>EventCategoryMouseButton&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00033">33</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5">None</a> = 0,</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180">EventCategoryApplication</a> = <a class="code hl_define" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(0), <span class="comment">// 0000</span></div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588">EventCategoryInput</a> = <a class="code hl_define" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(1), <span class="comment">// 0001</span></div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec">EventCategoryKeyboard</a> = <a class="code hl_define" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(2), <span class="comment">// 0010</span></div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f">EventCategoryMouse</a> = <a class="code hl_define" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(3), <span class="comment">// 0100</span></div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272">EventCategoryMouseButton</a> = <a class="code hl_define" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(4) <span class="comment">// 1000</span></div>
+<div class="line"><span class="lineno">   41</span>};</div>
+<div class="ttc" id="aEvent_8h_html_ad27cc17b25bb93134368d5eb21126eae"><div class="ttname"><a href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a></div><div class="ttdeci">#define BIT(x)</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00006">Event.h:6</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272">Core::EventCategoryMouseButton</a></div><div class="ttdeci">@ EventCategoryMouseButton</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00041">Event.h:40</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588">Core::EventCategoryInput</a></div><div class="ttdeci">@ EventCategoryInput</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00037">Event.h:37</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec">Core::EventCategoryKeyboard</a></div><div class="ttdeci">@ EventCategoryKeyboard</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f">Core::EventCategoryMouse</a></div><div class="ttdeci">@ EventCategoryMouse</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00039">Event.h:39</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180">Core::EventCategoryApplication</a></div><div class="ttdeci">@ EventCategoryApplication</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00036">Event.h:36</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5"><div class="ttname"><a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5">Core::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00035">Event.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac2acc0f2f1350d38961a94d0e1a26afa" name="ac2acc0f2f1350d38961a94d0e1a26afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2acc0f2f1350d38961a94d0e1a26afa">&#9670;&#160;</a></span>EventType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">Core::EventType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Different types of events. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa6adf97f83acf6453d4a6a4b1070f3754" name="ac2acc0f2f1350d38961a94d0e1a26afaa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07" name="ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07"></a>WindowClose&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c" name="ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c"></a>WindowResize&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca" name="ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca"></a>WindowFocus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c" name="ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c"></a>WindowLostFocus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda" name="ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda"></a>WindowMoved&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca" name="ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca"></a>KeyPressed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab" name="ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab"></a>KeyReleased&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e" name="ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e"></a>KeyTyped&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c" name="ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c"></a>MouseButtonPressed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c" name="ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c"></a>MouseButtonReleased&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08" name="ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08"></a>MouseMoved&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1" name="ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1"></a>MouseScrolled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5" name="ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5"></a>MouseDoubleClick&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00012">12</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5">None</a> = 0,</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07">WindowClose</a>,</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c">WindowResize</a>,</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca">WindowFocus</a>,</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c">WindowLostFocus</a>,</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda">WindowMoved</a>,</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca">KeyPressed</a>,</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab">KeyReleased</a>,</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e">KeyTyped</a>,</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c">MouseButtonPressed</a>,</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c">MouseButtonReleased</a>,</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08">MouseMoved</a>,</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1">MouseScrolled</a>,</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5">MouseDoubleClick</a></div>
+<div class="line"><span class="lineno">   30</span>};</div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5">Core::EventType::MouseDoubleClick</a></div><div class="ttdeci">@ MouseDoubleClick</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c">Core::EventType::WindowLostFocus</a></div><div class="ttdeci">@ WindowLostFocus</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca">Core::EventType::WindowFocus</a></div><div class="ttdeci">@ WindowFocus</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab">Core::EventType::KeyReleased</a></div><div class="ttdeci">@ KeyReleased</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1">Core::EventType::MouseScrolled</a></div><div class="ttdeci">@ MouseScrolled</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c">Core::EventType::MouseButtonPressed</a></div><div class="ttdeci">@ MouseButtonPressed</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c">Core::EventType::MouseButtonReleased</a></div><div class="ttdeci">@ MouseButtonReleased</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e">Core::EventType::KeyTyped</a></div><div class="ttdeci">@ KeyTyped</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c">Core::EventType::WindowResize</a></div><div class="ttdeci">@ WindowResize</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda">Core::EventType::WindowMoved</a></div><div class="ttdeci">@ WindowMoved</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca">Core::EventType::KeyPressed</a></div><div class="ttdeci">@ KeyPressed</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08">Core::EventType::MouseMoved</a></div><div class="ttdeci">@ MouseMoved</div></div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07">Core::EventType::WindowClose</a></div><div class="ttdeci">@ WindowClose</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a5a6d0eb653b89c7c83a4514c47e58c3b" name="a5a6d0eb653b89c7c83a4514c47e58c3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a6d0eb653b89c7c83a4514c47e58c3b">&#9670;&#160;</a></span>CreateApplication()</h2>
@@ -212,6 +422,50 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;[GLFW Error]: {}&quot;</span>, description);</div>
 <div class="line"><span class="lineno">   27</span>}</div>
 <div class="ttc" id="aPrintHelpers_8h_html_a3820662fa23f7fb1a776c4398eb83c50"><div class="ttname"><a href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a></div><div class="ttdeci">#define Error(...)</div><div class="ttdef"><b>Definition</b> <a href="PrintHelpers_8h_source.html#l00171">PrintHelpers.h:171</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1edf4ed7625ee7abaf84831b2b24408e" name="a1edf4ed7625ee7abaf84831b2b24408e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1edf4ed7625ee7abaf84831b2b24408e">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; Core::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCore_1_1Event.html">Event</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloads the output stream operator for events. </p>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00118">118</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> os &lt;&lt; e.<a class="code hl_function" href="classCore_1_1Event.html#a58d34b7d8544674018d7fa563947cf87">ToString</a>();</div>
+<div class="line"><span class="lineno">  121</span>}</div>
+<div class="ttc" id="aclassCore_1_1Event_html_a58d34b7d8544674018d7fa563947cf87"><div class="ttname"><a href="classCore_1_1Event.html#a58d34b7d8544674018d7fa563947cf87">Core::Event::ToString</a></div><div class="ttdeci">virtual std::string ToString() const</div><div class="ttdoc">Converts the event to a string representation.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00081">Event.h:81</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -461,12 +461,13 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="lineno">   59</span>        <span class="keyword">auto</span> it = <a class="code hl_variable" href="classData_1_1ExtraData_1_1ExtraDataContainer.html#a80003230825bfb20e09c908dfc33f39a">m_Data</a>.find(std::type_index(<span class="keyword">typeid</span>(T)));</div>
 <div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span>(it == <a class="code hl_variable" href="classData_1_1ExtraData_1_1ExtraDataContainer.html#a80003230825bfb20e09c908dfc33f39a">m_Data</a>.end())</div>
 <div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            <a class="code hl_variable" href="classData_1_1ExtraData_1_1ExtraDataContainer.html#a80003230825bfb20e09c908dfc33f39a">m_Data</a>[std::type_index(<span class="keyword">typeid</span>(T))] = T{};</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_variable" href="classData_1_1ExtraData_1_1ExtraDataContainer.html#a80003230825bfb20e09c908dfc33f39a">m_Data</a>[std::type_index(<span class="keyword">typeid</span>(T))] = <a class="code hl_enumvalue" href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">T</a>{};</div>
 <div class="line"><span class="lineno">   63</span>            it = <a class="code hl_variable" href="classData_1_1ExtraData_1_1ExtraDataContainer.html#a80003230825bfb20e09c908dfc33f39a">m_Data</a>.find(std::type_index(<span class="keyword">typeid</span>(T)));</div>
 <div class="line"><span class="lineno">   64</span>        }</div>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>        <span class="keywordflow">return</span> std::any_cast&lt;T&amp;&gt;(it-&gt;second);</div>
 <div class="line"><span class="lineno">   67</span>    }</div>
+<div class="ttc" id="anamespaceCore_1_1Key_html_a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca"><div class="ttname"><a href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">Core::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> <a href="KeyCodes_8h_source.html#l00052">KeyCodes.h:52</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

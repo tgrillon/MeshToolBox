@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MeshToolBox: Core/Include/Core/Event.h File Reference</title>
+<title>MeshToolBox: Core/Include/Core/Event/Event.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,14 +103,24 @@ $(document).ready(function(){initNavTree('Event_8h.html',''); initResizable(); }
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Event.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for Event.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Event_8h__incl.svg" width="190" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Event_8h__dep__incl.svg" width="627" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Event_8h__dep__incl.svg" width="1128" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="Event_8h_source.html">Go to the source code of this file.</a></p>
@@ -118,19 +128,167 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html">Core::Event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all events.  <a href="classCore_1_1Event.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1EventDispatcher.html">Core::EventDispatcher</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches events to the appropriate handler based on their type.  <a href="classCore_1_1EventDispatcher.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceCore" id="r_namespaceCore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html">Core</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad27cc17b25bb93134368d5eb21126eae" id="r_ad27cc17b25bb93134368d5eb21126eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Event_8h.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(x)&#160;&#160;&#160;(1 &lt;&lt; x)</td></tr>
+<tr class="separator:ad27cc17b25bb93134368d5eb21126eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d534fc4d69a68eefd1573fd0ac2f44" id="r_a80d534fc4d69a68eefd1573fd0ac2f44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Event_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(type)</td></tr>
+<tr class="separator:a80d534fc4d69a68eefd1573fd0ac2f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd52deea587a36ef619e596a0c691839" id="r_abd52deea587a36ef619e596a0c691839"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Event_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a>(category)</td></tr>
+<tr class="separator:abd52deea587a36ef619e596a0c691839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac2acc0f2f1350d38961a94d0e1a26afa" id="r_ac2acc0f2f1350d38961a94d0e1a26afa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">Core::EventType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa6adf97f83acf6453d4a6a4b1070f3754">Core::None</a> = 0
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07">Core::WindowClose</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9f8f27bff2915738c4fe1b970e12f89c">Core::WindowResize</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca">Core::WindowFocus</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c">Core::WindowLostFocus</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaab94473d9dfc85f8fdbf5cb3b1d992bda">Core::WindowMoved</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac17e6984c1e5a887a49831beadee6bca">Core::KeyPressed</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa4a77f07c8ad223b71ab4ce78a63841ab">Core::KeyReleased</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa9afbfd35b289eb4fc7f1bc148d7b422e">Core::KeyTyped</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7349f643d689997b7c54bf93e4095f5c">Core::MouseButtonPressed</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa7584c169de594c27f00084b93186fd7c">Core::MouseButtonReleased</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac2770ad109c8063ce69a3608a9a16c08">Core::MouseMoved</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1">Core::MouseScrolled</a>
+, <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5">Core::MouseDoubleClick</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac2acc0f2f1350d38961a94d0e1a26afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different types of events.  <a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">More...</a><br /></td></tr>
+<tr class="separator:ac2acc0f2f1350d38961a94d0e1a26afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f03ea688befde4f28dc1a922da88c42" id="r_a0f03ea688befde4f28dc1a922da88c42"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">Core::EventCategory</a> { <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42ade52923c06f973193772fece2cc8fbc5">Core::None</a> = 0
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a904b72c81d6850cefb0269af35bdc180">Core::EventCategoryApplication</a> = BIT(0)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a56d4c0d1a1b7d1834a0e87a4a9167588">Core::EventCategoryInput</a> = BIT(1)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a83425c3e82b578d4393c06d4c0ad76ec">Core::EventCategoryKeyboard</a> = BIT(2)
+, <br />
+&#160;&#160;<a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a8abb2ecaa0317f477d3336c7cb48db9f">Core::EventCategoryMouse</a> = BIT(3)
+, <a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42a502025c9cad6ae4d9f0268d3a4ecf272">Core::EventCategoryMouseButton</a> = BIT(4)
+<br />
+ }</td></tr>
+<tr class="memdesc:a0f03ea688befde4f28dc1a922da88c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Categories for events, used for filtering.  <a href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">More...</a><br /></td></tr>
+<tr class="separator:a0f03ea688befde4f28dc1a922da88c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1edf4ed7625ee7abaf84831b2b24408e" id="r_a1edf4ed7625ee7abaf84831b2b24408e"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCore.html#a1edf4ed7625ee7abaf84831b2b24408e">Core::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classCore_1_1Event.html">Event</a> &amp;e)</td></tr>
+<tr class="memdesc:a1edf4ed7625ee7abaf84831b2b24408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the output stream operator for events.  <br /></td></tr>
+<tr class="separator:a1edf4ed7625ee7abaf84831b2b24408e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad27cc17b25bb93134368d5eb21126eae" name="ad27cc17b25bb93134368d5eb21126eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27cc17b25bb93134368d5eb21126eae">&#9670;&#160;</a></span>BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(1 &lt;&lt; x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00006">6</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+
+</div>
+</div>
+<a id="abd52deea587a36ef619e596a0c691839" name="abd52deea587a36ef619e596a0c691839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd52deea587a36ef619e596a0c691839">&#9670;&#160;</a></span>EVENT_CLASS_CATEGORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_CLASS_CATEGORY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">category</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">int</span> GetCategoryFlags() const override \</div>
+<div class="line">    { \</div>
+<div class="line">        <span class="keywordflow">return</span> category; \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00057">57</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>    { \</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> category; \</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a80d534fc4d69a68eefd1573fd0ac2f44" name="a80d534fc4d69a68eefd1573fd0ac2f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d534fc4d69a68eefd1573fd0ac2f44">&#9670;&#160;</a></span>EVENT_CLASS_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_CLASS_TYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> EventType GetStaticType() \</div>
+<div class="line">    { \</div>
+<div class="line">        <span class="keywordflow">return</span> EventType::type; \</div>
+<div class="line">    } \</div>
+<div class="line">    <span class="keyword">virtual</span> EventType GetEventType() const override \</div>
+<div class="line">    { \</div>
+<div class="line">        <span class="keywordflow">return</span> GetStaticType(); \</div>
+<div class="line">    } \</div>
+<div class="line">    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* GetName() const override \</div>
+<div class="line">    { \</div>
+<div class="line">        <span class="keywordflow">return</span> #type; \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00043">43</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    { \</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> EventType::type; \</div>
+<div class="line"><span class="lineno">   47</span>    } \</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keyword">virtual</span> <a class="code hl_enumeration" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">EventType</a> GetEventType() const override \</div>
+<div class="line"><span class="lineno">   49</span>    { \</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> GetStaticType(); \</div>
+<div class="line"><span class="lineno">   51</span>    } \</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* GetName() const override \</div>
+<div class="line"><span class="lineno">   53</span>    { \</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> #type; \</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="ttc" id="anamespaceCore_html_ac2acc0f2f1350d38961a94d0e1a26afa"><div class="ttname"><a href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">Core::EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">Different types of events.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00012">Event.h:13</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_c12a6f5e6b887c62c6a89daa412fe214.html">Include</a></li><li class="navelem"><a class="el" href="dir_8db4ec2cfd0f83875186a5af144da35f.html">Core</a></li><li class="navelem"><a class="el" href="Event_8h.html">Event.h</a></li>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_c12a6f5e6b887c62c6a89daa412fe214.html">Include</a></li><li class="navelem"><a class="el" href="dir_8db4ec2cfd0f83875186a5af144da35f.html">Core</a></li><li class="navelem"><a class="el" href="dir_89fbb5b1e5b56673270c86a04f33a168.html">Event</a></li><li class="navelem"><a class="el" href="Event_8h.html">Event.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

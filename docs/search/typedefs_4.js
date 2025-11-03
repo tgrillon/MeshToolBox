@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pointer_0',['pointer',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#ad113c52adbb9f61a310bba3bf90184ca',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::pointer'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#aac627f7eea7e4c1ead232f1e6f5b18f8',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::pointer']]]
+  ['mat4_0',['Mat4',['../namespaceCore_1_1BaseType.html#a907137ec2e1ca4386327de91ff2ff353',1,'Core::BaseType']]],
+  ['mousecode_1',['MouseCode',['../namespaceCore.html#af9654679101a927f0b936a8e40422e92',1,'Core']]]
 ];

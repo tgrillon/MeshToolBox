@@ -1,17 +1,6 @@
 var searchData=
 [
-  ['read_0',['read',['../structstbi__io__callbacks.html#a623e46b3a2a019611601409926283a88',1,'stbi_io_callbacks']]],
-  ['readme_2emd_1',['README.md',['../README_8md.html',1,'']]],
-  ['readtextfile_2',['ReadTextFile',['../namespaceRenderer.html#a4f6e48366391aca4b0f6605da77ae04f',1,'Renderer']]],
-  ['red_3',['Red',['../namespacePrintHelpers_1_1Color.html#ab19e8a4eed4bc3ee1eed337c2b3a12c9',1,'PrintHelpers::Color']]],
-  ['reference_4',['reference',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a3462ea45ea41b6addf1edfec2b82bbaa',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::reference'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#a260ceb185de6d5e0c07080a5fd502a59',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::reference']]],
-  ['reloadcomputeshader_5',['ReloadComputeShader',['../namespaceRenderer.html#afda4b1083bf26deb7e10bf5e40c3ca59',1,'Renderer']]],
-  ['reloadgraphicsshader_6',['ReloadGraphicsShader',['../namespaceRenderer.html#a3543b26302193b0f8ade3177051df85f',1,'Renderer']]],
-  ['renderer_7',['Renderer',['../namespaceRenderer.html',1,'']]],
-  ['renderer_2ecpp_8',['Renderer.cpp',['../Renderer_8cpp.html',1,'']]],
-  ['renderer_2eh_9',['Renderer.h',['../Renderer_8h.html',1,'']]],
-  ['renderer_3a_3autils_10',['Utils',['../namespaceRenderer_1_1Utils.html',1,'Renderer']]],
-  ['reset_11',['Reset',['../namespacePrintHelpers_1_1Color.html#aa6f9bfbc4687581c214fa629da96c53e',1,'PrintHelpers::Color']]],
-  ['run_12',['run',['../classCore_1_1Application.html#a073563ab83ba295eb366975f55a9d20f',1,'Core::Application::Run()'],['../namespaceApplication.html#afd3930e7705af94cf318f392e72f1171',1,'Application::Run()']]],
-  ['runapp_2ecpp_13',['RunApp.cpp',['../RunApp_8cpp.html',1,'']]]
+  ['q_0',['Q',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da94da7e2d75cf3246b9acdda0c71efbe0',1,'Core::Key']]],
+  ['quality_20standards_1',['Code Quality Standards',['../index.html#autotoc_md3',1,'']]],
+  ['quat_2',['Quat',['../namespaceCore_1_1BaseType.html#ae7928542890f477fa365d5912930e14f',1,'Core::BaseType']]]
 ];

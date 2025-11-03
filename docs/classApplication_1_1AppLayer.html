@@ -214,15 +214,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   51</span>    glVertexArrayAttribBinding(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ad1b796b51c27ad914b63d688f995c744">m_VertexArray</a>, 1, 0);</div>
 <div class="line"><span class="lineno">   52</span> </div>
 <div class="line"><span class="lineno">   53</span>    <span class="comment">// Print various OpenGL informations to stdout</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(</div>
-<div class="line"><span class="lineno">   56</span>        <span class="stringliteral">&quot;{} {}&quot;</span>,</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_VENDOR)),</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_RENDERER)));</div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;GLFW \t {}&quot;</span>, glfwGetVersionString());</div>
-<div class="line"><span class="lineno">   60</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;OpenGL\t {}&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_VERSION)));</div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;GLSL\t {}&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_SHADING_LANGUAGE_VERSION)));</div>
-<div class="line"><span class="lineno">   62</span>}</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(</div>
+<div class="line"><span class="lineno">   55</span>        <span class="stringliteral">&quot;{} {}&quot;</span>,</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_VENDOR)),</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_RENDERER)));</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;GLFW \t {}&quot;</span>, glfwGetVersionString());</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;OpenGL\t {}&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_VERSION)));</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_define" href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a>(<span class="stringliteral">&quot;GLSL\t {}&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(glGetString(GL_SHADING_LANGUAGE_VERSION)));</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 <div class="ttc" id="aPrintHelpers_8h_html_ad436e1e1d6bf1c744f5eca58bfa1fcc8"><div class="ttname"><a href="PrintHelpers_8h.html#ad436e1e1d6bf1c744f5eca58bfa1fcc8">Info</a></div><div class="ttdeci">#define Info(...)</div><div class="ttdef"><b>Definition</b> <a href="PrintHelpers_8h_source.html#l00165">PrintHelpers.h:165</a></div></div>
 <div class="ttc" id="aclassApplication_1_1AppLayer_html_a7082a10cd55c2238b46bf531fd14767a"><div class="ttname"><a href="classApplication_1_1AppLayer.html#a7082a10cd55c2238b46bf531fd14767a">Application::AppLayer::m_Shader</a></div><div class="ttdeci">uint32_t m_Shader</div><div class="ttdef"><b>Definition</b> <a href="AppLayer_8h_source.html#l00024">AppLayer.h:24</a></div></div>
 <div class="ttc" id="aclassApplication_1_1AppLayer_html_ab07b603f1210123c6b30f247b064a5df"><div class="ttname"><a href="classApplication_1_1AppLayer.html#ab07b603f1210123c6b30f247b064a5df">Application::AppLayer::m_VertexBuffer</a></div><div class="ttdeci">uint32_t m_VertexBuffer</div><div class="ttdef"><b>Definition</b> <a href="AppLayer_8h_source.html#l00026">AppLayer.h:26</a></div></div>
@@ -256,22 +255,22 @@ Private Attributes</h2></td></tr>
 
 <p>Default destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00064">64</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>    glDeleteVertexArrays(1, &amp;<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ad1b796b51c27ad914b63d688f995c744">m_VertexArray</a>);</div>
-<div class="line"><span class="lineno">   67</span>    glDeleteBuffers(1, &amp;<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ab07b603f1210123c6b30f247b064a5df">m_VertexBuffer</a>);</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    glDeleteProgram(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#a7082a10cd55c2238b46bf531fd14767a">m_Shader</a>);</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Renderer::Texture</a> renderTexture;</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a> renderFramebuffer;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a> != 0)</div>
-<div class="line"><span class="lineno">   75</span>    {</div>
-<div class="line"><span class="lineno">   76</span>        glDeleteTextures(1, &amp;renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
-<div class="line"><span class="lineno">   77</span>        glDeleteFramebuffers(1, &amp;renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span>}</div>
+<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00063">63</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    glDeleteVertexArrays(1, &amp;<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ad1b796b51c27ad914b63d688f995c744">m_VertexArray</a>);</div>
+<div class="line"><span class="lineno">   66</span>    glDeleteBuffers(1, &amp;<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ab07b603f1210123c6b30f247b064a5df">m_VertexBuffer</a>);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    glDeleteProgram(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#a7082a10cd55c2238b46bf531fd14767a">m_Shader</a>);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Renderer::Texture</a> renderTexture;</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a> renderFramebuffer;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a> != 0)</div>
+<div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        glDeleteTextures(1, &amp;renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
+<div class="line"><span class="lineno">   76</span>        glDeleteFramebuffers(1, &amp;renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="astructRenderer_1_1Framebuffer_html"><div class="ttname"><a href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a></div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00018">Renderer.h:19</a></div></div>
 <div class="ttc" id="astructRenderer_1_1Framebuffer_html_abebd44dc030559185a890115adda53bb"><div class="ttname"><a href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Renderer::Framebuffer::Handle</a></div><div class="ttdeci">GLuint Handle</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00020">Renderer.h:20</a></div></div>
 <div class="ttc" id="astructRenderer_1_1Texture_html"><div class="ttname"><a href="structRenderer_1_1Texture.html">Renderer::Texture</a></div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00011">Renderer.h:12</a></div></div>
@@ -307,66 +306,66 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classCore_1_1Layer.html#a1f4c5ea98b68d8801502938c31eb6e2e">Core::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00084">84</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
-<div class="line"><span class="lineno">   86</span>    <span class="comment">// ImGui stuff</span></div>
-<div class="line"><span class="lineno">   87</span>    ImGui::Begin(<span class="stringliteral">&quot;My Application&quot;</span>);</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> windowWidth = ImGui::GetContentRegionAvail().x;</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> windowHeight = ImGui::GetContentRegionAvail().y;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span>(windowWidth &lt;= 0 || windowHeight &lt;= 0)</div>
-<div class="line"><span class="lineno">   93</span>    {</div>
-<div class="line"><span class="lineno">   94</span>        ImGui::End();</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   96</span>    }</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Renderer::Texture</a> renderTexture;</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a> renderFramebuffer;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a> != windowWidth || renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a> != windowHeight)</div>
-<div class="line"><span class="lineno">  102</span>    {</div>
-<div class="line"><span class="lineno">  103</span>        <span class="comment">// Clean up old resources</span></div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a> != 0)</div>
-<div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            glDeleteTextures(1, &amp;renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
-<div class="line"><span class="lineno">  107</span>            glDeleteFramebuffers(1, &amp;renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><span class="lineno">  108</span>        }</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>        <span class="comment">// Create new texture and framebuffer</span></div>
-<div class="line"><span class="lineno">  111</span>        renderTexture = <a class="code hl_function" href="namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e">Renderer::CreateTexture</a>(windowWidth, windowHeight);</div>
-<div class="line"><span class="lineno">  112</span>        renderFramebuffer = <a class="code hl_function" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">Renderer::CreateFramebufferWithTexture</a>(renderTexture);</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    ImVec2 pos = ImGui::GetCursorScreenPos();</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>    ImGui::GetWindowDrawList()-&gt;AddImage(</div>
-<div class="line"><span class="lineno">  118</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uintptr_t<span class="keyword">&gt;</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>)),</div>
-<div class="line"><span class="lineno">  119</span>        ImVec2(pos.x, pos.y),</div>
-<div class="line"><span class="lineno">  120</span>        ImVec2(pos.x + windowWidth, pos.y + windowHeight),</div>
-<div class="line"><span class="lineno">  121</span>        ImVec2(0, 1),</div>
-<div class="line"><span class="lineno">  122</span>        ImVec2(1, 0));</div>
-<div class="line"><span class="lineno">  123</span>    ImGui::End();</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// Drawing stuff</span></div>
-<div class="line"><span class="lineno">  126</span>    glBindFramebuffer(GL_FRAMEBUFFER, renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><span class="lineno">  127</span>    glViewport(0, 0, <span class="keyword">static_cast&lt;</span>GLsizei<span class="keyword">&gt;</span>(windowWidth), <span class="keyword">static_cast&lt;</span>GLsizei<span class="keyword">&gt;</span>(windowHeight));</div>
-<div class="line"><span class="lineno">  128</span>    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);</div>
-<div class="line"><span class="lineno">  129</span>    glClear(GL_COLOR_BUFFER_BIT);</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">double</span> relativeCursorX = 0.0;</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keywordtype">double</span> relativeCursorY = 0.0;</div>
-<div class="line"><span class="lineno">  133</span>    glfwGetCursorPos(<a class="code hl_function" href="classCore_1_1Application.html#af7555e5f3cab9c635ff58bcb4f6cac8c">Core::Application::Get</a>().GetWindow(), &amp;relativeCursorX, &amp;relativeCursorY);</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>    glUseProgram(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#a7082a10cd55c2238b46bf531fd14767a">m_Shader</a>);</div>
-<div class="line"><span class="lineno">  136</span>    glUniform1f(0, <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">Core::Application::GetTime</a>());</div>
-<div class="line"><span class="lineno">  137</span>    glUniform2f(1, windowWidth, windowHeight);</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>    <span class="comment">// Render</span></div>
-<div class="line"><span class="lineno">  140</span>    glBindVertexArray(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ad1b796b51c27ad914b63d688f995c744">m_VertexArray</a>);</div>
-<div class="line"><span class="lineno">  141</span>    glDrawArrays(GL_TRIANGLES, 0, 3);</div>
-<div class="line"><span class="lineno">  142</span>    glBindFramebuffer(GL_FRAMEBUFFER, 0);</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00083">83</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// ImGui stuff</span></div>
+<div class="line"><span class="lineno">   86</span>    ImGui::Begin(<span class="stringliteral">&quot;My Application&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> windowWidth = ImGui::GetContentRegionAvail().x;</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> windowHeight = ImGui::GetContentRegionAvail().y;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span>(windowWidth &lt;= 0 || windowHeight &lt;= 0)</div>
+<div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>        ImGui::End();</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Renderer::Texture</a> renderTexture;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a> renderFramebuffer;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a> != windowWidth || renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a> != windowHeight)</div>
+<div class="line"><span class="lineno">  101</span>    {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="comment">// Clean up old resources</span></div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">if</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a> != 0)</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            glDeleteTextures(1, &amp;renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
+<div class="line"><span class="lineno">  106</span>            glDeleteFramebuffers(1, &amp;renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        <span class="comment">// Create new texture and framebuffer</span></div>
+<div class="line"><span class="lineno">  110</span>        renderTexture = <a class="code hl_function" href="namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e">Renderer::CreateTexture</a>(windowWidth, windowHeight);</div>
+<div class="line"><span class="lineno">  111</span>        renderFramebuffer = <a class="code hl_function" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">Renderer::CreateFramebufferWithTexture</a>(renderTexture);</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    ImVec2 pos = ImGui::GetCursorScreenPos();</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    ImGui::GetWindowDrawList()-&gt;AddImage(</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uintptr_t<span class="keyword">&gt;</span>(renderTexture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>)),</div>
+<div class="line"><span class="lineno">  118</span>        ImVec2(pos.x, pos.y),</div>
+<div class="line"><span class="lineno">  119</span>        ImVec2(pos.x + windowWidth, pos.y + windowHeight),</div>
+<div class="line"><span class="lineno">  120</span>        ImVec2(0, 1),</div>
+<div class="line"><span class="lineno">  121</span>        ImVec2(1, 0));</div>
+<div class="line"><span class="lineno">  122</span>    ImGui::End();</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">// Drawing stuff</span></div>
+<div class="line"><span class="lineno">  125</span>    glBindFramebuffer(GL_FRAMEBUFFER, renderFramebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><span class="lineno">  126</span>    glViewport(0, 0, <span class="keyword">static_cast&lt;</span>GLsizei<span class="keyword">&gt;</span>(windowWidth), <span class="keyword">static_cast&lt;</span>GLsizei<span class="keyword">&gt;</span>(windowHeight));</div>
+<div class="line"><span class="lineno">  127</span>    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);</div>
+<div class="line"><span class="lineno">  128</span>    glClear(GL_COLOR_BUFFER_BIT);</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">double</span> relativeCursorX = 0.0;</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">double</span> relativeCursorY = 0.0;</div>
+<div class="line"><span class="lineno">  132</span>    glfwGetCursorPos(<a class="code hl_function" href="classCore_1_1Application.html#af7555e5f3cab9c635ff58bcb4f6cac8c">Core::Application::Get</a>().GetWindow(), &amp;relativeCursorX, &amp;relativeCursorY);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    glUseProgram(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#a7082a10cd55c2238b46bf531fd14767a">m_Shader</a>);</div>
+<div class="line"><span class="lineno">  135</span>    glUniform1f(0, <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">Core::Application::GetTime</a>());</div>
+<div class="line"><span class="lineno">  136</span>    glUniform2f(1, windowWidth, windowHeight);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">// Render</span></div>
+<div class="line"><span class="lineno">  139</span>    glBindVertexArray(<a class="code hl_variable" href="classApplication_1_1AppLayer.html#ad1b796b51c27ad914b63d688f995c744">m_VertexArray</a>);</div>
+<div class="line"><span class="lineno">  140</span>    glDrawArrays(GL_TRIANGLES, 0, 3);</div>
+<div class="line"><span class="lineno">  141</span>    glBindFramebuffer(GL_FRAMEBUFFER, 0);</div>
+<div class="line"><span class="lineno">  142</span>}</div>
 <div class="ttc" id="aclassCore_1_1Application_html_ab8b99d5c1e1c0ec4cde0db2a97b294ae"><div class="ttname"><a href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">Core::Application::GetTime</a></div><div class="ttdeci">static float GetTime()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00214">Application.cpp:214</a></div></div>
 <div class="ttc" id="aclassCore_1_1Application_html_af7555e5f3cab9c635ff58bcb4f6cac8c"><div class="ttname"><a href="classCore_1_1Application.html#af7555e5f3cab9c635ff58bcb4f6cac8c">Core::Application::Get</a></div><div class="ttdeci">static Application &amp; Get()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00203">Application.cpp:203</a></div></div>
 <div class="ttc" id="anamespaceRenderer_html_a2670a736242f0fa3bbdec5429911548e"><div class="ttname"><a href="namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e">Renderer::CreateTexture</a></div><div class="ttdeci">Texture CreateTexture(int width, int height)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00012">Renderer.cpp:12</a></div></div>
@@ -404,8 +403,8 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classCore_1_1Layer.html#a5cf4d45b44aeb12d4abbbd934ea66770">Core::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00081">81</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="AppLayer_8cpp_source.html#l00080">80</a> of file <a class="el" href="AppLayer_8cpp_source.html">AppLayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>

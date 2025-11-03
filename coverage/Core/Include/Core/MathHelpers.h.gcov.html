@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-10-27 13:06:58</td>
+            <td class="headerValue">2025-11-03 14:38:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -70,7 +70,7 @@
 <pre class="source">
 <span id="L1"><span class="lineNum">       1</span>              : #pragma once</span>
 <span id="L2"><span class="lineNum">       2</span>              : </span>
-<span id="L3"><span class="lineNum">       3</span>              : #include &quot;Core/BaseType.h&quot;</span>
+<span id="L3"><span class="lineNum">       3</span>              : #include &quot;Core/BaseTypes.h&quot;</span>
 <span id="L4"><span class="lineNum">       4</span>              : </span>
 <span id="L5"><span class="lineNum">       5</span>              : #include &lt;cmath&gt;</span>
 <span id="L6"><span class="lineNum">       6</span>              : #include &lt;limits&gt;</span>
@@ -88,13 +88,13 @@
 <span id="L18"><span class="lineNum">      18</span>              : }</span>
 <span id="L19"><span class="lineNum">      19</span>              : </span>
 <span id="L20"><span class="lineNum">      20</span>              : /// @brief Helper function to compare two Vec2 variables .</span>
-<span id="L21"><span class="lineNum">      21</span>              : constexpr bool EqualNear(Core::BaseType::Vec2 lhs, Core::BaseType::Vec2 rhs, float eps = 1e-6)</span>
+<span id="L21"><span class="lineNum">      21</span>              : constexpr bool EqualNear(BaseType::Vec2 lhs, BaseType::Vec2 rhs, float eps = 1e-6)</span>
 <span id="L22"><span class="lineNum">      22</span>              : {</span>
 <span id="L23"><span class="lineNum">      23</span>              :         return EqualNear(lhs.x, rhs.x, eps) &amp;&amp; EqualNear(lhs.y, rhs.y, eps);</span>
 <span id="L24"><span class="lineNum">      24</span>              : }</span>
 <span id="L25"><span class="lineNum">      25</span>              : </span>
 <span id="L26"><span class="lineNum">      26</span>              : /// @brief Helper function to compare two Vec3 variables.</span>
-<span id="L27"><span class="lineNum">      27</span>              : constexpr bool EqualNear(Core::BaseType::Vec3 lhs, Core::BaseType::Vec3 rhs, float eps = 1e-6)</span>
+<span id="L27"><span class="lineNum">      27</span>              : constexpr bool EqualNear(BaseType::Vec3 lhs, BaseType::Vec3 rhs, float eps = 1e-6)</span>
 <span id="L28"><span class="lineNum">      28</span>              : {</span>
 <span id="L29"><span class="lineNum">      29</span>              :         return EqualNear(lhs.x, rhs.x, eps) &amp;&amp; EqualNear(lhs.y, rhs.y, eps) &amp;&amp; EqualNear(lhs.z, rhs.z, eps);</span>
 <span id="L30"><span class="lineNum">      30</span>              : }</span>
@@ -102,36 +102,91 @@
 <span id="L32"><span class="lineNum">      32</span>              : </span>
 <span id="L33"><span class="lineNum">      33</span>              : namespace Core::Math::Geometry</span>
 <span id="L34"><span class="lineNum">      34</span>              : {</span>
-<span id="L35"><span class="lineNum">      35</span>              : /// @brief Returns the normalized version of v.</span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC tlaBgGNC">          80 : inline Core::BaseType::Vec3 Normalize(const Core::BaseType::Vec3&amp; v)</span></span>
-<span id="L37"><span class="lineNum">      37</span>              : {</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          80 :         return glm::normalize(v);</span></span>
-<span id="L39"><span class="lineNum">      39</span>              : }</span>
-<span id="L40"><span class="lineNum">      40</span>              : </span>
-<span id="L41"><span class="lineNum">      41</span>              : /// @brief Returns the length of v.</span>
-<span id="L42"><span class="lineNum">      42</span>              : inline Core::BaseType::ScalarValue Length(const Core::BaseType::Vec3&amp; v)</span>
-<span id="L43"><span class="lineNum">      43</span>              : {</span>
-<span id="L44"><span class="lineNum">      44</span>              :         return glm::length(v);</span>
-<span id="L45"><span class="lineNum">      45</span>              : }</span>
-<span id="L46"><span class="lineNum">      46</span>              : </span>
-<span id="L47"><span class="lineNum">      47</span>              : /// @brief Cross product of u and v.</span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">          24 : inline Core::BaseType::Vec3 Cross(const Core::BaseType::Vec3&amp; u, const Core::BaseType::Vec3&amp; v)</span></span>
-<span id="L49"><span class="lineNum">      49</span>              : {</span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          24 :         return glm::cross(u, v);</span></span>
-<span id="L51"><span class="lineNum">      51</span>              : }</span>
-<span id="L52"><span class="lineNum">      52</span>              : </span>
-<span id="L53"><span class="lineNum">      53</span>              : /// @brief Dot product of u and v.</span>
-<span id="L54"><span class="lineNum">      54</span>              : inline Core::BaseType::ScalarValue Dot(const Core::BaseType::Vec3&amp; u, const Core::BaseType::Vec3&amp; v)</span>
-<span id="L55"><span class="lineNum">      55</span>              : {</span>
-<span id="L56"><span class="lineNum">      56</span>              :         return glm::dot(u, v);</span>
-<span id="L57"><span class="lineNum">      57</span>              : }</span>
-<span id="L58"><span class="lineNum">      58</span>              : </span>
-<span id="L59"><span class="lineNum">      59</span>              : /// @brief Angle (in randians) between u and v.</span>
-<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">          36 : inline Core::BaseType::ScalarValue Angle(const Core::BaseType::Vec3&amp; u, const Core::BaseType::Vec3&amp; v)</span></span>
-<span id="L61"><span class="lineNum">      61</span>              : {</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          36 :         return glm::angle(u, v);</span></span>
-<span id="L63"><span class="lineNum">      63</span>              : }</span>
-<span id="L64"><span class="lineNum">      64</span>              : } // namespace Core::Math::Geometry</span>
+<span id="L35"><span class="lineNum">      35</span>              : /// @brief Returns a vector in the same direction as v but with length of 1.</span>
+<span id="L36"><span class="lineNum">      36</span>              : /// @warning According to issue 10 GLSL 1.10 specification, if length(x) == 0 then result is undefined and generate an error.</span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC tlaBgGNC">          80 : inline BaseType::Vec3 Normalize(const BaseType::Vec3&amp; v)</span></span>
+<span id="L38"><span class="lineNum">      38</span>              : {</span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          80 :         return glm::normalize(v);</span></span>
+<span id="L40"><span class="lineNum">      40</span>              : }</span>
+<span id="L41"><span class="lineNum">      41</span>              : </span>
+<span id="L42"><span class="lineNum">      42</span>              : /// @brief Returns a quaternion in the same direction as q but with length of 1.</span>
+<span id="L43"><span class="lineNum">      43</span>              : /// @warning According to issue 10 GLSL 1.10 specification, if length(x) == 0 then result is undefined and generate an error.</span>
+<span id="L44"><span class="lineNum">      44</span>              : inline BaseType::Quat Normalize(const BaseType::Quat&amp; q)</span>
+<span id="L45"><span class="lineNum">      45</span>              : {</span>
+<span id="L46"><span class="lineNum">      46</span>              :         return glm::normalize(q);</span>
+<span id="L47"><span class="lineNum">      47</span>              : }</span>
+<span id="L48"><span class="lineNum">      48</span>              : </span>
+<span id="L49"><span class="lineNum">      49</span>              : /// @brief Returns the length of v, i.e., sqrt(v * v).</span>
+<span id="L50"><span class="lineNum">      50</span>              : inline BaseType::ScalarValue Length(const BaseType::Vec3&amp; v)</span>
+<span id="L51"><span class="lineNum">      51</span>              : {</span>
+<span id="L52"><span class="lineNum">      52</span>              :         return glm::length(v);</span>
+<span id="L53"><span class="lineNum">      53</span>              : }</span>
+<span id="L54"><span class="lineNum">      54</span>              : </span>
+<span id="L55"><span class="lineNum">      55</span>              : /// @brief Returns the cross product of u and v.</span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">          24 : inline BaseType::Vec3 Cross(const BaseType::Vec3&amp; u, const BaseType::Vec3&amp; v)</span></span>
+<span id="L57"><span class="lineNum">      57</span>              : {</span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          24 :         return glm::cross(u, v);</span></span>
+<span id="L59"><span class="lineNum">      59</span>              : }</span>
+<span id="L60"><span class="lineNum">      60</span>              : </span>
+<span id="L61"><span class="lineNum">      61</span>              : /// @brief Returns the cross product of p and q.</span>
+<span id="L62"><span class="lineNum">      62</span>              : inline BaseType::Quat Cross(const BaseType::Quat&amp; p, const BaseType::Quat&amp; q)</span>
+<span id="L63"><span class="lineNum">      63</span>              : {</span>
+<span id="L64"><span class="lineNum">      64</span>              :         return glm::cross(p, q);</span>
+<span id="L65"><span class="lineNum">      65</span>              : }</span>
+<span id="L66"><span class="lineNum">      66</span>              : </span>
+<span id="L67"><span class="lineNum">      67</span>              : /// @brief Returns the dot product of u and v, i.e., result = u * v.</span>
+<span id="L68"><span class="lineNum">      68</span>              : inline BaseType::ScalarValue Dot(const BaseType::Vec3&amp; u, const BaseType::Vec3&amp; v)</span>
+<span id="L69"><span class="lineNum">      69</span>              : {</span>
+<span id="L70"><span class="lineNum">      70</span>              :         return glm::dot(u, v);</span>
+<span id="L71"><span class="lineNum">      71</span>              : }</span>
+<span id="L72"><span class="lineNum">      72</span>              : </span>
+<span id="L73"><span class="lineNum">      73</span>              : /// @brief Returns the absolute angle between two vectors.</span>
+<span id="L74"><span class="lineNum">      74</span>              : /// @note Parameters need to be normalized.</span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          36 : inline BaseType::ScalarValue Angle(const BaseType::Vec3&amp; u, const BaseType::Vec3&amp; v)</span></span>
+<span id="L76"><span class="lineNum">      76</span>              : {</span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          36 :         return glm::angle(u, v);</span></span>
+<span id="L78"><span class="lineNum">      78</span>              : }</span>
+<span id="L79"><span class="lineNum">      79</span>              : </span>
+<span id="L80"><span class="lineNum">      80</span>              : /// @brief Build a quaternion from an angle and a normalized axis.</span>
+<span id="L81"><span class="lineNum">      81</span>              : inline BaseType::Quat AngleAxis(const BaseType::ScalarValue angle, const BaseType::Vec3&amp; axis)</span>
+<span id="L82"><span class="lineNum">      82</span>              : {</span>
+<span id="L83"><span class="lineNum">      83</span>              :         return glm::angleAxis(angle, axis);</span>
+<span id="L84"><span class="lineNum">      84</span>              : }</span>
+<span id="L85"><span class="lineNum">      85</span>              : </span>
+<span id="L86"><span class="lineNum">      86</span>              : /// @brief Builds a rotation 3 * 3 matrix created from an angle.</span>
+<span id="L87"><span class="lineNum">      87</span>              : inline BaseType::Vec3 Rotate(const BaseType::Quat&amp; q, const BaseType::Vec3&amp; v)</span>
+<span id="L88"><span class="lineNum">      88</span>              : {</span>
+<span id="L89"><span class="lineNum">      89</span>              :         return glm::rotate(q, v);</span>
+<span id="L90"><span class="lineNum">      90</span>              : }</span>
+<span id="L91"><span class="lineNum">      91</span>              : </span>
+<span id="L92"><span class="lineNum">      92</span>              : /// @brief Creates a matrix for a symetric perspective-view frustum based on the default handedness and default near and far clip planes definition.</span>
+<span id="L93"><span class="lineNum">      93</span>              : inline BaseType::Mat4 Perspective(</span>
+<span id="L94"><span class="lineNum">      94</span>              :         const BaseType::ScalarValue fov,</span>
+<span id="L95"><span class="lineNum">      95</span>              :         const BaseType::ScalarValue aspect,</span>
+<span id="L96"><span class="lineNum">      96</span>              :         const BaseType::ScalarValue zNear,</span>
+<span id="L97"><span class="lineNum">      97</span>              :         const BaseType::ScalarValue zFar)</span>
+<span id="L98"><span class="lineNum">      98</span>              : {</span>
+<span id="L99"><span class="lineNum">      99</span>              :         return glm::perspective(fov, aspect, zNear, zFar);</span>
+<span id="L100"><span class="lineNum">     100</span>              : }</span>
+<span id="L101"><span class="lineNum">     101</span>              : </span>
+<span id="L102"><span class="lineNum">     102</span>              : /// @brief Build a look at view matrix based on the default handedness.</span>
+<span id="L103"><span class="lineNum">     103</span>              : inline BaseType::Mat4 LookAt(const BaseType::Vec3&amp; eye, const BaseType::Vec3&amp; center, const BaseType::Vec3&amp; up)</span>
+<span id="L104"><span class="lineNum">     104</span>              : {</span>
+<span id="L105"><span class="lineNum">     105</span>              :         return glm::lookAt(eye, center, up);</span>
+<span id="L106"><span class="lineNum">     106</span>              : }</span>
+<span id="L107"><span class="lineNum">     107</span>              : </span>
+<span id="L108"><span class="lineNum">     108</span>              : /// @brief Build a look at view matrix based on the default handedness.</span>
+<span id="L109"><span class="lineNum">     109</span>              : inline BaseType::Mat4 Ortho(</span>
+<span id="L110"><span class="lineNum">     110</span>              :         const BaseType::ScalarValue&amp; left,</span>
+<span id="L111"><span class="lineNum">     111</span>              :         const BaseType::ScalarValue right,</span>
+<span id="L112"><span class="lineNum">     112</span>              :         const BaseType::ScalarValue bottom,</span>
+<span id="L113"><span class="lineNum">     113</span>              :         const BaseType::ScalarValue top,</span>
+<span id="L114"><span class="lineNum">     114</span>              :         const BaseType::ScalarValue zNear,</span>
+<span id="L115"><span class="lineNum">     115</span>              :         const BaseType::ScalarValue zFar)</span>
+<span id="L116"><span class="lineNum">     116</span>              : {</span>
+<span id="L117"><span class="lineNum">     117</span>              :         return glm::ortho(left, right, bottom, top, zNear, zFar);</span>
+<span id="L118"><span class="lineNum">     118</span>              : }</span>
+<span id="L119"><span class="lineNum">     119</span>              : } // namespace Core::Math::Geometry</span>
         </pre>
               </td>
             </tr>

@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../PrintHelpers_8h.html#aec0f6f11ac6f3ae92a3091fe890d0d60',1,'PrintHelpers.h']]],
-  ['warningimpl_1',['WarningImpl',['../namespacePrintHelpers_1_1detail.html#a4fd9828f8f01feeb51451a7ac4517bd8',1,'PrintHelpers::detail']]],
-  ['width_2',['width',['../structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce',1,'Renderer::Texture::Width'],['../structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698',1,'Core::WindowSpecification::Width']]],
-  ['window_3',['window',['../classCore_1_1Window.html',1,'Core::Window'],['../classCore_1_1Window.html#a2ac97d0baf6dbde85f4ae15258e389c9',1,'Core::Window::Window()']]],
-  ['window_2ecpp_4',['Window.cpp',['../Window_8cpp.html',1,'']]],
-  ['window_2eh_5',['Window.h',['../Window_8h.html',1,'']]],
-  ['windowspec_6',['WindowSpec',['../structCore_1_1ApplicationSpecification.html#add62b89091536372c15c095c61e9efce',1,'Core::ApplicationSpecification']]],
-  ['windowspecification_7',['WindowSpecification',['../structCore_1_1WindowSpecification.html',1,'Core']]]
+  ['v_0',['V',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dabf44f22ee9c66f88284e6fc8276d5f6c',1,'Core::Key']]],
+  ['value_5ftype_1',['value_type',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#af6cad6ddb5d6ec0279ae2171bfc457ed',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::value_type'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#a396b6205676408f51b3212fb6993433f',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::value_type']]],
+  ['vec2_2',['Vec2',['../namespaceCore_1_1BaseType.html#aa254ecd93b2ff29ddc3fc1eef5599c0b',1,'Core::BaseType']]],
+  ['vec3_3',['Vec3',['../namespaceCore_1_1BaseType.html#aa5f38640676b41787aa227312ac5ffc1',1,'Core::BaseType']]],
+  ['vec4_4',['Vec4',['../namespaceCore_1_1BaseType.html#a77f42b0c0899129929c8f1f6a4c9f7fb',1,'Core::BaseType']]],
+  ['vertex_5',['Vertex',['../structData_1_1Primitive_1_1Vertex.html',1,'Data::Primitive']]],
+  ['vertexhasnullincidenttriangle_6',['VertexHasNullIncidentTriangle',['../structUtilitary_1_1Surface_1_1MeshIntegrity.html#acb2dec07341118e8e633ddc8824125aca39f4950f6e997f49ac42ce2e9f8f9498',1,'Utilitary::Surface::MeshIntegrity']]],
+  ['vertexindex_7',['VertexIndex',['../namespaceCore_1_1BaseType.html#aa586354031c5be69706612b5c5e20f62',1,'Core::BaseType']]],
+  ['vertexlocalindex_8',['VertexLocalIndex',['../namespaceCore_1_1BaseType.html#a9990eeb2c3ef00920ed2ce4e564a7686',1,'Core::BaseType']]],
+  ['vertexnotintriangle_9',['VertexNotInTriangle',['../structUtilitary_1_1Surface_1_1MeshIntegrity.html#acb2dec07341118e8e633ddc8824125acad9bb3249f71e17c224792cdb7ea20db8',1,'Utilitary::Surface::MeshIntegrity']]],
+  ['vertexpair_10',['vertexpair',['../classData_1_1Primitive_1_1VertexPair.html#a637879d1b4bd68fad81ae7d0a5a1a255',1,'Data::Primitive::VertexPair::VertexPair()'],['../classData_1_1Primitive_1_1VertexPair.html',1,'Data::Primitive::VertexPair']]],
+  ['vertexpair_2ecpp_11',['VertexPair.cpp',['../VertexPair_8cpp.html',1,'']]],
+  ['vertexpair_2eh_12',['VertexPair.h',['../VertexPair_8h.html',1,'']]],
+  ['vertexpair_5futest_2ecpp_13',['VertexPair_utest.cpp',['../VertexPair__utest_8cpp.html',1,'']]],
+  ['vertexproxy_14',['vertexproxy',['../classData_1_1Primitive_1_1VertexProxy.html#ab150f69b19d4485a227bff28c326585e',1,'Data::Primitive::VertexProxy::VertexProxy()'],['../classData_1_1Primitive_1_1VertexProxy.html',1,'Data::Primitive::VertexProxy']]],
+  ['vertices_15',['Vertices',['../structData_1_1Primitive_1_1Triangle.html#a09b28d462d786661d18ff716d0764ae9',1,'Data::Primitive::Triangle']]],
+  ['verticesaroundvertexcirculator_16',['verticesaroundvertexcirculator',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html#aef7d6940f357455aa8f6e669ef23ce7b',1,'Data::Surface::Mesh::VerticesAroundVertexRange::VerticesAroundVertexCirculator'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a044120817696583c20fbb171c8da90a5',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::VerticesAroundVertexCirculator()'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator']]],
+  ['verticesaroundvertexrange_17',['verticesaroundvertexrange',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html#a133ad4eb6375eb479869e47cf995aaac',1,'Data::Surface::Mesh::VerticesAroundVertexRange::VerticesAroundVertexRange()'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html',1,'Data::Surface::Mesh::VerticesAroundVertexRange']]],
+  ['verticestexcoordsextradata_18',['VerticesTexCoordsExtraData',['../classData_1_1ExtraData_1_1VerticesTexCoordsExtraData.html',1,'Data::ExtraData']]],
+  ['vsync_19',['VSync',['../structCore_1_1WindowSpecification.html#a277607057f3142d98ffe3b73c3d062b3',1,'Core::WindowSpecification']]]
 ];

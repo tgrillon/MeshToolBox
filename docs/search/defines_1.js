@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['error_0',['Error',['../PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50',1,'PrintHelpers.h']]]
+  ['debug_0',['Debug',['../PrintHelpers_8h.html#acd8dd41e8a67bba7ccfb3b50f7aa88a5',1,'PrintHelpers.h']]]
 ];

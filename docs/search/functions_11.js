@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['vertexpair_0',['VertexPair',['../classData_1_1Primitive_1_1VertexPair.html#a637879d1b4bd68fad81ae7d0a5a1a255',1,'Data::Primitive::VertexPair']]],
-  ['vertexproxy_1',['VertexProxy',['../classData_1_1Primitive_1_1VertexProxy.html#ab150f69b19d4485a227bff28c326585e',1,'Data::Primitive::VertexProxy']]],
-  ['verticesaroundvertexcirculator_2',['VerticesAroundVertexCirculator',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a044120817696583c20fbb171c8da90a5',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator']]],
-  ['verticesaroundvertexrange_3',['VerticesAroundVertexRange',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html#a133ad4eb6375eb479869e47cf995aaac',1,'Data::Surface::Mesh::VerticesAroundVertexRange']]]
+  ['update_0',['Update',['../classCore_1_1Window.html#a15a5757f30d9af37cf4ef3f41cddb4d1',1,'Core::Window']]],
+  ['updatebuffer_1',['updatebuffer',['../namespaceRenderer.html#a0707abee1b4f025d747e4d6ce9e41b7a',1,'Renderer::UpdateBuffer(int vbo, const std::vector&lt; float &gt; &amp;data)'],['../namespaceRenderer.html#ac3b5034c93e986bd9c97df8c3eadff55',1,'Renderer::UpdateBuffer(int vbo, const std::vector&lt; int &gt; &amp;data)']]],
+  ['updatecurvertexindexinccworder_2',['UpdateCurVertexIndexInCCWOrder',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a6a8287131e62c2cbe68aca461ac42fbd',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator']]],
+  ['updatecurvertexindexincworder_3',['UpdateCurVertexIndexInCWOrder',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a0e2dd24b29bf5631a81c9fdb8bee9b9c',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator']]],
+  ['updatemeshconnectivity_4',['UpdateMeshConnectivity',['../classData_1_1Surface_1_1Mesh.html#a9b826c6a581cb0b8461dea1fdae7cc88',1,'Data::Surface::Mesh']]],
+  ['updateverticesboundarystatus_5',['UpdateVerticesBoundaryStatus',['../classData_1_1Surface_1_1Mesh.html#a94c9430f7d1179b2d5c2008db787adc8',1,'Data::Surface::Mesh']]]
 ];

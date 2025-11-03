@@ -22,12 +22,28 @@ var hierarchy =
       [ "Data::ExtraData::ObjectMaterialData", "classData_1_1ExtraData_1_1ObjectMaterialData.html", null ],
       [ "Data::ExtraData::SingleDataExtraData< T >", "classData_1_1ExtraData_1_1SingleDataExtraData.html", null ]
     ] ],
-    [ "Core::Event", "classCore_1_1Event.html", null ],
+    [ "Core::Event", "classCore_1_1Event.html", [
+      [ "Core::Event::KeyEvent", "classCore_1_1Event_1_1KeyEvent.html", [
+        [ "Core::Event::KeyPressedEvent", "classCore_1_1Event_1_1KeyPressedEvent.html", null ],
+        [ "Core::Event::KeyReleasedEvent", "classCore_1_1Event_1_1KeyReleasedEvent.html", null ],
+        [ "Core::Event::KeyTypedEvent", "classCore_1_1Event_1_1KeyTypedEvent.html", null ]
+      ] ],
+      [ "Core::Event::MouseButtonEvent", "classCore_1_1Event_1_1MouseButtonEvent.html", [
+        [ "Core::Event::MouseButtonPressedEvent", "classCore_1_1Event_1_1MouseButtonPressedEvent.html", null ],
+        [ "Core::Event::MouseButtonReleasedEvent", "classCore_1_1Event_1_1MouseButtonReleasedEvent.html", null ]
+      ] ],
+      [ "Core::Event::MouseMovedEvent", "classCore_1_1Event_1_1MouseMovedEvent.html", null ],
+      [ "Core::Event::MouseScrolledEvent", "classCore_1_1Event_1_1MouseScrolledEvent.html", null ],
+      [ "Core::Event::WindowCloseEvent", "classCore_1_1Event_1_1WindowCloseEvent.html", null ],
+      [ "Core::Event::WindowResizeEvent", "classCore_1_1Event_1_1WindowResizeEvent.html", null ]
+    ] ],
+    [ "Core::EventDispatcher", "classCore_1_1EventDispatcher.html", null ],
     [ "Data::ExtraData::ExtraDataContainer", "classData_1_1ExtraData_1_1ExtraDataContainer.html", null ],
     [ "Renderer::Framebuffer", "structRenderer_1_1Framebuffer.html", null ],
     [ "std::hash< Core::BaseType::Vec2 >", "structstd_1_1hash_3_01Core_1_1BaseType_1_1Vec2_01_4.html", null ],
     [ "std::hash< Core::BaseType::Vec3 >", "structstd_1_1hash_3_01Core_1_1BaseType_1_1Vec3_01_4.html", null ],
     [ "std::hash< Data::Primitive::VertexPair >", "structstd_1_1hash_3_01Data_1_1Primitive_1_1VertexPair_01_4.html", null ],
+    [ "Core::Input", "classCore_1_1Input.html", null ],
     [ "Core::Layer", "classCore_1_1Layer.html", [
       [ "Application::AppLayer", "classApplication_1_1AppLayer.html", null ]
     ] ],

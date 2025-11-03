@@ -1,0 +1,7 @@
+<map id="Core::Event::KeyTypedEvent" name="Core::Event::KeyTypedEvent">
+<area shape="rect" id="Node000001" title="Event class for key typed events." alt="" coords="5,152,209,177"/>
+<area shape="rect" id="Node000002" href="$classCore_1_1Event_1_1KeyEvent.html" title="Base class for keyboard events." alt="" coords="24,79,191,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,118,110,152,105,152,105,118"/>
+<area shape="rect" id="Node000003" href="$classCore_1_1Event.html" title="Base class for all events." alt="" coords="59,5,156,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,44,110,79,105,79,105,44"/>
+</map>

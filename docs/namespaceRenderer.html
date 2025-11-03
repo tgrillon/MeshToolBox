@@ -123,6 +123,18 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa202a7c1277299c55a9fa3081e4647fe" id="r_aa202a7c1277299c55a9fa3081e4647fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#aa202a7c1277299c55a9fa3081e4647fe">LoadBuffer</a> (int vbo, int location, int size, const std::vector&lt; float &gt; &amp;data, unsigned int mode=GL_STATIC_DRAW)</td></tr>
+<tr class="separator:aa202a7c1277299c55a9fa3081e4647fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c13a9778f01dc859158329c7941307c" id="r_a0c13a9778f01dc859158329c7941307c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#a0c13a9778f01dc859158329c7941307c">LoadBuffer</a> (int vbo, int location, int size, const std::vector&lt; int &gt; &amp;data, unsigned int mode=GL_STATIC_DRAW)</td></tr>
+<tr class="separator:a0c13a9778f01dc859158329c7941307c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ce171f66197a91d17a55f8e361ccdc" id="r_ac5ce171f66197a91d17a55f8e361ccdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#ac5ce171f66197a91d17a55f8e361ccdc">LoadBufferInstance</a> (int vbo, int location, int size, const std::vector&lt; float &gt; &amp;data, unsigned int mode=GL_STATIC_DRAW)</td></tr>
+<tr class="separator:ac5ce171f66197a91d17a55f8e361ccdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50d9c2b50a8ef0c021fe842c83f6a7b" id="r_ae50d9c2b50a8ef0c021fe842c83f6a7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#ae50d9c2b50a8ef0c021fe842c83f6a7b">LoadBufferInstance</a> (int vbo, int location, int size, const std::vector&lt; int &gt; &amp;data, unsigned int mode=GL_STATIC_DRAW)</td></tr>
+<tr class="separator:ae50d9c2b50a8ef0c021fe842c83f6a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0707abee1b4f025d747e4d6ce9e41b7a" id="r_a0707abee1b4f025d747e4d6ce9e41b7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#a0707abee1b4f025d747e4d6ce9e41b7a">UpdateBuffer</a> (int vbo, const std::vector&lt; float &gt; &amp;data)</td></tr>
+<tr class="separator:a0707abee1b4f025d747e4d6ce9e41b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b5034c93e986bd9c97df8c3eadff55" id="r_ac3b5034c93e986bd9c97df8c3eadff55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#ac3b5034c93e986bd9c97df8c3eadff55">UpdateBuffer</a> (int vbo, const std::vector&lt; int &gt; &amp;data)</td></tr>
+<tr class="separator:ac3b5034c93e986bd9c97df8c3eadff55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2670a736242f0fa3bbdec5429911548e" id="r_a2670a736242f0fa3bbdec5429911548e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRenderer_1_1Texture.html">Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e">CreateTexture</a> (int width, int height)</td></tr>
 <tr class="separator:a2670a736242f0fa3bbdec5429911548e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f14254a77c68383e67f33c6cda9fde" id="r_a05f14254a77c68383e67f33c6cda9fde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRenderer_1_1Texture.html">Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRenderer.html#a05f14254a77c68383e67f33c6cda9fde">LoadTexture</a> (const std::filesystem::path &amp;path)</td></tr>
@@ -498,6 +510,227 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aa202a7c1277299c55a9fa3081e4647fe" name="aa202a7c1277299c55a9fa3081e4647fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa202a7c1277299c55a9fa3081e4647fe">&#9670;&#160;</a></span>LoadBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::LoadBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>GL_STATIC_DRAW</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00007">7</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keyword">auto</span> byteCount = <span class="keyword">sizeof</span>(float) * data.size();</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><span class="lineno">   12</span>    glBufferData(GL_ARRAY_BUFFER, byteCount, data.data(), mode);</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>    glVertexAttribPointer(location, size, GL_FLOAT, GL_FALSE, size * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>), (<span class="keyword">const</span> <span class="keywordtype">void</span>*)0);</div>
+<div class="line"><span class="lineno">   15</span>    glEnableVertexAttribArray(location);</div>
+<div class="line"><span class="lineno">   16</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0c13a9778f01dc859158329c7941307c" name="a0c13a9778f01dc859158329c7941307c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c13a9778f01dc859158329c7941307c">&#9670;&#160;</a></span>LoadBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::LoadBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>GL_STATIC_DRAW</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00018">18</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keyword">auto</span> byteCount = <span class="keyword">sizeof</span>(int) * data.size();</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><span class="lineno">   23</span>    glBufferData(GL_ARRAY_BUFFER, byteCount, data.data(), mode);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    glVertexAttribIPointer(location, size, GL_INT, size * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), (<span class="keyword">const</span> <span class="keywordtype">void</span>*)0);</div>
+<div class="line"><span class="lineno">   26</span>    glEnableVertexAttribArray(location);</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac5ce171f66197a91d17a55f8e361ccdc" name="ac5ce171f66197a91d17a55f8e361ccdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ce171f66197a91d17a55f8e361ccdc">&#9670;&#160;</a></span>LoadBufferInstance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::LoadBufferInstance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>GL_STATIC_DRAW</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00030">30</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="namespaceRenderer.html#aa202a7c1277299c55a9fa3081e4647fe">LoadBuffer</a>(vbo, location, size, data, mode);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    glVertexAttribDivisor(location, 1);</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="anamespaceRenderer_html_aa202a7c1277299c55a9fa3081e4647fe"><div class="ttname"><a href="namespaceRenderer.html#aa202a7c1277299c55a9fa3081e4647fe">Renderer::LoadBuffer</a></div><div class="ttdeci">void LoadBuffer(int vbo, int location, int size, const std::vector&lt; float &gt; &amp;data, unsigned int mode=GL_STATIC_DRAW)</div><div class="ttdef"><b>Definition</b> <a href="Buffer_8cpp_source.html#l00007">Buffer.cpp:7</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae50d9c2b50a8ef0c021fe842c83f6a7b" name="ae50d9c2b50a8ef0c021fe842c83f6a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50d9c2b50a8ef0c021fe842c83f6a7b">&#9670;&#160;</a></span>LoadBufferInstance() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::LoadBufferInstance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>GL_STATIC_DRAW</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00038">38</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="namespaceRenderer.html#aa202a7c1277299c55a9fa3081e4647fe">LoadBuffer</a>(vbo, location, size, data, mode);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    glVertexAttribDivisor(location, 1);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a05f14254a77c68383e67f33c6cda9fde" name="a05f14254a77c68383e67f33c6cda9fde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05f14254a77c68383e67f33c6cda9fde">&#9670;&#160;</a></span>LoadTexture()</h2>
 
@@ -680,6 +913,78 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> newShaderHandle;</div>
 <div class="line"><span class="lineno">  191</span>}</div>
 <div class="ttc" id="anamespaceRenderer_html_a107c944959e6d2cf38b4f8e0fe2d4d17"><div class="ttname"><a href="namespaceRenderer.html#a107c944959e6d2cf38b4f8e0fe2d4d17">Renderer::CreateGraphicsShader</a></div><div class="ttdeci">uint32_t CreateGraphicsShader(const std::filesystem::path &amp;vertexPath, const std::filesystem::path &amp;fragmentPath)</div><div class="ttdef"><b>Definition</b> <a href="Shader_8cpp_source.html#l00094">Shader.cpp:94</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0707abee1b4f025d747e4d6ce9e41b7a" name="a0707abee1b4f025d747e4d6ce9e41b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0707abee1b4f025d747e4d6ce9e41b7a">&#9670;&#160;</a></span>UpdateBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::UpdateBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00045">45</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keyword">auto</span> byteCount = <span class="keyword">sizeof</span>(float) * data.size();</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><span class="lineno">   50</span>    glBufferSubData(GL_ARRAY_BUFFER, 0, byteCount, data.data());</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac3b5034c93e986bd9c97df8c3eadff55" name="ac3b5034c93e986bd9c97df8c3eadff55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b5034c93e986bd9c97df8c3eadff55">&#9670;&#160;</a></span>UpdateBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::UpdateBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Buffer_8cpp_source.html#l00053">53</a> of file <a class="el" href="Buffer_8cpp_source.html">Buffer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keyword">auto</span> byteCount = <span class="keyword">sizeof</span>(int) * data.size();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><span class="lineno">   58</span>    glBufferSubData(GL_ARRAY_BUFFER, 0, byteCount, data.data());</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,0 +1,5 @@
+<map id="Core::EventDispatcher" name="Core::EventDispatcher">
+<area shape="rect" id="Node000001" title="Dispatches events to the appropriate handler based on their type." alt="" coords="5,93,172,119"/>
+<area shape="rect" id="Node000002" href="$classCore_1_1Event.html" title="Base class for all events." alt="" coords="40,5,137,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,45,91,93,86,93,86,45"/>
+</map>

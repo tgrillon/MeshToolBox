@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_0',['reference',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a3462ea45ea41b6addf1edfec2b82bbaa',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::reference'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#a260ceb185de6d5e0c07080a5fd502a59',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::reference']]]
+  ['pointer_0',['pointer',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#ad113c52adbb9f61a310bba3bf90184ca',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::pointer'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#aac627f7eea7e4c1ead232f1e6f5b18f8',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::pointer']]]
 ];

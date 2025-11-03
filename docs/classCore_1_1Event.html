@@ -101,16 +101,249 @@ $(document).ready(function(){initNavTree('classCore_1_1Event.html',''); initResi
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Core::Event Class Reference</div></div>
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="classCore_1_1Event-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Core::Event Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for all events.  
+ <a href="classCore_1_1Event.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Event_8h_source.html">Event.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Core::Event:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCore_1_1Event__inherit__graph.svg" width="651" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac8f2fa1690ff38bac1c4da6eb8f63d59" id="r_ac8f2fa1690ff38bac1c4da6eb8f63d59"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#ac8f2fa1690ff38bac1c4da6eb8f63d59">~Event</a> ()=default</td></tr>
+<tr class="memdesc:ac8f2fa1690ff38bac1c4da6eb8f63d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="separator:ac8f2fa1690ff38bac1c4da6eb8f63d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4a4c3fa98ff69a9def8afc3f18da20" id="r_a3f4a4c3fa98ff69a9def8afc3f18da20"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#a3f4a4c3fa98ff69a9def8afc3f18da20">GetEventType</a> () const =0</td></tr>
+<tr class="memdesc:a3f4a4c3fa98ff69a9def8afc3f18da20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the event.  <br /></td></tr>
+<tr class="separator:a3f4a4c3fa98ff69a9def8afc3f18da20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d848b82a94086575d869a7fb0819339" id="r_a9d848b82a94086575d869a7fb0819339"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#a9d848b82a94086575d869a7fb0819339">GetName</a> () const =0</td></tr>
+<tr class="memdesc:a9d848b82a94086575d869a7fb0819339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the event.  <br /></td></tr>
+<tr class="separator:a9d848b82a94086575d869a7fb0819339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0aca45db9dd3574ca1045765cc3832" id="r_adc0aca45db9dd3574ca1045765cc3832"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#adc0aca45db9dd3574ca1045765cc3832">GetCategoryFlags</a> () const =0</td></tr>
+<tr class="memdesc:adc0aca45db9dd3574ca1045765cc3832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the category flags of the event.  <br /></td></tr>
+<tr class="separator:adc0aca45db9dd3574ca1045765cc3832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d34b7d8544674018d7fa563947cf87" id="r_a58d34b7d8544674018d7fa563947cf87"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#a58d34b7d8544674018d7fa563947cf87">ToString</a> () const</td></tr>
+<tr class="memdesc:a58d34b7d8544674018d7fa563947cf87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the event to a string representation.  <br /></td></tr>
+<tr class="separator:a58d34b7d8544674018d7fa563947cf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98c1cfd824e7c6b7498b4f03b9e675f" id="r_ad98c1cfd824e7c6b7498b4f03b9e675f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#ad98c1cfd824e7c6b7498b4f03b9e675f">IsInCategory</a> (<a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">EventCategory</a> category)</td></tr>
+<tr class="memdesc:ad98c1cfd824e7c6b7498b4f03b9e675f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the event is in a specific category.  <br /></td></tr>
+<tr class="separator:ad98c1cfd824e7c6b7498b4f03b9e675f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a7a26648c85c0e328ccfe62777bca5d1e" id="r_a7a26648c85c0e328ccfe62777bca5d1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Event.html#a7a26648c85c0e328ccfe62777bca5d1e">Handled</a> = false</td></tr>
+<tr class="memdesc:a7a26648c85c0e328ccfe62777bca5d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the event has been handled.  <br /></td></tr>
+<tr class="separator:a7a26648c85c0e328ccfe62777bca5d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00006">6</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>Core/Include/Core/<a class="el" href="Event_8h_source.html">Event.h</a></li>
+<div class="textblock"><p>Base class for all events. </p>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00064">64</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac8f2fa1690ff38bac1c4da6eb8f63d59" name="ac8f2fa1690ff38bac1c4da6eb8f63d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f2fa1690ff38bac1c4da6eb8f63d59">&#9670;&#160;</a></span>~Event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Core::Event::~Event </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="adc0aca45db9dd3574ca1045765cc3832" name="adc0aca45db9dd3574ca1045765cc3832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0aca45db9dd3574ca1045765cc3832">&#9670;&#160;</a></span>GetCategoryFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Core::Event::GetCategoryFlags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the category flags of the event. </p>
+
+</div>
+</div>
+<a id="a3f4a4c3fa98ff69a9def8afc3f18da20" name="a3f4a4c3fa98ff69a9def8afc3f18da20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4a4c3fa98ff69a9def8afc3f18da20">&#9670;&#160;</a></span>GetEventType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afa">EventType</a> Core::Event::GetEventType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the type of the event. </p>
+
+</div>
+</div>
+<a id="a9d848b82a94086575d869a7fb0819339" name="a9d848b82a94086575d869a7fb0819339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d848b82a94086575d869a7fb0819339">&#9670;&#160;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char * Core::Event::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the event. </p>
+
+</div>
+</div>
+<a id="ad98c1cfd824e7c6b7498b4f03b9e675f" name="ad98c1cfd824e7c6b7498b4f03b9e675f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98c1cfd824e7c6b7498b4f03b9e675f">&#9670;&#160;</a></span>IsInCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Core::Event::IsInCategory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceCore.html#a0f03ea688befde4f28dc1a922da88c42">EventCategory</a>&#160;</td>
+          <td class="paramname"><em>category</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the event is in a specific category. </p>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00084">84</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keywordflow">return</span> GetCategoryFlags() &amp; category; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a58d34b7d8544674018d7fa563947cf87" name="a58d34b7d8544674018d7fa563947cf87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d34b7d8544674018d7fa563947cf87">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Core::Event::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the event to a string representation. </p>
+
+<p>Reimplemented in <a class="el" href="classCore_1_1Event_1_1WindowResizeEvent.html#ab6e63e1770204c363c9e9b23d9ec9180">Core::Event::WindowResizeEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyPressedEvent.html#af6ef9f30d0a795c8945e6b0f98c511a2">Core::Event::KeyPressedEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyReleasedEvent.html#a8e53750262f281cabf81ea03797a73a2">Core::Event::KeyReleasedEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyTypedEvent.html#a6ad78b1839630dbc2efa41923a4aab09">Core::Event::KeyTypedEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseMovedEvent.html#a0cf3101b6460b403ee65dabdb355520d">Core::Event::MouseMovedEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseScrolledEvent.html#ad064455f8ae2fb80fbb85342283464c2">Core::Event::MouseScrolledEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseButtonPressedEvent.html#a996e33141fa1e9b021fea7741f09a585">Core::Event::MouseButtonPressedEvent</a>, and <a class="el" href="classCore_1_1Event_1_1MouseButtonReleasedEvent.html#a337bc3d9afc5a6ce7ae31d313d22cb75">Core::Event::MouseButtonReleasedEvent</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00081">81</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> GetName(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7a26648c85c0e328ccfe62777bca5d1e" name="a7a26648c85c0e328ccfe62777bca5d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a26648c85c0e328ccfe62777bca5d1e">&#9670;&#160;</a></span>Handled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Core::Event::Handled = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the event has been handled. </p>
+
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00071">71</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>Core/Include/Core/Event/<a class="el" href="Event_8h_source.html">Event.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
