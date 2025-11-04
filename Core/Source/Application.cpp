@@ -78,6 +78,7 @@ Application::~Application()
 
 	m_LayerStack.clear();
 
+	m_Window->Destroy();
 	glfwTerminate();
 
 	s_Application = nullptr;

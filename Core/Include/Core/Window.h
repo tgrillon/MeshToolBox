@@ -30,6 +30,7 @@ public:
 	~Window();
 
 	void Update();
+	void Destroy();
 
 	glm::vec2 GetFramebufferSize();
 
