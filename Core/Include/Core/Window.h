@@ -30,6 +30,7 @@ public:
 	~Window();
 
 	void Update();
+	void Destroy();
 
 	BaseType::Vec2 GetFramebufferSize();
 

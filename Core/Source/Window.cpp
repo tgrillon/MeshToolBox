@@ -96,6 +96,11 @@ Window::Window(const WindowSpecification& specification)
 
 Window::~Window()
 {
+	Destroy();
+}
+
+void Window::Destroy()
+{
 	if(m_Handle)
 		glfwDestroyWindow(m_Handle);
 
