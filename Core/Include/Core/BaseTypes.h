@@ -40,8 +40,8 @@ struct hash<Core::BaseType::Vec2>
 {
 	size_t operator()(const Core::BaseType::Vec2& elt) const
 	{
-		auto h1 = std::hash<Core::BaseType::VertexIndex>{}(elt.x);
-		auto h2 = std::hash<Core::BaseType::VertexIndex>{}(elt.y);
+		auto h1 = std::hash<float>{}(elt.x);
+		auto h2 = std::hash<float>{}(elt.y);
 		return h1 ^ h2;
 	}
 };
@@ -52,9 +52,9 @@ struct hash<Core::BaseType::Vec3>
 {
 	size_t operator()(const Core::BaseType::Vec3& elt) const
 	{
-		auto h1 = std::hash<Core::BaseType::VertexIndex>{}(elt.x);
-		auto h2 = std::hash<Core::BaseType::VertexIndex>{}(elt.y);
-		auto h3 = std::hash<Core::BaseType::VertexIndex>{}(elt.z);
+		auto h1 = std::hash<float>{}(elt.x);
+		auto h2 = std::hash<float>{}(elt.y);
+		auto h3 = std::hash<float>{}(elt.z);
 		return h1 ^ h2 ^ h3;
 	}
 };

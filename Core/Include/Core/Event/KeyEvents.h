@@ -3,7 +3,7 @@
 #include "Core/Event/Event.h"
 #include "Core/Event/KeyCodes.h"
 
-namespace Core::Event
+namespace Core
 {
 /// @brief Base class for keyboard events.
 class KeyEvent : public Event
@@ -81,4 +81,4 @@ public:
 
 	EVENT_CLASS_TYPE(KeyTyped)
 };
-} // namespace Core::Event
+} // namespace Core

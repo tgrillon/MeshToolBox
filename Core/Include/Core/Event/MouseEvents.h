@@ -3,7 +3,7 @@
 #include "Core/Event/Event.h"
 #include "Core/Event/MouseCodes.h"
 
-namespace Core::Event
+namespace Core
 {
 /// @brief Mouse moved event class.
 class MouseMovedEvent : public Event
@@ -111,4 +111,4 @@ public:
 	EVENT_CLASS_TYPE(MouseButtonReleased)
 };
 
-} // namespace Core::Event
+} // namespace Core

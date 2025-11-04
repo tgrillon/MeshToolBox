@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Core/BaseTypes.h"
+#include "Core/Event/ApplicationEvent.h"
+#include "Core/Event/KeyEvents.h"
 #include "Core/Layer.h"
 #include "Core/Window.h"
 
@@ -36,7 +37,6 @@ public:
 	}
 
 	BaseType::Vec2 GetFramebufferSize() const;
-	GLFWwindow* GetWindow() const;
 
 	bool IsDarkModeEnabled() const;
 	bool& DisplayMode();
@@ -44,7 +44,15 @@ public:
 	void SetMenubarCallback(const std::function<void()>& funCallback) { m_MenubarCallback = funCallback; }
 
 	static Application& Get();
+	static GLFWwindow* GetWindow();
 	static float GetTime();
+
+private:
+	void OnEvent(Event& event);
+
+	bool OnResizeEvent(WindowResizeEvent& event);
+	bool OnCloseEvent(WindowCloseEvent& event);
+	bool OnKeyReleasedEvent(KeyReleasedEvent& event);
 
 private:
 	ApplicationSpecification m_Specification;

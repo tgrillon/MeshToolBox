@@ -6,6 +6,7 @@ set(SOURCES
 vendor/stb/stb_image.cpp
 Source/Application.cpp
 Source/Window.cpp
+Source/Input.cpp
 Source/Renderer/Renderer.cpp
 Source/Renderer/Shader.cpp
 Source/Renderer/GLUtils.cpp
