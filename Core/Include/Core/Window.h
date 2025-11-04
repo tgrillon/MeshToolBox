@@ -1,8 +1,11 @@
 #pragma once
 
+#include "Core/Event/Event.h"
+
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+#include <functional>
 #include <string>
 
 namespace Core
@@ -20,11 +23,11 @@ struct WindowSpecification
 class Window
 {
 public:
+	using EventCallbackFn = std::function<void(Event&)>;
+
+public:
 	Window(const WindowSpecification& specification = WindowSpecification());
 	~Window();
-
-	void Create();
-	void Destroy();
 
 	void Update();
 
@@ -34,10 +37,25 @@ public:
 
 	GLFWwindow* GetHandle() const { return m_Handle; }
 
+	void SetEventCallback(const EventCallbackFn& callback);
+
 private:
 	WindowSpecification m_Specification;
 
 	GLFWwindow* m_Handle = nullptr;
+
+	struct WindowData
+	{
+		std::string Title;
+		uint32_t Width;
+		uint32_t Height;
+		bool IsResizeable;
+		bool VSync;
+
+		EventCallbackFn EventCallback;
+	};
+
+	WindowData m_Data;
 };
 
 } // namespace Core

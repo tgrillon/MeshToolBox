@@ -2,7 +2,7 @@
 
 #include "Core/Event/Event.h"
 
-namespace Core::Event
+namespace Core
 {
 
 /// @brief Event class for window resize events.
@@ -44,4 +44,4 @@ public:
 	EVENT_CLASS_TYPE(WindowClose)
 	EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
-} // namespace Core::Event
+} // namespace Core

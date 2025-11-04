@@ -1,5 +1,7 @@
 #include "Core/Application.h"
 
+#include "Core/Event/Input.h"
+#include "Core/Event/KeyCodes.h"
 #include "Core/Renderer/GLUtils.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -36,7 +38,6 @@ Application::Application(const ApplicationSpecification& specification)
 		m_Specification.WindowSpec.Title = m_Specification.Name;
 
 	m_Window = std::make_shared<Window>(m_Specification.WindowSpec);
-	m_Window->Create();
 
 	Renderer::Utils::InitOpenGLDebugMessageCallback();
 
@@ -60,6 +61,12 @@ Application::Application(const ApplicationSpecification& specification)
 
 	ImGui_ImplGlfw_InitForOpenGL(m_Window->GetHandle(), true);
 	ImGui_ImplOpenGL3_Init("#version 460");
+
+	m_Window->SetEventCallback(
+		[this](Event& event)
+		{
+			this->OnEvent(event);
+		});
 }
 
 Application::~Application()
@@ -68,8 +75,6 @@ Application::~Application()
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
 	ImGui::DestroyContext();
-
-	m_Window->Destroy();
 
 	m_LayerStack.clear();
 
@@ -203,13 +208,62 @@ Application& Application::Get()
 	return *s_Application;
 }
 
-GLFWwindow* Application::GetWindow() const
+GLFWwindow* Application::GetWindow()
 {
-	return m_Window->GetHandle();
+	return s_Application->m_Window->GetHandle();
 }
 
 float Application::GetTime()
 {
 	return (float)glfwGetTime();
+}
+
+void Application::OnEvent(Event& event)
+{
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<WindowResizeEvent>(
+		[this](WindowResizeEvent& event)
+		{
+			return this->OnResizeEvent(event);
+		});
+	dispatcher.Dispatch<WindowCloseEvent>(
+		[this](WindowCloseEvent& event)
+		{
+			return this->OnCloseEvent(event);
+		});
+	dispatcher.Dispatch<KeyReleasedEvent>(
+		[this](KeyReleasedEvent& event)
+		{
+			return this->OnKeyReleasedEvent(event);
+		});
+
+	for(const std::unique_ptr<Layer>& layer : m_LayerStack)
+	{
+		if(event.Handled)
+			break;
+		layer->OnEvent(event);
+	}
+}
+
+bool Application::OnResizeEvent(WindowResizeEvent&)
+{
+	return true;
+}
+
+bool Application::OnCloseEvent(WindowCloseEvent&)
+{
+	m_Running = false;
+	return true;
+}
+
+bool Application::OnKeyReleasedEvent(KeyReleasedEvent& event)
+{
+	if(Input::IsKeyReleased(Key::Escape))
+	{
+		m_Running = false;
+		return true;
+	}
+
+	return false;
 }
 } // namespace Core
