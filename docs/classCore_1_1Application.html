@@ -245,7 +245,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   71</span>            this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#a14340d8fbf8295472bec26f1584620b4">OnEvent</a>(event);</div>
 <div class="line"><span class="lineno">   72</span>        });</div>
 <div class="line"><span class="lineno">   73</span>}</div>
-<div class="ttc" id="aclassCore_1_1Application_html_a14340d8fbf8295472bec26f1584620b4"><div class="ttname"><a href="classCore_1_1Application.html#a14340d8fbf8295472bec26f1584620b4">Core::Application::OnEvent</a></div><div class="ttdeci">void OnEvent(Event &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00224">Application.cpp:224</a></div></div>
+<div class="ttc" id="aclassCore_1_1Application_html_a14340d8fbf8295472bec26f1584620b4"><div class="ttname"><a href="classCore_1_1Application.html#a14340d8fbf8295472bec26f1584620b4">Core::Application::OnEvent</a></div><div class="ttdeci">void OnEvent(Event &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00225">Application.cpp:225</a></div></div>
 <div class="ttc" id="aclassCore_1_1Application_html_a3e7cef830343e50d2610099c426d1b95"><div class="ttname"><a href="classCore_1_1Application.html#a3e7cef830343e50d2610099c426d1b95">Core::Application::m_Specification</a></div><div class="ttdeci">ApplicationSpecification m_Specification</div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00058">Application.h:58</a></div></div>
 <div class="ttc" id="aclassCore_1_1Application_html_a95c40cb763f41257bb2bb0c0c78b3490"><div class="ttname"><a href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">Core::Application::m_Window</a></div><div class="ttdeci">std::shared_ptr&lt; Window &gt; m_Window</div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00059">Application.h:59</a></div></div>
 <div class="ttc" id="anamespaceCore_html_a368c16922eb60842617d97c5a5bc6dcf"><div class="ttname"><a href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">Core::s_Application</a></div><div class="ttdeci">static Application * s_Application</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00024">Application.cpp:24</a></div></div>
@@ -281,12 +281,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   81</span> </div>
 <div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>.clear();</div>
 <div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    glfwTerminate();</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="Application_8cpp.html#a8bd72616f89083ec211da0e6613b6389">g_ApplicationRunning</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;Destroy();</div>
+<div class="line"><span class="lineno">   85</span>    glfwTerminate();</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="Application_8cpp.html#a8bd72616f89083ec211da0e6613b6389">g_ApplicationRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span>}</div>
 <div class="ttc" id="aApplication_8cpp_html_a8bd72616f89083ec211da0e6613b6389"><div class="ttname"><a href="Application_8cpp.html#a8bd72616f89083ec211da0e6613b6389">g_ApplicationRunning</a></div><div class="ttdeci">bool g_ApplicationRunning</div><div class="ttdef"><b>Definition</b> <a href="RunApp_8cpp_source.html#l00007">RunApp.cpp:7</a></div></div>
 <div class="ttc" id="aclassCore_1_1Application_html_a01c243989409bd9800750880d1bb38a2"><div class="ttname"><a href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">Core::Application::m_LayerStack</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; Layer &gt; &gt; m_LayerStack</div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00063">Application.h:63</a></div></div>
 </div><!-- fragment -->
@@ -333,11 +334,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00208">208</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  209</span>{</div>
-<div class="line"><span class="lineno">  210</span>    assert(<a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>);</div>
-<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">return</span> *<a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>;</div>
-<div class="line"><span class="lineno">  212</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00209">209</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>{</div>
+<div class="line"><span class="lineno">  211</span>    assert(<a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>);</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> *<a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>;</div>
+<div class="line"><span class="lineno">  213</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,10 +357,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00203">203</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>{</div>
-<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;GetFramebufferSize();</div>
-<div class="line"><span class="lineno">  206</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00204">204</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>{</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;GetFramebufferSize();</div>
+<div class="line"><span class="lineno">  207</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,10 +387,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00219">219</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
-<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)glfwGetTime();</div>
-<div class="line"><span class="lineno">  222</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00220">220</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>{</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)glfwGetTime();</div>
+<div class="line"><span class="lineno">  223</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -416,10 +417,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00214">214</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>{</div>
-<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>-&gt;<a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;GetHandle();</div>
-<div class="line"><span class="lineno">  217</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00215">215</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>{</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf">s_Application</a>-&gt;<a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;GetHandle();</div>
+<div class="line"><span class="lineno">  218</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -464,11 +465,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00256">256</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  257</span>{</div>
-<div class="line"><span class="lineno">  258</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  260</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00257">257</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>{</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  261</span>}</div>
 <div class="ttc" id="aclassCore_1_1Application_html_af41b92d9ceb5f8b546c688f581c7a9ea"><div class="ttname"><a href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">Core::Application::m_Running</a></div><div class="ttdeci">bool m_Running</div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00060">Application.h:60</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -497,35 +498,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00224">224</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  225</span>{</div>
-<div class="line"><span class="lineno">  226</span>    EventDispatcher dispatcher(event);</div>
-<div class="line"><span class="lineno">  227</span>    dispatcher.Dispatch&lt;WindowResizeEvent&gt;(</div>
-<div class="line"><span class="lineno">  228</span>        [<span class="keyword">this</span>](WindowResizeEvent&amp; event)</div>
-<div class="line"><span class="lineno">  229</span>        {</div>
-<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#ab5f53c368eea1a1dbe9c0050a0d8a2da">OnResizeEvent</a>(event);</div>
-<div class="line"><span class="lineno">  231</span>        });</div>
-<div class="line"><span class="lineno">  232</span>    dispatcher.Dispatch&lt;WindowCloseEvent&gt;(</div>
-<div class="line"><span class="lineno">  233</span>        [<span class="keyword">this</span>](WindowCloseEvent&amp; event)</div>
-<div class="line"><span class="lineno">  234</span>        {</div>
-<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#af9e1aa7fcc68859d8c9f9072d27668ad">OnCloseEvent</a>(event);</div>
-<div class="line"><span class="lineno">  236</span>        });</div>
-<div class="line"><span class="lineno">  237</span>    dispatcher.Dispatch&lt;KeyReleasedEvent&gt;(</div>
-<div class="line"><span class="lineno">  238</span>        [<span class="keyword">this</span>](KeyReleasedEvent&amp; event)</div>
-<div class="line"><span class="lineno">  239</span>        {</div>
-<div class="line"><span class="lineno">  240</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#a88871a2b32de6485279ad49097260f79">OnKeyReleasedEvent</a>(event);</div>
-<div class="line"><span class="lineno">  241</span>        });</div>
-<div class="line"><span class="lineno">  242</span> </div>
-<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
-<div class="line"><span class="lineno">  244</span>    {</div>
-<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">if</span>(event.Handled)</div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  247</span>        layer-&gt;OnEvent(event);</div>
-<div class="line"><span class="lineno">  248</span>    }</div>
-<div class="line"><span class="lineno">  249</span>}</div>
-<div class="ttc" id="aclassCore_1_1Application_html_a88871a2b32de6485279ad49097260f79"><div class="ttname"><a href="classCore_1_1Application.html#a88871a2b32de6485279ad49097260f79">Core::Application::OnKeyReleasedEvent</a></div><div class="ttdeci">bool OnKeyReleasedEvent(KeyReleasedEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00262">Application.cpp:262</a></div></div>
-<div class="ttc" id="aclassCore_1_1Application_html_ab5f53c368eea1a1dbe9c0050a0d8a2da"><div class="ttname"><a href="classCore_1_1Application.html#ab5f53c368eea1a1dbe9c0050a0d8a2da">Core::Application::OnResizeEvent</a></div><div class="ttdeci">bool OnResizeEvent(WindowResizeEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00251">Application.cpp:251</a></div></div>
-<div class="ttc" id="aclassCore_1_1Application_html_af9e1aa7fcc68859d8c9f9072d27668ad"><div class="ttname"><a href="classCore_1_1Application.html#af9e1aa7fcc68859d8c9f9072d27668ad">Core::Application::OnCloseEvent</a></div><div class="ttdeci">bool OnCloseEvent(WindowCloseEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00256">Application.cpp:256</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00225">225</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>{</div>
+<div class="line"><span class="lineno">  227</span>    EventDispatcher dispatcher(event);</div>
+<div class="line"><span class="lineno">  228</span>    dispatcher.Dispatch&lt;WindowResizeEvent&gt;(</div>
+<div class="line"><span class="lineno">  229</span>        [<span class="keyword">this</span>](WindowResizeEvent&amp; event)</div>
+<div class="line"><span class="lineno">  230</span>        {</div>
+<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#ab5f53c368eea1a1dbe9c0050a0d8a2da">OnResizeEvent</a>(event);</div>
+<div class="line"><span class="lineno">  232</span>        });</div>
+<div class="line"><span class="lineno">  233</span>    dispatcher.Dispatch&lt;WindowCloseEvent&gt;(</div>
+<div class="line"><span class="lineno">  234</span>        [<span class="keyword">this</span>](WindowCloseEvent&amp; event)</div>
+<div class="line"><span class="lineno">  235</span>        {</div>
+<div class="line"><span class="lineno">  236</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#af9e1aa7fcc68859d8c9f9072d27668ad">OnCloseEvent</a>(event);</div>
+<div class="line"><span class="lineno">  237</span>        });</div>
+<div class="line"><span class="lineno">  238</span>    dispatcher.Dispatch&lt;KeyReleasedEvent&gt;(</div>
+<div class="line"><span class="lineno">  239</span>        [<span class="keyword">this</span>](KeyReleasedEvent&amp; event)</div>
+<div class="line"><span class="lineno">  240</span>        {</div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classCore_1_1Application.html#a88871a2b32de6485279ad49097260f79">OnKeyReleasedEvent</a>(event);</div>
+<div class="line"><span class="lineno">  242</span>        });</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
+<div class="line"><span class="lineno">  245</span>    {</div>
+<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">if</span>(event.Handled)</div>
+<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  248</span>        layer-&gt;OnEvent(event);</div>
+<div class="line"><span class="lineno">  249</span>    }</div>
+<div class="line"><span class="lineno">  250</span>}</div>
+<div class="ttc" id="aclassCore_1_1Application_html_a88871a2b32de6485279ad49097260f79"><div class="ttname"><a href="classCore_1_1Application.html#a88871a2b32de6485279ad49097260f79">Core::Application::OnKeyReleasedEvent</a></div><div class="ttdeci">bool OnKeyReleasedEvent(KeyReleasedEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00263">Application.cpp:263</a></div></div>
+<div class="ttc" id="aclassCore_1_1Application_html_ab5f53c368eea1a1dbe9c0050a0d8a2da"><div class="ttname"><a href="classCore_1_1Application.html#ab5f53c368eea1a1dbe9c0050a0d8a2da">Core::Application::OnResizeEvent</a></div><div class="ttdeci">bool OnResizeEvent(WindowResizeEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00252">Application.cpp:252</a></div></div>
+<div class="ttc" id="aclassCore_1_1Application_html_af9e1aa7fcc68859d8c9f9072d27668ad"><div class="ttname"><a href="classCore_1_1Application.html#af9e1aa7fcc68859d8c9f9072d27668ad">Core::Application::OnCloseEvent</a></div><div class="ttdeci">bool OnCloseEvent(WindowCloseEvent &amp;event)</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00257">Application.cpp:257</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -553,16 +554,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00262">262</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  263</span>{</div>
-<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">Input::IsKeyReleased</a>(<a class="code hl_enumvalue" href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c">Key::Escape</a>))</div>
-<div class="line"><span class="lineno">  265</span>    {</div>
-<div class="line"><span class="lineno">  266</span>        <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  267</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  268</span>    }</div>
-<div class="line"><span class="lineno">  269</span> </div>
-<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  271</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00263">263</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>{</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">Input::IsKeyReleased</a>(<a class="code hl_enumvalue" href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c">Key::Escape</a>))</div>
+<div class="line"><span class="lineno">  266</span>    {</div>
+<div class="line"><span class="lineno">  267</span>        <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  272</span>}</div>
 <div class="ttc" id="aclassCore_1_1Input_html_aa3669ad89e6984e7ebf112f455e40a32"><div class="ttname"><a href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">Core::Input::IsKeyReleased</a></div><div class="ttdeci">static bool IsKeyReleased(KeyCode key)</div><div class="ttdoc">Checks if the specified key is currently released.</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00016">Input.cpp:16</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Key_html_a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c"><div class="ttname"><a href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c">Core::Key::Escape</a></div><div class="ttdeci">@ Escape</div><div class="ttdef"><b>Definition</b> <a href="KeyCodes_8h_source.html#l00071">KeyCodes.h:71</a></div></div>
 </div><!-- fragment -->
@@ -592,10 +593,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00251">251</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  252</span>{</div>
-<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  254</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00252">252</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  253</span>{</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  255</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -647,115 +648,115 @@ requires (std::is_base_of_v&lt;<a class="el" href="classCore_1_1Layer.html">Laye
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00091">91</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
-<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordtype">float</span> lastTime = <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">GetTime</a>();</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="comment">// Main Application loop</span></div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">while</span>(<a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a>)</div>
-<div class="line"><span class="lineno">   99</span>    {</div>
-<div class="line"><span class="lineno">  100</span>        glfwPollEvents();</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;ShouldClose())</div>
-<div class="line"><span class="lineno">  103</span>        {</div>
-<div class="line"><span class="lineno">  104</span>            <a class="code hl_function" href="classCore_1_1Application.html#a03b6184af497777514146b94b3870a24">Stop</a>();</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  106</span>        }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordtype">float</span> currentTime = <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">GetTime</a>();</div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordtype">float</span> timestep = glm::clamp(currentTime - lastTime, 0.001f, 0.1f);</div>
-<div class="line"><span class="lineno">  110</span>        lastTime = currentTime;</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>        <span class="comment">// Main layer update here</span></div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
-<div class="line"><span class="lineno">  114</span>            layer-&gt;OnUpdate(timestep);</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>        <span class="comment">// Start the Dear ImGui frame</span></div>
-<div class="line"><span class="lineno">  117</span>        ImGui_ImplOpenGL3_NewFrame();</div>
-<div class="line"><span class="lineno">  118</span>        ImGui_ImplGlfw_NewFrame();</div>
-<div class="line"><span class="lineno">  119</span>        ImGui::NewFrame();</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>        {</div>
-<div class="line"><span class="lineno">  122</span>            <span class="keyword">static</span> ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>            <span class="comment">// We are using the ImGuiWindowFlags_NoDocking flag to make the parent window not dockable into,</span></div>
-<div class="line"><span class="lineno">  125</span>            <span class="comment">// because it would be confusing to have two docking targets within each others.</span></div>
-<div class="line"><span class="lineno">  126</span>            ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDocking;</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>)</div>
-<div class="line"><span class="lineno">  128</span>                window_flags |= ImGuiWindowFlags_MenuBar;</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>            <span class="keyword">const</span> ImGuiViewport* viewport = ImGui::GetMainViewport();</div>
-<div class="line"><span class="lineno">  131</span>            ImGui::SetNextWindowPos(viewport-&gt;WorkPos);</div>
-<div class="line"><span class="lineno">  132</span>            ImGui::SetNextWindowSize(viewport-&gt;WorkSize);</div>
-<div class="line"><span class="lineno">  133</span>            ImGui::SetNextWindowViewport(viewport-&gt;ID);</div>
-<div class="line"><span class="lineno">  134</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);</div>
-<div class="line"><span class="lineno">  135</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);</div>
-<div class="line"><span class="lineno">  136</span>            window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize</div>
-<div class="line"><span class="lineno">  137</span>                | ImGuiWindowFlags_NoMove;</div>
-<div class="line"><span class="lineno">  138</span>            window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>            <span class="comment">// When using ImGuiDockNodeFlags_PassthruCentralNode, DockSpace() will render our background</span></div>
-<div class="line"><span class="lineno">  141</span>            <span class="comment">// and handle the pass-thru hole, so we ask Begin() to not render a background.</span></div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">if</span>(dockspace_flags &amp; ImGuiDockNodeFlags_PassthruCentralNode)</div>
-<div class="line"><span class="lineno">  143</span>                window_flags |= ImGuiWindowFlags_NoBackground;</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>            <span class="comment">// Important: note that we proceed even if Begin() returns false (aka window is collapsed).</span></div>
-<div class="line"><span class="lineno">  146</span>            <span class="comment">// This is because we want to keep our DockSpace() active. If a DockSpace() is inactive,</span></div>
-<div class="line"><span class="lineno">  147</span>            <span class="comment">// all active windows docked into it will lose their parent and become undocked.</span></div>
-<div class="line"><span class="lineno">  148</span>            <span class="comment">// We cannot preserve the docking relationship between an active window and an inactive docking, otherwise</span></div>
-<div class="line"><span class="lineno">  149</span>            <span class="comment">// any change of dockspace/settings would lead to windows being stuck in limbo and never being visible.</span></div>
-<div class="line"><span class="lineno">  150</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));</div>
-<div class="line"><span class="lineno">  151</span>            ImGui::Begin(<span class="stringliteral">&quot;DockSpace Demo&quot;</span>, <span class="keyword">nullptr</span>, window_flags);</div>
-<div class="line"><span class="lineno">  152</span>            ImGui::PopStyleVar();</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>            ImGui::PopStyleVar(2);</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>            <span class="comment">// Submit the DockSpace</span></div>
-<div class="line"><span class="lineno">  157</span>            ImGuiIO&amp; io = ImGui::GetIO();</div>
-<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">if</span>(io.ConfigFlags &amp; ImGuiConfigFlags_DockingEnable)</div>
-<div class="line"><span class="lineno">  159</span>            {</div>
-<div class="line"><span class="lineno">  160</span>                ImGuiID dockspace_id = ImGui::GetID(<span class="stringliteral">&quot;VulkanAppDockspace&quot;</span>);</div>
-<div class="line"><span class="lineno">  161</span>                ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);</div>
-<div class="line"><span class="lineno">  162</span>            }</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>)</div>
-<div class="line"><span class="lineno">  165</span>            {</div>
-<div class="line"><span class="lineno">  166</span>                <span class="keywordflow">if</span>(ImGui::BeginMenuBar())</div>
-<div class="line"><span class="lineno">  167</span>                {</div>
-<div class="line"><span class="lineno">  168</span>                    <a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>();</div>
-<div class="line"><span class="lineno">  169</span>                    ImGui::EndMenuBar();</div>
-<div class="line"><span class="lineno">  170</span>                }</div>
-<div class="line"><span class="lineno">  171</span>            }</div>
-<div class="line"><span class="lineno">  172</span> </div>
-<div class="line"><span class="lineno">  173</span>            <span class="comment">// NOTE: rendering can be done elsewhere (eg. render thread)</span></div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
-<div class="line"><span class="lineno">  175</span>                layer-&gt;OnRender();</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>            ImGui::End();</div>
-<div class="line"><span class="lineno">  178</span>        }</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>        ImGui::Render();</div>
-<div class="line"><span class="lineno">  181</span>        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>        ImGuiIO&amp; io = ImGui::GetIO();</div>
-<div class="line"><span class="lineno">  184</span>        IM_UNUSED(io);</div>
-<div class="line"><span class="lineno">  185</span>        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());</div>
-<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">if</span>(io.ConfigFlags &amp; ImGuiConfigFlags_ViewportsEnable)</div>
-<div class="line"><span class="lineno">  187</span>        {</div>
-<div class="line"><span class="lineno">  188</span>            GLFWwindow* backup_current_context = glfwGetCurrentContext();</div>
-<div class="line"><span class="lineno">  189</span>            ImGui::UpdatePlatformWindows();</div>
-<div class="line"><span class="lineno">  190</span>            ImGui::RenderPlatformWindowsDefault();</div>
-<div class="line"><span class="lineno">  191</span>            glfwMakeContextCurrent(backup_current_context);</div>
-<div class="line"><span class="lineno">  192</span>        }</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>        <a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;Update();</div>
-<div class="line"><span class="lineno">  195</span>    }</div>
-<div class="line"><span class="lineno">  196</span>}</div>
-<div class="ttc" id="aclassCore_1_1Application_html_a03b6184af497777514146b94b3870a24"><div class="ttname"><a href="classCore_1_1Application.html#a03b6184af497777514146b94b3870a24">Core::Application::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00198">Application.cpp:198</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00092">92</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">float</span> lastTime = <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">GetTime</a>();</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">// Main Application loop</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">while</span>(<a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a>)</div>
+<div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span>        glfwPollEvents();</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;ShouldClose())</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            <a class="code hl_function" href="classCore_1_1Application.html#a03b6184af497777514146b94b3870a24">Stop</a>();</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordtype">float</span> currentTime = <a class="code hl_function" href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">GetTime</a>();</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordtype">float</span> timestep = glm::clamp(currentTime - lastTime, 0.001f, 0.1f);</div>
+<div class="line"><span class="lineno">  111</span>        lastTime = currentTime;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>        <span class="comment">// Main layer update here</span></div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
+<div class="line"><span class="lineno">  115</span>            layer-&gt;OnUpdate(timestep);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>        <span class="comment">// Start the Dear ImGui frame</span></div>
+<div class="line"><span class="lineno">  118</span>        ImGui_ImplOpenGL3_NewFrame();</div>
+<div class="line"><span class="lineno">  119</span>        ImGui_ImplGlfw_NewFrame();</div>
+<div class="line"><span class="lineno">  120</span>        ImGui::NewFrame();</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>        {</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keyword">static</span> ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>            <span class="comment">// We are using the ImGuiWindowFlags_NoDocking flag to make the parent window not dockable into,</span></div>
+<div class="line"><span class="lineno">  126</span>            <span class="comment">// because it would be confusing to have two docking targets within each others.</span></div>
+<div class="line"><span class="lineno">  127</span>            ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDocking;</div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>)</div>
+<div class="line"><span class="lineno">  129</span>                window_flags |= ImGuiWindowFlags_MenuBar;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            <span class="keyword">const</span> ImGuiViewport* viewport = ImGui::GetMainViewport();</div>
+<div class="line"><span class="lineno">  132</span>            ImGui::SetNextWindowPos(viewport-&gt;WorkPos);</div>
+<div class="line"><span class="lineno">  133</span>            ImGui::SetNextWindowSize(viewport-&gt;WorkSize);</div>
+<div class="line"><span class="lineno">  134</span>            ImGui::SetNextWindowViewport(viewport-&gt;ID);</div>
+<div class="line"><span class="lineno">  135</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);</div>
+<div class="line"><span class="lineno">  136</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);</div>
+<div class="line"><span class="lineno">  137</span>            window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize</div>
+<div class="line"><span class="lineno">  138</span>                | ImGuiWindowFlags_NoMove;</div>
+<div class="line"><span class="lineno">  139</span>            window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>            <span class="comment">// When using ImGuiDockNodeFlags_PassthruCentralNode, DockSpace() will render our background</span></div>
+<div class="line"><span class="lineno">  142</span>            <span class="comment">// and handle the pass-thru hole, so we ask Begin() to not render a background.</span></div>
+<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span>(dockspace_flags &amp; ImGuiDockNodeFlags_PassthruCentralNode)</div>
+<div class="line"><span class="lineno">  144</span>                window_flags |= ImGuiWindowFlags_NoBackground;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>            <span class="comment">// Important: note that we proceed even if Begin() returns false (aka window is collapsed).</span></div>
+<div class="line"><span class="lineno">  147</span>            <span class="comment">// This is because we want to keep our DockSpace() active. If a DockSpace() is inactive,</span></div>
+<div class="line"><span class="lineno">  148</span>            <span class="comment">// all active windows docked into it will lose their parent and become undocked.</span></div>
+<div class="line"><span class="lineno">  149</span>            <span class="comment">// We cannot preserve the docking relationship between an active window and an inactive docking, otherwise</span></div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">// any change of dockspace/settings would lead to windows being stuck in limbo and never being visible.</span></div>
+<div class="line"><span class="lineno">  151</span>            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));</div>
+<div class="line"><span class="lineno">  152</span>            ImGui::Begin(<span class="stringliteral">&quot;DockSpace Demo&quot;</span>, <span class="keyword">nullptr</span>, window_flags);</div>
+<div class="line"><span class="lineno">  153</span>            ImGui::PopStyleVar();</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>            ImGui::PopStyleVar(2);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>            <span class="comment">// Submit the DockSpace</span></div>
+<div class="line"><span class="lineno">  158</span>            ImGuiIO&amp; io = ImGui::GetIO();</div>
+<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">if</span>(io.ConfigFlags &amp; ImGuiConfigFlags_DockingEnable)</div>
+<div class="line"><span class="lineno">  160</span>            {</div>
+<div class="line"><span class="lineno">  161</span>                ImGuiID dockspace_id = ImGui::GetID(<span class="stringliteral">&quot;VulkanAppDockspace&quot;</span>);</div>
+<div class="line"><span class="lineno">  162</span>                ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);</div>
+<div class="line"><span class="lineno">  163</span>            }</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>)</div>
+<div class="line"><span class="lineno">  166</span>            {</div>
+<div class="line"><span class="lineno">  167</span>                <span class="keywordflow">if</span>(ImGui::BeginMenuBar())</div>
+<div class="line"><span class="lineno">  168</span>                {</div>
+<div class="line"><span class="lineno">  169</span>                    <a class="code hl_variable" href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">m_MenubarCallback</a>();</div>
+<div class="line"><span class="lineno">  170</span>                    ImGui::EndMenuBar();</div>
+<div class="line"><span class="lineno">  171</span>                }</div>
+<div class="line"><span class="lineno">  172</span>            }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>            <span class="comment">// NOTE: rendering can be done elsewhere (eg. render thread)</span></div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> std::unique_ptr&lt;Layer&gt;&amp; layer : <a class="code hl_variable" href="classCore_1_1Application.html#a01c243989409bd9800750880d1bb38a2">m_LayerStack</a>)</div>
+<div class="line"><span class="lineno">  176</span>                layer-&gt;OnRender();</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>            ImGui::End();</div>
+<div class="line"><span class="lineno">  179</span>        }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>        ImGui::Render();</div>
+<div class="line"><span class="lineno">  182</span>        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>        ImGuiIO&amp; io = ImGui::GetIO();</div>
+<div class="line"><span class="lineno">  185</span>        IM_UNUSED(io);</div>
+<div class="line"><span class="lineno">  186</span>        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span>(io.ConfigFlags &amp; ImGuiConfigFlags_ViewportsEnable)</div>
+<div class="line"><span class="lineno">  188</span>        {</div>
+<div class="line"><span class="lineno">  189</span>            GLFWwindow* backup_current_context = glfwGetCurrentContext();</div>
+<div class="line"><span class="lineno">  190</span>            ImGui::UpdatePlatformWindows();</div>
+<div class="line"><span class="lineno">  191</span>            ImGui::RenderPlatformWindowsDefault();</div>
+<div class="line"><span class="lineno">  192</span>            glfwMakeContextCurrent(backup_current_context);</div>
+<div class="line"><span class="lineno">  193</span>        }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>        <a class="code hl_variable" href="classCore_1_1Application.html#a95c40cb763f41257bb2bb0c0c78b3490">m_Window</a>-&gt;Update();</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span>}</div>
+<div class="ttc" id="aclassCore_1_1Application_html_a03b6184af497777514146b94b3870a24"><div class="ttname"><a href="classCore_1_1Application.html#a03b6184af497777514146b94b3870a24">Core::Application::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00199">Application.cpp:199</a></div></div>
 <div class="ttc" id="aclassCore_1_1Application_html_a13e3bfad8f90c9f7a1d9bf04f774e769"><div class="ttname"><a href="classCore_1_1Application.html#a13e3bfad8f90c9f7a1d9bf04f774e769">Core::Application::m_MenubarCallback</a></div><div class="ttdeci">std::function&lt; void()&gt; m_MenubarCallback</div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00062">Application.h:62</a></div></div>
-<div class="ttc" id="aclassCore_1_1Application_html_ab8b99d5c1e1c0ec4cde0db2a97b294ae"><div class="ttname"><a href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">Core::Application::GetTime</a></div><div class="ttdeci">static float GetTime()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00219">Application.cpp:219</a></div></div>
+<div class="ttc" id="aclassCore_1_1Application_html_ab8b99d5c1e1c0ec4cde0db2a97b294ae"><div class="ttname"><a href="classCore_1_1Application.html#ab8b99d5c1e1c0ec4cde0db2a97b294ae">Core::Application::GetTime</a></div><div class="ttdeci">static float GetTime()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00220">Application.cpp:220</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -803,10 +804,10 @@ requires (std::is_base_of_v&lt;<a class="el" href="classCore_1_1Layer.html">Laye
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00198">198</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
-<div class="line"><span class="lineno">  200</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  201</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00199">199</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_variable" href="classCore_1_1Application.html#af41b92d9ceb5f8b546c688f581c7a9ea">m_Running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  202</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

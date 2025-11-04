@@ -4,6 +4,7 @@ var classCore_1_1Window =
     [ "EventCallbackFn", "classCore_1_1Window.html#a73444857dfca72313ab2e82aaf45a91a", null ],
     [ "Window", "classCore_1_1Window.html#a2ac97d0baf6dbde85f4ae15258e389c9", null ],
     [ "~Window", "classCore_1_1Window.html#a922e2e28e9873adbd05617c560d39925", null ],
+    [ "Destroy", "classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3", null ],
     [ "GetFramebufferSize", "classCore_1_1Window.html#a55bb4d8e1f155bb75413cf19eaf1e47d", null ],
     [ "GetHandle", "classCore_1_1Window.html#aa7c22907225568c0210b65337d6e6510", null ],
     [ "SetEventCallback", "classCore_1_1Window.html#aea57c03442f35f846f8778bdc6ed675b", null ],
