@@ -18,11 +18,10 @@ var searchData=
   ['debug_15',['Debug',['../PrintHelpers_8h.html#acd8dd41e8a67bba7ccfb3b50f7aa88a5',1,'PrintHelpers.h']]],
   ['debugimpl_16',['DebugImpl',['../namespacePrintHelpers_1_1detail.html#a8a7150138f4a457b97f124a691d974e5',1,'PrintHelpers::detail']]],
   ['delete_17',['Delete',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da8fb6dce0c17134bc78e022ac4d46363e',1,'Core::Key']]],
-  ['destroy_18',['Destroy',['../classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3',1,'Core::Window']]],
-  ['development_20guidelines_19',['Development Guidelines',['../index.html#autotoc_md2',1,'']]],
-  ['difference_5ftype_20',['difference_type',['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#ad90dba3805b34ae30851a370fad03a28',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::difference_type'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a6dba30510dd12dbaa7ada1f50d831062',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::difference_type']]],
-  ['dispatch_21',['Dispatch',['../classCore_1_1EventDispatcher.html#a635f812dc4b6caf2c1c9e10082829d00',1,'Core::EventDispatcher']]],
-  ['displaymode_22',['DisplayMode',['../classCore_1_1Application.html#a16f8895de8269ebcfae75da390bcd7ca',1,'Core::Application']]],
-  ['dot_23',['Dot',['../namespaceCore_1_1Math_1_1Geometry.html#a305c2af2e4f17b0036f3cecd01ac15ba',1,'Core::Math::Geometry']]],
-  ['down_24',['Down',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da3e3d1d0d3d69b8cfd9f6b4c575d49d14',1,'Core::Key']]]
+  ['development_20guidelines_18',['Development Guidelines',['../index.html#autotoc_md2',1,'']]],
+  ['difference_5ftype_19',['difference_type',['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#ad90dba3805b34ae30851a370fad03a28',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::difference_type'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a6dba30510dd12dbaa7ada1f50d831062',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::difference_type']]],
+  ['dispatch_20',['Dispatch',['../classCore_1_1EventDispatcher.html#a635f812dc4b6caf2c1c9e10082829d00',1,'Core::EventDispatcher']]],
+  ['displaymode_21',['DisplayMode',['../classCore_1_1Application.html#a16f8895de8269ebcfae75da390bcd7ca',1,'Core::Application']]],
+  ['dot_22',['Dot',['../namespaceCore_1_1Math_1_1Geometry.html#a305c2af2e4f17b0036f3cecd01ac15ba',1,'Core::Math::Geometry']]],
+  ['down_23',['Down',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da3e3d1d0d3d69b8cfd9f6b4c575d49d14',1,'Core::Key']]]
 ];

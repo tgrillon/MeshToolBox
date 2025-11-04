@@ -21,9 +21,10 @@ var searchData=
   ['isempty_18',['IsEmpty',['../classData_1_1ExtraData_1_1ExtraDataContainer.html#ad181c51f17aa753e8f8f88ae2e4c6093',1,'Data::ExtraData::ExtraDataContainer']]],
   ['isincategory_19',['IsInCategory',['../classCore_1_1Event.html#ad98c1cfd824e7c6b7498b4f03b9e675f',1,'Core::Event']]],
   ['iskeypressed_20',['IsKeyPressed',['../classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9',1,'Core::Input']]],
-  ['ismousebuttonpressed_21',['IsMouseButtonPressed',['../classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8',1,'Core::Input']]],
-  ['isrepeat_22',['IsRepeat',['../classCore_1_1Event_1_1KeyPressedEvent.html#a409da62c34f3e582155582ba4cbb27a9',1,'Core::Event::KeyPressedEvent']]],
-  ['isresizeable_23',['IsResizeable',['../structCore_1_1WindowSpecification.html#a626608e069747c6727735b7d75d34976',1,'Core::WindowSpecification']]],
-  ['iterator_5fcategory_24',['iterator_category',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a670bb8987db11ff0167b332e4a7dbe1e',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::iterator_category'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#a835d4270c3e9ffcf6bf90379763b0a2a',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::iterator_category']]],
-  ['ivec2_25',['iVec2',['../namespaceCore_1_1BaseType.html#a03ac1fd11808c2543b7cf1edaf17ccfc',1,'Core::BaseType']]]
+  ['iskeyreleased_21',['IsKeyReleased',['../classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32',1,'Core::Input']]],
+  ['ismousebuttonpressed_22',['IsMouseButtonPressed',['../classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8',1,'Core::Input']]],
+  ['isrepeat_23',['IsRepeat',['../classCore_1_1KeyPressedEvent.html#a8367e549cc695a9b49f1bc982f37a957',1,'Core::KeyPressedEvent']]],
+  ['isresizeable_24',['isresizeable',['../structCore_1_1WindowSpecification.html#a626608e069747c6727735b7d75d34976',1,'Core::WindowSpecification::IsResizeable'],['../structCore_1_1Window_1_1WindowData.html#a7f8dc647339ad2e44a59fddc527424ed',1,'Core::Window::WindowData::IsResizeable']]],
+  ['iterator_5fcategory_25',['iterator_category',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html#a670bb8987db11ff0167b332e4a7dbe1e',1,'Data::Surface::Mesh::VerticesAroundVertexCirculator::iterator_category'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#a835d4270c3e9ffcf6bf90379763b0a2a',1,'Data::Surface::Mesh::TrianglesAroundVertexCirculator::iterator_category']]],
+  ['ivec2_26',['iVec2',['../namespaceCore_1_1BaseType.html#a03ac1fd11808c2543b7cf1edaf17ccfc',1,'Core::BaseType']]]
 ];

@@ -1,5 +1,7 @@
 <map id="Core/Include/Core/Event/Input.h" name="Core/Include/Core/Event/Input.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,184,45"/>
-<area shape="rect" id="Node000002" href="$Input_8cpp.html" title=" " alt="" coords="13,93,177,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,59,97,93,92,93,92,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="122,5,301,45"/>
+<area shape="rect" id="Node000002" href="$Application_8cpp.html" title=" " alt="" coords="5,93,209,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,56,125,95,121,91,174,51"/>
+<area shape="rect" id="Node000003" href="$Input_8cpp.html" title=" " alt="" coords="233,93,397,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,51,301,91,298,95,246,56"/>
 </map>

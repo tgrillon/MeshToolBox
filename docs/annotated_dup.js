@@ -4,26 +4,24 @@ var annotated_dup =
       [ "AppLayer", "classApplication_1_1AppLayer.html", "classApplication_1_1AppLayer" ]
     ] ],
     [ "Core", "namespaceCore.html", [
-      [ "Event", "namespaceCore_1_1Event.html", [
-        [ "KeyEvent", "classCore_1_1Event_1_1KeyEvent.html", "classCore_1_1Event_1_1KeyEvent" ],
-        [ "KeyPressedEvent", "classCore_1_1Event_1_1KeyPressedEvent.html", "classCore_1_1Event_1_1KeyPressedEvent" ],
-        [ "KeyReleasedEvent", "classCore_1_1Event_1_1KeyReleasedEvent.html", "classCore_1_1Event_1_1KeyReleasedEvent" ],
-        [ "KeyTypedEvent", "classCore_1_1Event_1_1KeyTypedEvent.html", "classCore_1_1Event_1_1KeyTypedEvent" ],
-        [ "MouseButtonEvent", "classCore_1_1Event_1_1MouseButtonEvent.html", "classCore_1_1Event_1_1MouseButtonEvent" ],
-        [ "MouseButtonPressedEvent", "classCore_1_1Event_1_1MouseButtonPressedEvent.html", "classCore_1_1Event_1_1MouseButtonPressedEvent" ],
-        [ "MouseButtonReleasedEvent", "classCore_1_1Event_1_1MouseButtonReleasedEvent.html", "classCore_1_1Event_1_1MouseButtonReleasedEvent" ],
-        [ "MouseMovedEvent", "classCore_1_1Event_1_1MouseMovedEvent.html", "classCore_1_1Event_1_1MouseMovedEvent" ],
-        [ "MouseScrolledEvent", "classCore_1_1Event_1_1MouseScrolledEvent.html", "classCore_1_1Event_1_1MouseScrolledEvent" ],
-        [ "WindowCloseEvent", "classCore_1_1Event_1_1WindowCloseEvent.html", "classCore_1_1Event_1_1WindowCloseEvent" ],
-        [ "WindowResizeEvent", "classCore_1_1Event_1_1WindowResizeEvent.html", "classCore_1_1Event_1_1WindowResizeEvent" ]
-      ] ],
       [ "Application", "classCore_1_1Application.html", "classCore_1_1Application" ],
       [ "ApplicationSpecification", "structCore_1_1ApplicationSpecification.html", "structCore_1_1ApplicationSpecification" ],
       [ "Event", "classCore_1_1Event.html", "classCore_1_1Event" ],
       [ "EventDispatcher", "classCore_1_1EventDispatcher.html", "classCore_1_1EventDispatcher" ],
       [ "Input", "classCore_1_1Input.html", "classCore_1_1Input" ],
+      [ "KeyEvent", "classCore_1_1KeyEvent.html", "classCore_1_1KeyEvent" ],
+      [ "KeyPressedEvent", "classCore_1_1KeyPressedEvent.html", "classCore_1_1KeyPressedEvent" ],
+      [ "KeyReleasedEvent", "classCore_1_1KeyReleasedEvent.html", "classCore_1_1KeyReleasedEvent" ],
+      [ "KeyTypedEvent", "classCore_1_1KeyTypedEvent.html", "classCore_1_1KeyTypedEvent" ],
       [ "Layer", "classCore_1_1Layer.html", "classCore_1_1Layer" ],
+      [ "MouseButtonEvent", "classCore_1_1MouseButtonEvent.html", "classCore_1_1MouseButtonEvent" ],
+      [ "MouseButtonPressedEvent", "classCore_1_1MouseButtonPressedEvent.html", "classCore_1_1MouseButtonPressedEvent" ],
+      [ "MouseButtonReleasedEvent", "classCore_1_1MouseButtonReleasedEvent.html", "classCore_1_1MouseButtonReleasedEvent" ],
+      [ "MouseMovedEvent", "classCore_1_1MouseMovedEvent.html", "classCore_1_1MouseMovedEvent" ],
+      [ "MouseScrolledEvent", "classCore_1_1MouseScrolledEvent.html", "classCore_1_1MouseScrolledEvent" ],
       [ "Window", "classCore_1_1Window.html", "classCore_1_1Window" ],
+      [ "WindowCloseEvent", "classCore_1_1WindowCloseEvent.html", "classCore_1_1WindowCloseEvent" ],
+      [ "WindowResizeEvent", "classCore_1_1WindowResizeEvent.html", "classCore_1_1WindowResizeEvent" ],
       [ "WindowSpecification", "structCore_1_1WindowSpecification.html", "structCore_1_1WindowSpecification" ]
     ] ],
     [ "Data", "namespaceData.html", [

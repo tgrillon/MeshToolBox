@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('classCore_1_1Event.html',''); initResi
 <div class="dynheader">
 Inheritance diagram for Core::Event:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classCore_1_1Event__inherit__graph.svg" width="651" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCore_1_1Event__inherit__graph.svg" width="603" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -287,7 +287,8 @@ Public Attributes</h2></td></tr>
 <p>Checks if the event is in a specific category. </p>
 
 <p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00084">84</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keywordflow">return</span> GetCategoryFlags() &amp; category; }</div>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Event.html#adc0aca45db9dd3574ca1045765cc3832">GetCategoryFlags</a>() &amp; category; }</div>
+<div class="ttc" id="aclassCore_1_1Event_html_adc0aca45db9dd3574ca1045765cc3832"><div class="ttname"><a href="classCore_1_1Event.html#adc0aca45db9dd3574ca1045765cc3832">Core::Event::GetCategoryFlags</a></div><div class="ttdeci">virtual int GetCategoryFlags() const =0</div><div class="ttdoc">Gets the category flags of the event.</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,10 +317,11 @@ Public Attributes</h2></td></tr>
 
 <p>Converts the event to a string representation. </p>
 
-<p>Reimplemented in <a class="el" href="classCore_1_1Event_1_1WindowResizeEvent.html#ab6e63e1770204c363c9e9b23d9ec9180">Core::Event::WindowResizeEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyPressedEvent.html#af6ef9f30d0a795c8945e6b0f98c511a2">Core::Event::KeyPressedEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyReleasedEvent.html#a8e53750262f281cabf81ea03797a73a2">Core::Event::KeyReleasedEvent</a>, <a class="el" href="classCore_1_1Event_1_1KeyTypedEvent.html#a6ad78b1839630dbc2efa41923a4aab09">Core::Event::KeyTypedEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseMovedEvent.html#a0cf3101b6460b403ee65dabdb355520d">Core::Event::MouseMovedEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseScrolledEvent.html#ad064455f8ae2fb80fbb85342283464c2">Core::Event::MouseScrolledEvent</a>, <a class="el" href="classCore_1_1Event_1_1MouseButtonPressedEvent.html#a996e33141fa1e9b021fea7741f09a585">Core::Event::MouseButtonPressedEvent</a>, and <a class="el" href="classCore_1_1Event_1_1MouseButtonReleasedEvent.html#a337bc3d9afc5a6ce7ae31d313d22cb75">Core::Event::MouseButtonReleasedEvent</a>.</p>
+<p>Reimplemented in <a class="el" href="classCore_1_1WindowResizeEvent.html#af06d3a2b32f62a9e01a1d6cf2e97fcbd">Core::WindowResizeEvent</a>, <a class="el" href="classCore_1_1KeyPressedEvent.html#a27f978252a4827a469cb658cf2899a34">Core::KeyPressedEvent</a>, <a class="el" href="classCore_1_1KeyReleasedEvent.html#a111a0b680c0ae84dcf0a67a7a2ad01b3">Core::KeyReleasedEvent</a>, <a class="el" href="classCore_1_1KeyTypedEvent.html#a5190da1e2e8da95caef7f2e303b87646">Core::KeyTypedEvent</a>, <a class="el" href="classCore_1_1MouseMovedEvent.html#aa6367c1c88fe063a7a84e57622079d26">Core::MouseMovedEvent</a>, <a class="el" href="classCore_1_1MouseScrolledEvent.html#a2e138215281d8a4e02f97fff948d6936">Core::MouseScrolledEvent</a>, <a class="el" href="classCore_1_1MouseButtonPressedEvent.html#ad27dcb8f536768e4362c9df1c9630131">Core::MouseButtonPressedEvent</a>, and <a class="el" href="classCore_1_1MouseButtonReleasedEvent.html#aa2cb8c6f106b872cce95f785cbcbbf0b">Core::MouseButtonReleasedEvent</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00081">81</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> GetName(); }</div>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Event.html#a9d848b82a94086575d869a7fb0819339">GetName</a>(); }</div>
+<div class="ttc" id="aclassCore_1_1Event_html_a9d848b82a94086575d869a7fb0819339"><div class="ttname"><a href="classCore_1_1Event.html#a9d848b82a94086575d869a7fb0819339">Core::Event::GetName</a></div><div class="ttdeci">virtual const char * GetName() const =0</div><div class="ttdoc">Gets the name of the event.</div></div>
 </div><!-- fragment -->
 </div>
 </div>

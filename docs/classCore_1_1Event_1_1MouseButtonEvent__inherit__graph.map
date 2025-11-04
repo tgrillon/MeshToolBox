@@ -1,9 +1,0 @@
-<map id="Core::Event::MouseButtonEvent" name="Core::Event::MouseButtonEvent">
-<area shape="rect" id="Node000001" title="Base class for mouse button events." alt="" coords="112,79,303,119"/>
-<area shape="rect" id="Node000003" href="$classCore_1_1Event_1_1MouseButtonPressedEvent.html" title="Mouse button pressed event class." alt="" coords="5,167,196,207"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,129,126,169,123,164,171,125"/>
-<area shape="rect" id="Node000004" href="$classCore_1_1Event_1_1MouseButtonReleasedEvent.html" title="Mouse button released event class." alt="" coords="220,167,411,207"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,125,293,164,290,169,240,129"/>
-<area shape="rect" id="Node000002" href="$classCore_1_1Event.html" title="Base class for all events." alt="" coords="159,5,256,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,44,210,79,205,79,205,44"/>
-</map>

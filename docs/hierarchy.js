@@ -23,19 +23,19 @@ var hierarchy =
       [ "Data::ExtraData::SingleDataExtraData< T >", "classData_1_1ExtraData_1_1SingleDataExtraData.html", null ]
     ] ],
     [ "Core::Event", "classCore_1_1Event.html", [
-      [ "Core::Event::KeyEvent", "classCore_1_1Event_1_1KeyEvent.html", [
-        [ "Core::Event::KeyPressedEvent", "classCore_1_1Event_1_1KeyPressedEvent.html", null ],
-        [ "Core::Event::KeyReleasedEvent", "classCore_1_1Event_1_1KeyReleasedEvent.html", null ],
-        [ "Core::Event::KeyTypedEvent", "classCore_1_1Event_1_1KeyTypedEvent.html", null ]
+      [ "Core::KeyEvent", "classCore_1_1KeyEvent.html", [
+        [ "Core::KeyPressedEvent", "classCore_1_1KeyPressedEvent.html", null ],
+        [ "Core::KeyReleasedEvent", "classCore_1_1KeyReleasedEvent.html", null ],
+        [ "Core::KeyTypedEvent", "classCore_1_1KeyTypedEvent.html", null ]
       ] ],
-      [ "Core::Event::MouseButtonEvent", "classCore_1_1Event_1_1MouseButtonEvent.html", [
-        [ "Core::Event::MouseButtonPressedEvent", "classCore_1_1Event_1_1MouseButtonPressedEvent.html", null ],
-        [ "Core::Event::MouseButtonReleasedEvent", "classCore_1_1Event_1_1MouseButtonReleasedEvent.html", null ]
+      [ "Core::MouseButtonEvent", "classCore_1_1MouseButtonEvent.html", [
+        [ "Core::MouseButtonPressedEvent", "classCore_1_1MouseButtonPressedEvent.html", null ],
+        [ "Core::MouseButtonReleasedEvent", "classCore_1_1MouseButtonReleasedEvent.html", null ]
       ] ],
-      [ "Core::Event::MouseMovedEvent", "classCore_1_1Event_1_1MouseMovedEvent.html", null ],
-      [ "Core::Event::MouseScrolledEvent", "classCore_1_1Event_1_1MouseScrolledEvent.html", null ],
-      [ "Core::Event::WindowCloseEvent", "classCore_1_1Event_1_1WindowCloseEvent.html", null ],
-      [ "Core::Event::WindowResizeEvent", "classCore_1_1Event_1_1WindowResizeEvent.html", null ]
+      [ "Core::MouseMovedEvent", "classCore_1_1MouseMovedEvent.html", null ],
+      [ "Core::MouseScrolledEvent", "classCore_1_1MouseScrolledEvent.html", null ],
+      [ "Core::WindowCloseEvent", "classCore_1_1WindowCloseEvent.html", null ],
+      [ "Core::WindowResizeEvent", "classCore_1_1WindowResizeEvent.html", null ]
     ] ],
     [ "Core::EventDispatcher", "classCore_1_1EventDispatcher.html", null ],
     [ "Data::ExtraData::ExtraDataContainer", "classData_1_1ExtraData_1_1ExtraDataContainer.html", null ],
@@ -63,5 +63,6 @@ var hierarchy =
     [ "Data::Surface::Mesh::VerticesAroundVertexCirculator", "classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html", null ],
     [ "Data::Surface::Mesh::VerticesAroundVertexRange", "classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html", null ],
     [ "Core::Window", "classCore_1_1Window.html", null ],
+    [ "Core::Window::WindowData", "structCore_1_1Window_1_1WindowData.html", null ],
     [ "Core::WindowSpecification", "structCore_1_1WindowSpecification.html", null ]
 ];

@@ -1,5 +1,7 @@
 <map id="Core::Window" name="Core::Window">
-<area shape="rect" id="Node000001" title=" " alt="" coords="47,93,159,119"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="157,93,269,119"/>
 <area shape="rect" id="Node000002" href="$structCore_1_1WindowSpecification.html" title=" " alt="" coords="5,5,200,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,45,105,93,100,93,100,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,37,200,91,197,95,127,41"/>
+<area shape="rect" id="Node000003" href="$structCore_1_1Window_1_1WindowData.html" title=" " alt="" coords="224,5,427,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,44,280,71,241,95,238,91,277,67,305,40"/>
 </map>

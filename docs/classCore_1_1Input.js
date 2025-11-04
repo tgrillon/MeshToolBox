@@ -4,5 +4,6 @@ var classCore_1_1Input =
     [ "GetMouseX", "classCore_1_1Input.html#a6da8522166291dc48b69d1bb26da2996", null ],
     [ "GetMouseY", "classCore_1_1Input.html#a4762c7f42ca1560c8a33ada0dccdc18d", null ],
     [ "IsKeyPressed", "classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9", null ],
+    [ "IsKeyReleased", "classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32", null ],
     [ "IsMouseButtonPressed", "classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8", null ]
 ];
