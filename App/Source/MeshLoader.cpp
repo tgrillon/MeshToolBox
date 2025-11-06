@@ -1,6 +1,6 @@
 #include "Application/MeshLoader.h"
 
-#include "Application/ExtraDataType.h"
+#include "Application/ExtraDataTypes.h"
 #include "Application/PrimitiveProxy.h"
 #include "Application/VertexPair.h"
 #include "Core/PrintHelpers.h"

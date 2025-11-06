@@ -1,4 +1,4 @@
-#include "Application/ExtraDataType.h"
+#include "Application/ExtraDataTypes.h"
 #include "Application/MeshExporter.h"
 #include "Application/PrimitiveProxy.h"
 #include "Application/TestHelpers.h"

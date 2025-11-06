@@ -10,8 +10,10 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtx/vector_angle.hpp>
 
+#include <array>
 #include <bitset>
 #include <cstdint>
+#include <vector>
 
 namespace Core::BaseType
 {
@@ -31,6 +33,16 @@ using Mat4 = glm::mat4;
 
 using Quat = glm::quat;
 } // namespace Core::BaseType
+
+namespace Core::Container
+{
+template<typename T>
+using DynamicArray = std::vector<T>;
+
+template<class T, size_t N>
+using StaticArray = std::array<T, N>;
+
+} // namespace Core::Container
 
 namespace std
 {
@@ -59,3 +71,12 @@ struct hash<Core::BaseType::Vec3>
 	}
 };
 } // namespace std
+
+namespace HashHelper
+{
+template<typename T>
+struct EnumStructHash
+{
+	bool operator()(T t) const { return static_cast<size_t>(t); }
+};
+} // namespace HashHelper

@@ -190,4 +190,10 @@ uint32_t ReloadGraphicsShader(
 	return newShaderHandle;
 }
 
+int GetUniformLocation(const char* name, int program)
+{
+	int location = glGetUniformLocation(program, name);
+	return location;
+}
+
 } // namespace Renderer

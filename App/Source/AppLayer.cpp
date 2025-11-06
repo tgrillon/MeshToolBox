@@ -1,8 +1,10 @@
 #include "Application/AppLayer.h"
 
+#include "Application/Mesh.h"
+#include "Application/MeshLoader.h"
 #include "Core/Application.h"
 #include "Core/PrintHelpers.h"
-#include "Core/Renderer/Renderer.h"
+#include "Core/Renderer/Buffer.h"
 #include "Core/Renderer/Shader.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -10,45 +12,100 @@
 
 #include <glm/glm.hpp>
 
-namespace Application
+using namespace Core;
+using namespace Core::BaseType;
+using namespace Core::Container;
+using namespace Core::Math::Geometry;
+
+namespace App
 {
 AppLayer::AppLayer()
 {
 	// Create shaders
-	m_Shader = Renderer::CreateGraphicsShader("Data/Shaders/Vertex.glsl", "Data/Shaders/Fragment.glsl");
+	m_Shader = Renderer::CreateGraphicsShader("Data/Shaders/BaseVertex.glsl", "Data/Shaders/BaseFragment.glsl");
 
 	// Create geometry
-	glCreateVertexArrays(1, &m_VertexArray);
-	glCreateBuffers(1, &m_VertexBuffer);
+	glCreateVertexArrays(VaoType::NbVao, m_Vao);
+	glCreateBuffers(VboType::NbVbo, m_Vbo);
 
-	struct Vertex
-	{
-		glm::vec2 Position;
-		glm::vec2 TexCoord;
+	float p = 0.5;
+	float n = -0.5;
+
+	DynamicArray<float> positions = {
+		n, p, n, /* */ p, p, n, /* */ p, p, p, // tri1 dessus
+		n, p, n, /* */ p, p, p, /* */ n, p, p, // tri2
+
+		n, n, n, /* */ p, n, n, /* */ p, p, n, // tri1 avant
+		n, n, n, /* */ p, p, n, /* */ n, p, n, // tri2
+
+		p, n, n, /* */ p, n, p, /* */ p, p, p, // tri1 droite
+		p, n, n, /* */ p, p, p, /* */ p, p, n, // tri2
+
+		p, n, p, /* */ n, n, p, /* */ n, p, p, // tri1 arriÃ¨re
+		p, n, p, /* */ n, p, p, /* */ p, p, p, // tri2
+
+		n, n, p, /* */ n, n, n, /* */ n, p, n, // tri1 gauche
+		n, n, p, /* */ n, p, n, /* */ n, p, p, // tri2
+
+		n, n, n, /* */ p, n, p, /* */ p, n, n, // tri1 dessous
+		n, n, n, /* */ n, n, p, /* */ p, n, p, // tri2
 	};
 
-	Vertex vertices[] = {
-		{ { -1.0f, -1.0f }, { 0.0f, 0.0f } }, // Bottom-left
-		{ { 3.0f, -1.0f }, { 2.0f, 0.0f } }, // Bottom-right
-		{ { -1.0f, 3.0f }, { 0.0f, 2.0f } } // Top-left
+	DynamicArray<float> texCoords = {
+		1 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 3 / 4.f, // up
+		1 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 3 / 4.f, /* */ 1 / 18.f, 3 / 4.f, // up
+
+		1 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 1 / 2.f, // front
+		1 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 1 / 2.f, /* */ 1 / 18.f, 1 / 2.f, // front
+
+		1 / 6.f,  1 / 2.f, /* */ 1 / 6.f,  3 / 4.f, /* */ 2 / 18.f, 3 / 4.f, // right
+		1 / 6.f,  1 / 2.f, /* */ 2 / 18.f, 3 / 4.f, /* */ 2 / 18.f, 1 / 2.f, // right
+
+		2 / 18.f, 1.f,	   /* */ 1 / 18.f, 1.f,		/* */ 1 / 18.f, 3 / 4.f, // back
+		2 / 18.f, 1.f,	   /* */ 1 / 18.f, 3 / 4.f, /* */ 2 / 18.f, 3 / 4.f, // back
+
+		0.f,	  3 / 4.f, /* */ 0.f,	   1 / 2.f, /* */ 1 / 18.f, 1 / 2.f, // left
+		0.f,	  3 / 4.f, /* */ 1 / 18.f, 1 / 2.f, /* */ 1 / 18.f, 3 / 4.f, // left
+
+		1 / 18.f, 0.0f,	   /* */ 2 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 0.0f, // bottom
+		1 / 18.f, 0.0f,	   /* */ 1 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 1 / 4.f, // bottom
 	};
 
-	glNamedBufferData(m_VertexBuffer, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	DynamicArray<float> normals = {
+		0,	1,	0,	/* */ 0,  1,  0,  /* */ 0,	1,	0, // up
+		0,	1,	0,	/* */ 0,  1,  0,  /* */ 0,	1,	0, // up
 
-	// Bind the VBO to VAO at binding index 0
-	glVertexArrayVertexBuffer(m_VertexArray, 0, m_VertexBuffer, 0, sizeof(Vertex));
+		0,	0,	-1, /* */ 0,  0,  -1, /* */ 0,	0,	-1, // front
+		0,	0,	-1, /* */ 0,  0,  -1, /* */ 0,	0,	-1, // front
 
-	// Enable attributes
-	glEnableVertexArrayAttrib(m_VertexArray, 0); // position
-	glEnableVertexArrayAttrib(m_VertexArray, 1); // uv
+		1,	0,	0,	/* */ 1,  0,  0,  /* */ 1,	0,	0, // right
+		1,	0,	0,	/* */ 1,  0,  0,  /* */ 1,	0,	0, // right
 
-	// Format: location, size, type, normalized, relative offset
-	glVertexArrayAttribFormat(m_VertexArray, 0, 2, GL_FLOAT, GL_FALSE, static_cast<GLuint>(offsetof(Vertex, Position)));
-	glVertexArrayAttribFormat(m_VertexArray, 1, 2, GL_FLOAT, GL_FALSE, static_cast<GLuint>(offsetof(Vertex, TexCoord)));
+		0,	0,	1,	/* */ 0,  0,  1,  /* */ 0,	0,	1, // back
+		0,	0,	1,	/* */ 0,  0,  1,  /* */ 0,	0,	1, // back
 
-	// Link attribute locations to binding index 0
-	glVertexArrayAttribBinding(m_VertexArray, 0, 0);
-	glVertexArrayAttribBinding(m_VertexArray, 1, 0);
+		-1, 0,	0,	/* */ -1, 0,  0,  /* */ -1, 0,	0, // left
+		-1, 0,	0,	/* */ -1, 0,  0,  /* */ -1, 0,	0, // left
+
+		0,	-1, 0,	/* */ 0,  -1, 0,  /* */ 0,	-1, 0, // bottom
+		0,	-1, 0,	/* */ 0,  -1, 0,  /* */ 0,	-1, 0, // bottom
+	};
+
+	glBindVertexArray(m_Vao[VaoType::Object]);
+	Renderer::LoadBuffer(m_Vbo[VboType::Position], VboType::Position, 3, positions);
+	Renderer::LoadBuffer(m_Vbo[VboType::TexCoords], VboType::TexCoords, 2, texCoords);
+	// Renderer::LoadBuffer(m_Vbo[VboType::Normal], VboType::Normal, 3, normals);
+
+	m_Texture = Renderer::LoadTexture("Data/Texture/blocks.png");
+
+	glBindTexture(GL_TEXTURE_2D, m_Texture.Handle);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);
+
+	m_Camera = Camera(45.0f, 1.775f, 0.1f, 1000.0f);
 
 	// Print various OpenGL informations to stdout
 	Info(
@@ -62,8 +119,8 @@ AppLayer::AppLayer()
 
 AppLayer::~AppLayer()
 {
-	glDeleteVertexArrays(1, &m_VertexArray);
-	glDeleteBuffers(1, &m_VertexBuffer);
+	glDeleteVertexArrays(VaoType::NbVao, m_Vao);
+	glDeleteBuffers(VboType::NbVbo, m_Vbo);
 
 	glDeleteProgram(m_Shader);
 
@@ -75,10 +132,17 @@ AppLayer::~AppLayer()
 		glDeleteTextures(1, &renderTexture.Handle);
 		glDeleteFramebuffers(1, &renderFramebuffer.Handle);
 	}
+
+	if(m_Texture.Handle != 0)
+	{
+		glDeleteTextures(1, &m_Texture.Handle);
+	}
 }
 
-void AppLayer::OnUpdate(float)
-{}
+void AppLayer::OnUpdate(const float dt)
+{
+	m_Camera.OnUpdate(dt);
+}
 
 void AppLayer::OnRender()
 {
@@ -87,6 +151,8 @@ void AppLayer::OnRender()
 
 	const float windowWidth = ImGui::GetContentRegionAvail().x;
 	const float windowHeight = ImGui::GetContentRegionAvail().y;
+
+	m_Camera.SetViewportSize(windowWidth, windowHeight);
 
 	if(windowWidth <= 0 || windowHeight <= 0)
 	{
@@ -117,27 +183,54 @@ void AppLayer::OnRender()
 		reinterpret_cast<void*>(static_cast<uintptr_t>(renderTexture.Handle)),
 		ImVec2(pos.x, pos.y),
 		ImVec2(pos.x + windowWidth, pos.y + windowHeight),
-		ImVec2(0, 1),
-		ImVec2(1, 0));
+		ImVec2(0, 0),
+		ImVec2(1, 1));
 	ImGui::End();
 
 	// Drawing stuff
 	glBindFramebuffer(GL_FRAMEBUFFER, renderFramebuffer.Handle);
 	glViewport(0, 0, static_cast<GLsizei>(windowWidth), static_cast<GLsizei>(windowHeight));
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
 
-	double relativeCursorX = 0.0;
-	double relativeCursorY = 0.0;
-	glfwGetCursorPos(Core::Application::Get().GetWindow(), &relativeCursorX, &relativeCursorY);
+	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	Mat4 mvp = m_Camera.GetViewProjection();
 
 	glUseProgram(m_Shader);
-	glUniform1f(0, Core::Application::GetTime());
-	glUniform2f(1, windowWidth, windowHeight);
+	glUniformMatrix4fv(Renderer::GetUniformLocation("u_Mvp", m_Shader), 1, GL_FALSE, glm::value_ptr(mvp));
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_Texture.Handle);
+	glUniform1i(Renderer::GetUniformLocation("u_Texture", m_Shader), 0);
 
 	// Render
-	glBindVertexArray(m_VertexArray);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glBindVertexArray(m_Vao[VaoType::Object]);
+	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
-} // namespace Application
+
+void AppLayer::OnEvent(Event& event)
+{
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<KeyPressedEvent>(
+		[this](KeyPressedEvent& e)
+		{
+			switch(e.GetKeyCode())
+			{
+				case Key::L:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+					break;
+				case Key::P:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+					break;
+				case Key::F:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+					break;
+			}
+			return false;
+		});
+
+	m_Camera.OnEvent(event);
+}
+
+} // namespace App

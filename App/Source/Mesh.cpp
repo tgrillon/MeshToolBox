@@ -1,6 +1,6 @@
 #include "Application/Mesh.h"
 
-#include "Application/ExtraDataType.h"
+#include "Application/ExtraDataTypes.h"
 #include "Application/PrimitiveProxy.h"
 #include "Application/VertexPair.h"
 #include "Core/MathHelpers.h"
@@ -329,6 +329,22 @@ void Mesh::UpdateVerticesBoundaryStatus()
 				previousBoundaryStatus.SetData(true);
 			}
 		}
+	}
+}
+
+void Mesh::GetBoundingBox(Core::BaseType::Vec3& pMin, Core::BaseType::Vec3& pMax)
+{
+	pMin = { 1000, 1000, 1000 };
+	pMax = { -1000, -1000, -1000 };
+	for(auto&& curVertex : m_Vertices)
+	{
+		pMin.x = std::min(pMin.x, curVertex.Position.x);
+		pMin.y = std::min(pMin.y, curVertex.Position.y);
+		pMin.z = std::min(pMin.z, curVertex.Position.z);
+
+		pMax.x = std::max(pMax.x, curVertex.Position.x);
+		pMax.y = std::max(pMax.y, curVertex.Position.y);
+		pMax.z = std::max(pMax.z, curVertex.Position.z);
 	}
 }
 } // namespace Data::Surface

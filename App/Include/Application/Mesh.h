@@ -104,6 +104,8 @@ public:
 	/// @brief Update the boundary status stored on each vertex as an extra data (true = boundary vertex, false = interrior vertex)
 	void UpdateVerticesBoundaryStatus();
 
+	void GetBoundingBox(Core::BaseType::Vec3& pMin, Core::BaseType::Vec3& pMax);
+
 public:
 	/// @brief Circulator to iterate over the vertices around a given vertex.
 	/// @note The circulator will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.

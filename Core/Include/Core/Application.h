@@ -52,7 +52,7 @@ private:
 
 	bool OnResizeEvent(WindowResizeEvent& event);
 	bool OnCloseEvent(WindowCloseEvent& event);
-	bool OnKeyReleasedEvent(KeyReleasedEvent& event);
+	bool OnKeyPressedEvent(KeyPressedEvent& event);
 
 private:
 	ApplicationSpecification m_Specification;
@@ -62,7 +62,4 @@ private:
 	std::function<void()> m_MenubarCallback;
 	std::vector<std::unique_ptr<Layer>> m_LayerStack;
 };
-
-// Implemented by CLIENT
-std::unique_ptr<Application> CreateApplication(int argc, char** argv);
 } // namespace Core
