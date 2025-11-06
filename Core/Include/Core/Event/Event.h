@@ -1,9 +1,17 @@
 #pragma once
 
+#include "Core/PrintHelpers.h"
+
 #include <sstream>
 #include <string>
 
 #define BIT(x) (1 << x)
+
+#define BIND_EVENT_FN(fn) \
+	[this](auto&&... args) -> decltype(auto) \
+	{ \
+		return this->fn(std::forward<decltype(args)>(args)...); \
+	}
 
 namespace Core
 {
@@ -104,6 +112,9 @@ public:
 		if(m_Event.GetEventType() == T::GetStaticType())
 		{
 			m_Event.Handled |= func(static_cast<T&>(m_Event));
+#if 0
+			Trace("{} event triggered", m_Event.GetName());
+#endif
 			return true;
 		}
 		return false;

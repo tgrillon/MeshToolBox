@@ -227,21 +227,9 @@ float Application::GetTime()
 void Application::OnEvent(Event& event)
 {
 	EventDispatcher dispatcher(event);
-	dispatcher.Dispatch<WindowResizeEvent>(
-		[this](WindowResizeEvent& event)
-		{
-			return this->OnResizeEvent(event);
-		});
-	dispatcher.Dispatch<WindowCloseEvent>(
-		[this](WindowCloseEvent& event)
-		{
-			return this->OnCloseEvent(event);
-		});
-	dispatcher.Dispatch<KeyReleasedEvent>(
-		[this](KeyReleasedEvent& event)
-		{
-			return this->OnKeyReleasedEvent(event);
-		});
+	dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Application::OnResizeEvent));
+	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnCloseEvent));
+	dispatcher.Dispatch<KeyPressedEvent>(BIND_EVENT_FN(Application::OnKeyPressedEvent));
 
 	for(const std::unique_ptr<Layer>& layer : m_LayerStack)
 	{
@@ -262,12 +250,12 @@ bool Application::OnCloseEvent(WindowCloseEvent&)
 	return true;
 }
 
-bool Application::OnKeyReleasedEvent(KeyReleasedEvent& event)
+bool Application::OnKeyPressedEvent(KeyPressedEvent& event)
 {
-	if(Input::IsKeyReleased(Key::Escape))
+	if(event.GetKeyCode() == Key::Escape)
 	{
 		m_Running = false;
-		return true;
+		Trace("Key::Escape is pressed");
 	}
 
 	return false;

@@ -1,4 +1,4 @@
-#include "Application/ExtraDataType.h"
+#include "Application/ExtraDataTypes.h"
 #include "Application/Mesh.h"
 #include "Application/MeshIntegrity.h"
 #include "Application/MeshLoader.h"

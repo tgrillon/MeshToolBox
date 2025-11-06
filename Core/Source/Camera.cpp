@@ -1,251 +1,153 @@
+
 #include "Core/Camera.h"
+
+#include "Core/Event/Input.h"
+#include "Core/MathHelpers.h"
+
+#include <algorithm>
+#include <cstdio>
+
+using namespace Core::BaseType;
+using namespace Core::Math::Geometry;
 
 namespace Core
 {
 
-using namespace BaseType;
-using namespace Math::Geometry;
-
-Camera::Camera()
-	: m_CameraMode(CameraMode::Free)
-	, m_CameraUp(Vec3(0, 1, 0))
-	, m_FOV(45)
-	, m_CameraPositionDelta(Vec3(0, 0, 0))
-	, m_CameraScale(.5f)
-	, m_MaxPitchRate(5)
-	, m_MaxHeadingRate(5)
-	, m_MoveCamera(false)
-{}
-
-Camera::~Camera()
-{}
-
-void Camera::Reset()
+Camera::Camera(float fov, float aspectRatio, float nearClip, float farClip)
+	: m_FOV(fov)
+	, m_AspectRatio(aspectRatio)
+	, m_NearClip(nearClip)
+	, m_FarClip(farClip)
+	, m_Projection(Perspective(Radians(fov), aspectRatio, nearClip, farClip))
 {
-	m_CameraUp = Vec3(0, 1, 0);
+	UpdateView();
 }
 
-void Camera::Update()
+void Camera::UpdateProjection()
 {
-	m_CameraDirection = Normalize(m_CameraLookAt - m_CameraPosition);
-	//need to set the matrix state. this is only important because lighting doesn't work if this isn't done
-	glViewport(m_ViewportX, m_ViewportY, m_WindowWidth, m_WindowHeight);
+	m_AspectRatio = m_ViewportWidth / m_ViewportHeight;
+	m_Projection = Perspective(Radians(m_FOV), m_AspectRatio, m_NearClip, m_FarClip);
+	m_Projection[1][1] *= -1; // Flip Y for OpenGL
+}
 
-	if(m_CameraMode == CameraMode::Ortho)
+void Camera::UpdateView()
+{
+	m_Position = CalculatePosition();
+
+	Quat orientation = GetOrientation();
+	m_View = Translate(IdentityMat4(), m_Position) * ToMat4(orientation);
+	m_View = Inverse(m_View);
+}
+
+std::pair<float, float> Camera::PanSpeed() const
+{
+	float x = std::min(m_ViewportWidth / 1000.0f, 2.4f); // max = 2.4f
+	float xFactor = 0.0366f * (x * x) - 0.1778f * x + 0.3021f;
+
+	float y = std::min(m_ViewportHeight / 1000.0f, 2.4f); // max = 2.4f
+	float yFactor = 0.0366f * (y * y) - 0.1778f * y + 0.3021f;
+
+	return { xFactor, yFactor };
+}
+
+float Camera::RotationSpeed() const
+{
+	return 0.8f;
+}
+
+float Camera::ZoomSpeed() const
+{
+	float distance = m_Distance * 0.2f;
+	distance = std::max(distance, 0.0f);
+	float speed = distance * distance;
+	speed = std::min(speed, 100.0f); // max speed = 100
+	return speed;
+}
+
+void Camera::OnUpdate(const float ts)
+{
+	const Vec2& mouse{ Input::GetMouseX(), Input::GetMouseY() };
+	Vec2 delta = (mouse - m_InitialMousePosition) * 0.003f;
+	m_InitialMousePosition = mouse;
+
+	if(Input::IsMouseButtonPressed(Mouse::ButtonMiddle))
+		MousePan(delta);
+	else if(Input::IsMouseButtonPressed(Mouse::ButtonLeft))
+		MouseRotate(delta);
+	else if(Input::IsMouseButtonPressed(Mouse::ButtonRight))
 	{
-		//our m_Projection matrix will be an orthogonal one in this case
-		//if the values are not floating point, this command does not work properly
-		//need to multiply by m_AspectRatio!!! (otherise will not scale properly)
-		m_Projection = Ortho(-1.5f * float(m_AspectRatio), 1.5f * float(m_AspectRatio), -1.5f, 1.5f, -10.0f, 10.f);
+		if(std::abs(delta.x) > std::abs(delta.y * m_AspectRatio))
+			MouseZoom(delta.x);
+		else
+			MouseZoom(delta.y);
 	}
-	else if(m_CameraMode == CameraMode::Free)
+
+	UpdateView();
+}
+
+void Camera::OnEvent(Event& e)
+{
+	EventDispatcher dispatcher(e);
+	dispatcher.Dispatch<MouseScrolledEvent>(BIND_EVENT_FN(Camera::OnMouseScroll));
+}
+
+bool Camera::OnMouseScroll(MouseScrolledEvent& e)
+{
+	float delta = e.GetYOffset() * 0.1f;
+	MouseZoom(delta);
+	UpdateView();
+	return false;
+}
+
+void Camera::MousePan(const Vec2& delta)
+{
+	auto [xSpeed, ySpeed] = PanSpeed();
+	m_Translation.x += -delta.x * xSpeed * m_Distance;
+	m_Translation.y += delta.y * ySpeed * m_Distance;
+}
+
+void Camera::MouseRotate(const Vec2& delta)
+{
+	float yawSign = GetUpDirection().y < 0 ? -1.0f : 1.0f;
+	m_Yaw += yawSign * delta.x * RotationSpeed();
+	m_Pitch += delta.y * RotationSpeed();
+}
+
+void Camera::MouseZoom(float delta)
+{
+	m_Distance -= delta * ZoomSpeed();
+	if(m_Distance < 1.0f)
 	{
-		m_Projection = Perspective(m_FOV, m_AspectRatio, m_NearClip, m_FarClip);
-		//detmine axis for pitch rotation
-		Vec3 axis = Cross(m_CameraDirection, m_CameraUp);
-		//compute quaternion for pitch based on the camera pitch angle
-		Quat pitch_quat = AngleAxis(m_CameraPitch, axis);
-		//determine heading quaternion from the camera up vector and the heading angle
-		Quat heading_quat = AngleAxis(m_CameraHeading, m_CameraUp);
-		//add the two quaternions
-		Quat temp = Cross(pitch_quat, heading_quat);
-		temp = Normalize(temp);
-		//update the direction from the quaternion
-		m_CameraDirection = Rotate(temp, m_CameraDirection);
-		//add the camera delta
-		m_CameraPosition += m_CameraPositionDelta;
-		//set the look at to be infront of the camera
-		m_CameraLookAt = m_CameraPosition + m_CameraDirection * 1.0f;
-		//damping for smooth camera
-		m_CameraHeading *= .5;
-		m_CameraPitch *= .5;
-		m_CameraPositionDelta = m_CameraPositionDelta * .8f;
-	}
-	//compute the m_MVP
-	m_View = LookAt(m_CameraPosition, m_CameraLookAt, m_CameraUp);
-	m_Model = Mat4(1.0f);
-	m_MVP = m_Projection * m_View * m_Model;
-}
-
-//Setting Functions
-void Camera::SetMode(CameraMode cam_mode)
-{
-	m_CameraMode = cam_mode;
-	m_CameraUp = Vec3(0, 1, 0);
-}
-
-void Camera::SetPosition(Vec3 pos)
-{
-	m_CameraPosition = pos;
-}
-
-void Camera::SetLookAt(Vec3 pos)
-{
-	m_CameraLookAt = pos;
-}
-
-void Camera::SetFOV(double fov)
-{
-	m_FOV = fov;
-}
-
-void Camera::SetViewport(int loc_x, int loc_y, int width, int height)
-{
-	m_ViewportX = loc_x;
-	m_ViewportY = loc_y;
-	m_WindowWidth = width;
-	m_WindowHeight = height;
-	//need to use doubles division here, it will not work otherwise and it is possible to get a zero m_AspectRatio ratio with integer rounding
-	m_AspectRatio = double(width) / double(height);
-	;
-}
-
-void Camera::SetClipping(double near_clip_distance, double far_clip_distance)
-{
-	m_NearClip = near_clip_distance;
-	m_FarClip = far_clip_distance;
-}
-
-void Camera::Move(CameraDirection dir)
-{
-	if(m_CameraMode == CameraMode::Free)
-	{
-		switch(dir)
-		{
-			case CameraDirection::Up:
-				m_CameraPositionDelta += m_CameraUp * m_CameraScale;
-				break;
-			case CameraDirection::Down:
-				m_CameraPositionDelta -= m_CameraUp * m_CameraScale;
-				break;
-			case CameraDirection::Left:
-				m_CameraPositionDelta -= Cross(m_CameraDirection, m_CameraUp) * m_CameraScale;
-				break;
-			case CameraDirection::Right:
-				m_CameraPositionDelta += Cross(m_CameraDirection, m_CameraUp) * m_CameraScale;
-				break;
-			case CameraDirection::Forward:
-				m_CameraPositionDelta += m_CameraDirection * m_CameraScale;
-				break;
-			case CameraDirection::Back:
-				m_CameraPositionDelta -= m_CameraDirection * m_CameraScale;
-				break;
-		}
+		m_FocalPoint += GetForwardDirection();
+		m_Distance = 1.0f;
 	}
 }
 
-void Camera::ChangePitch(float degrees)
+Vec3 Camera::GetUpDirection() const
 {
-	//Check bounds with the max pitch rate so that we aren't moving too fast
-	if(degrees < -m_MaxPitchRate)
-	{
-		degrees = -m_MaxPitchRate;
-	}
-	else if(degrees > m_MaxPitchRate)
-	{
-		degrees = m_MaxPitchRate;
-	}
-	m_CameraPitch += degrees;
-
-	//Check bounds for the camera pitch
-	if(m_CameraPitch > 360.0f)
-	{
-		m_CameraPitch -= 360.0f;
-	}
-	else if(m_CameraPitch < -360.0f)
-	{
-		m_CameraPitch += 360.0f;
-	}
+	return Rotate(GetOrientation(), Vec3(0.0f, 1.0f, 0.0f));
 }
 
-void Camera::ChangeHeading(float degrees)
+Vec3 Camera::GetRightDirection() const
 {
-	//Check bounds with the max heading rate so that we aren't moving too fast
-	if(degrees < -m_MaxHeadingRate)
-	{
-		degrees = -m_MaxHeadingRate;
-	}
-	else if(degrees > m_MaxHeadingRate)
-	{
-		degrees = m_MaxHeadingRate;
-	}
-	//This controls how the heading is changed if the camera is pointed straight up or down
-	//The heading delta direction changes
-	if(m_CameraPitch > 90 && m_CameraPitch < 270 || (m_CameraPitch < -90 && m_CameraPitch > -270))
-	{
-		m_CameraHeading -= degrees;
-	}
-	else
-	{
-		m_CameraHeading += degrees;
-	}
-	//Check bounds for the camera heading
-	if(m_CameraHeading > 360.0f)
-	{
-		m_CameraHeading -= 360.0f;
-	}
-	else if(m_CameraHeading < -360.0f)
-	{
-		m_CameraHeading += 360.0f;
-	}
+	return Rotate(GetOrientation(), Vec3(1.0f, 0.0f, 0.0f));
 }
 
-void Camera::Move2D(int x, int y)
+Vec3 Camera::GetForwardDirection() const
 {
-	//compute the mouse delta from the previous mouse position
-	Vec3 mouse_delta = m_MousePosition - Vec3(x, y, 0);
-	//if the camera is moving, meaning that the mouse was clicked and dragged, change the pitch and heading
-	if(m_MoveCamera)
-	{
-		ChangeHeading(.08f * mouse_delta.x);
-		ChangePitch(.08f * mouse_delta.y);
-	}
-	m_MousePosition = Vec3(x, y, 0);
+	return Rotate(GetOrientation(), Vec3(0.0f, 0.0f, -1.0f));
 }
 
-void Camera::SetPos(int button, int state, int x, int y)
+Vec3 Camera::CalculatePosition() const
 {
-	if(button == 3 && state == GLFW_PRESS)
-	{
-		m_CameraPositionDelta += m_CameraUp * .05f;
-	}
-	else if(button == 4 && state == GLFW_PRESS)
-	{
-		m_CameraPositionDelta -= m_CameraUp * .05f;
-	}
-	else if(button == GLFW_MOUSE_BUTTON_LEFT && state == GLFW_PRESS)
-	{
-		m_MoveCamera = true;
-	}
-	else if(button == GLFW_MOUSE_BUTTON_LEFT && state == GLFW_RELEASE)
-	{
-		m_MoveCamera = false;
-	}
-	m_MousePosition = Vec3(x, y, 0);
+	Vec3 position = m_FocalPoint - GetForwardDirection() * m_Distance;
+	position += GetRightDirection() * m_Translation.x;
+	position += GetUpDirection() * m_Translation.y;
+	return position;
 }
 
-CameraMode Camera::GetMode()
+Quat Camera::GetOrientation() const
 {
-	return m_CameraMode;
-}
-
-void Camera::GetViewport(int& loc_x, int& loc_y, int& width, int& height)
-{
-	loc_x = m_ViewportX;
-	loc_y = m_ViewportY;
-	width = m_WindowWidth;
-	height = m_WindowHeight;
-}
-
-double Camera::GetAspectRatio() const
-{
-	return m_AspectRatio;
-}
-
-void Camera::GetMatricies(Mat4& P, Mat4& V, Mat4& M)
-{
-	P = m_Projection;
-	V = m_View;
-	M = m_Model;
+	return Quat(Vec3(-m_Pitch, -m_Yaw, 0.0f));
 }
 } // namespace Core

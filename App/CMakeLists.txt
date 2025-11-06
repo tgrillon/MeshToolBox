@@ -6,6 +6,7 @@ set(SOURCES
     Source/RunApp.cpp
     Source/AppLayer.cpp
     Source/Mesh.cpp
+    Source/MeshBuffer.cpp
     Source/MeshCirculator.cpp
     Source/MeshExporter.cpp
     Source/MeshLoader.cpp

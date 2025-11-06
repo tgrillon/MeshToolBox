@@ -1,5 +1,7 @@
 #include "Application/AppLayer.h"
 
+#include "Application/Mesh.h"
+#include "Application/MeshLoader.h"
 #include "Core/Application.h"
 #include "Core/PrintHelpers.h"
 #include "Core/Renderer/Buffer.h"
@@ -12,8 +14,10 @@
 
 using namespace Core;
 using namespace Core::BaseType;
+using namespace Core::Container;
+using namespace Core::Math::Geometry;
 
-namespace Application
+namespace App
 {
 AppLayer::AppLayer()
 {
@@ -24,10 +28,10 @@ AppLayer::AppLayer()
 	glCreateVertexArrays(VaoType::NbVao, m_Vao);
 	glCreateBuffers(VboType::NbVbo, m_Vbo);
 
-	float p = 1.0;
-	float n = 0.0;
+	float p = 0.5;
+	float n = -0.5;
 
-	std::vector<float> positions = {
+	DynamicArray<float> positions = {
 		n, p, n, /* */ p, p, n, /* */ p, p, p, // tri1 dessus
 		n, p, n, /* */ p, p, p, /* */ n, p, p, // tri2
 
@@ -43,11 +47,11 @@ AppLayer::AppLayer()
 		n, n, p, /* */ n, n, n, /* */ n, p, n, // tri1 gauche
 		n, n, p, /* */ n, p, n, /* */ n, p, p, // tri2
 
-		n, n, n, /* */ p, n, n, /* */ p, n, p, // tri1 dessous
-		n, n, n, /* */ p, n, p, /* */ n, n, p, // tri2
+		n, n, n, /* */ p, n, p, /* */ p, n, n, // tri1 dessous
+		n, n, n, /* */ n, n, p, /* */ p, n, p, // tri2
 	};
 
-	std::vector<float> texCoords = {
+	DynamicArray<float> texCoords = {
 		1 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 3 / 4.f, // up
 		1 / 18.f, 1 / 2.f, /* */ 2 / 18.f, 3 / 4.f, /* */ 1 / 18.f, 3 / 4.f, // up
 
@@ -63,11 +67,11 @@ AppLayer::AppLayer()
 		0.f,	  3 / 4.f, /* */ 0.f,	   1 / 2.f, /* */ 1 / 18.f, 1 / 2.f, // left
 		0.f,	  3 / 4.f, /* */ 1 / 18.f, 1 / 2.f, /* */ 1 / 18.f, 3 / 4.f, // left
 
-		1 / 18.f, 0.0f,	   /* */ 2 / 18.f, 0.0f,	/* */ 2 / 18.f, 1 / 4.f, // bottom
-		1 / 18.f, 0.0f,	   /* */ 2 / 18.f, 1 / 4.f, /* */ 1 / 18.f, 1 / 4.f, // bottom
+		1 / 18.f, 0.0f,	   /* */ 2 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 0.0f, // bottom
+		1 / 18.f, 0.0f,	   /* */ 1 / 18.f, 1 / 4.f, /* */ 2 / 18.f, 1 / 4.f, // bottom
 	};
 
-	std::vector<float> normals = {
+	DynamicArray<float> normals = {
 		0,	1,	0,	/* */ 0,  1,  0,  /* */ 0,	1,	0, // up
 		0,	1,	0,	/* */ 0,  1,  0,  /* */ 0,	1,	0, // up
 
@@ -90,17 +94,18 @@ AppLayer::AppLayer()
 	glBindVertexArray(m_Vao[VaoType::Object]);
 	Renderer::LoadBuffer(m_Vbo[VboType::Position], VboType::Position, 3, positions);
 	Renderer::LoadBuffer(m_Vbo[VboType::TexCoords], VboType::TexCoords, 2, texCoords);
-	Renderer::LoadBuffer(m_Vbo[VboType::Normal], VboType::Normal, 3, normals);
+	// Renderer::LoadBuffer(m_Vbo[VboType::Normal], VboType::Normal, 3, normals);
 
-	m_Texture = Renderer::LoadTexture("Data/Texture/debug2x2red.png");
+	m_Texture = Renderer::LoadTexture("Data/Texture/blocks.png");
 
 	glBindTexture(GL_TEXTURE_2D, m_Texture.Handle);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-	m_Camera.SetLookAt(Vec3{ 0, 0, 0 });
-	Vec2 fbSize = Core::Application::Get().GetFramebufferSize();
-	m_Camera.SetViewport(0, 0, fbSize.x, fbSize.y);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);
+
+	m_Camera = Camera(45.0f, 1.775f, 0.1f, 1000.0f);
 
 	// Print various OpenGL informations to stdout
 	Info(
@@ -134,8 +139,10 @@ AppLayer::~AppLayer()
 	}
 }
 
-void AppLayer::OnUpdate(float)
-{}
+void AppLayer::OnUpdate(const float dt)
+{
+	m_Camera.OnUpdate(dt);
+}
 
 void AppLayer::OnRender()
 {
@@ -144,6 +151,8 @@ void AppLayer::OnRender()
 
 	const float windowWidth = ImGui::GetContentRegionAvail().x;
 	const float windowHeight = ImGui::GetContentRegionAvail().y;
+
+	m_Camera.SetViewportSize(windowWidth, windowHeight);
 
 	if(windowWidth <= 0 || windowHeight <= 0)
 	{
@@ -174,36 +183,54 @@ void AppLayer::OnRender()
 		reinterpret_cast<void*>(static_cast<uintptr_t>(renderTexture.Handle)),
 		ImVec2(pos.x, pos.y),
 		ImVec2(pos.x + windowWidth, pos.y + windowHeight),
-		ImVec2(0, 1),
-		ImVec2(1, 0));
+		ImVec2(0, 0),
+		ImVec2(1, 1));
 	ImGui::End();
 
 	// Drawing stuff
 	glBindFramebuffer(GL_FRAMEBUFFER, renderFramebuffer.Handle);
 	glViewport(0, 0, static_cast<GLsizei>(windowWidth), static_cast<GLsizei>(windowHeight));
+
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	double relativeCursorX = 0.0;
-	double relativeCursorY = 0.0;
-	glfwGetCursorPos(Core::Application::GetWindow(), &relativeCursorX, &relativeCursorY);
-
-	Mat4 p, v, m;
-	m_Camera.GetMatricies(p, v, m);
-
-	Mat4 mvp = p * v * m;
+	Mat4 mvp = m_Camera.GetViewProjection();
 
 	glUseProgram(m_Shader);
-	glUniformMatrix4fv(Renderer::GetUniformLocation("u_Mvp", m_Shader), 1, GL_TRUE, glm::value_ptr(mvp));
+	glUniformMatrix4fv(Renderer::GetUniformLocation("u_Mvp", m_Shader), 1, GL_FALSE, glm::value_ptr(mvp));
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_Texture.Handle);
 	glUniform1i(Renderer::GetUniformLocation("u_Texture", m_Shader), 0);
 
 	// Render
 	glBindVertexArray(m_Vao[VaoType::Object]);
-	glDrawArrays(GL_TRIANGLES, 0, 8);
+	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void AppLayer::OnEvent(Event&)
-{}
+void AppLayer::OnEvent(Event& event)
+{
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<KeyPressedEvent>(
+		[this](KeyPressedEvent& e)
+		{
+			switch(e.GetKeyCode())
+			{
+				case Key::L:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+					break;
+				case Key::P:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+					break;
+				case Key::F:
+					glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+					break;
+			}
+			return false;
+		});
 
-} // namespace Application
+	m_Camera.OnEvent(event);
+}
+
+} // namespace App

@@ -8,6 +8,9 @@
 #pragma once
 
 #include "Core/BaseTypes.h"
+#include "Core/Event/Event.h"
+#include "Core/Event/KeyEvents.h"
+#include "Core/Event/MouseEvents.h"
 #include "Core/MathHelpers.h"
 
 #include <GLFW/glfw3.h>
@@ -15,110 +18,74 @@
 
 namespace Core
 {
-
-enum struct CameraMode : uint8_t
-{
-	Ortho = 0,
-	Orbiter,
-	Free
-};
-
-enum struct CameraDirection : uint8_t
-{
-	Up = 0,
-	Down,
-	Left,
-	Right,
-	Forward,
-	Back
-};
-
-/// @brief A quaternion based camera.
 class Camera
 {
 public:
-	Camera();
-	~Camera();
+	Camera() = default;
+	Camera(float fov, float aspectRatio, float nearClip, float farClip);
 
-	void Reset();
-	/// @brief This function updates the camera depending on the current camera mode, the m_Projection and viewport matricies are computed, then the position and location of the camera is updated.
-	void Update();
+	void OnUpdate(const float ts);
+	void OnEvent(Event& e);
 
-	/// @brief Given a specific moving direction, the camera will be moved in the appropriate direction
-	/// @brief - for a spherical camera this will be around the look_at point
-	/// @brief - for a free camera a delta will be computed for the direction of movement.
-	void Move(CameraDirection dir);
+	inline float GetDistance() const { return m_Distance; }
 
-	/// @brief Change the pitch (up, down) for the free camera
-	void ChangePitch(float degrees);
+	inline void SetDistance(float distance) { m_Distance = distance; }
 
-	/// @brief Change heading (left, right) for the free camera
-	void ChangeHeading(float degrees);
+	inline void SetViewportSize(float width, float height)
+	{
+		m_ViewportWidth = width;
+		m_ViewportHeight = height;
+		UpdateProjection();
+	}
 
-	/// @brief Change the heading and pitch of the camera based on the 2d movement of the mouse
-	void Move2D(int x, int y);
+	const Core::BaseType::Mat4& GetViewMatrix() const { return m_View; }
 
-	/// @brief Changes the camera mode, only three valid modes, Ortho, Free, and Spherical
-	void SetMode(CameraMode cam_mode);
-	/// @brief Set the position of the camera
-	void SetPosition(Core::BaseType::Vec3 pos);
-	/// @brief Set's the look at point for the camera
-	void SetLookAt(BaseType::Vec3 pos);
-	/// @brief Changes the Field of View (FOV) for the camera
-	void SetFOV(double fov);
-	/// @brief Change the viewport location and size
-	void SetViewport(int loc_x, int loc_y, int width, int height);
-	/// @brief Change the clipping distance for the camera
-	void SetClipping(double near_clip_distance, double far_clip_distance);
+	Core::BaseType::Mat4 GetViewProjection() const { return m_Projection * m_View; }
 
-	void SetDistance(double cam_dist);
-	void SetPos(int button, int state, int x, int y);
+	Core::BaseType::Vec3 GetUpDirection() const;
+	Core::BaseType::Vec3 GetRightDirection() const;
+	Core::BaseType::Vec3 GetForwardDirection() const;
 
-	/// @brief Get active camera mode.
-	CameraMode GetMode();
+	const Core::BaseType::Vec3& GetPosition() const { return m_Position; }
 
-	/// @brief Get viewport dimensions.
-	void GetViewport(int& loc_x, int& loc_y, int& width, int& height);
+	glm::quat GetOrientation() const;
 
-	/// @brief Returns aspect ratio.
-	double GetAspectRatio() const;
+	float GetPitch() const { return m_Pitch; }
 
-	/// @brief Get Projection (P), View (V) and Model (M) matrices.
-	void GetMatricies(Core::BaseType::Mat4& P, Core::BaseType::Mat4& V, Core::BaseType::Mat4& M);
+	float GetYaw() const { return m_Yaw; }
 
 private:
-	CameraMode m_CameraMode;
+	void UpdateProjection();
+	void UpdateView();
 
-	int m_ViewportX;
-	int m_ViewportY;
+	bool OnMouseScroll(MouseScrolledEvent& e);
 
-	int m_WindowWidth;
-	int m_WindowHeight;
+	void MousePan(const Core::BaseType::Vec2& delta);
+	void MouseRotate(const Core::BaseType::Vec2& delta);
+	void MouseZoom(float delta);
 
-	double m_AspectRatio;
-	double m_FOV;
-	double m_NearClip;
-	double m_FarClip;
+	Core::BaseType::Vec3 CalculatePosition() const;
 
-	float m_CameraScale;
-	float m_CameraHeading;
-	float m_CameraPitch;
+	std::pair<float, float> PanSpeed() const;
+	float RotationSpeed() const;
+	float ZoomSpeed() const;
 
-	float m_MaxPitchRate;
-	float m_MaxHeadingRate;
-	bool m_MoveCamera;
+private:
+	float m_FOV = 45.0f, m_AspectRatio = 1.778f, m_NearClip = 0.1f, m_FarClip = 1000.0f;
 
-	Core::BaseType::Vec3 m_CameraPosition;
-	Core::BaseType::Vec3 m_CameraPositionDelta;
-	Core::BaseType::Vec3 m_CameraLookAt;
-	Core::BaseType::Vec3 m_CameraDirection;
-
-	Core::BaseType::Vec3 m_CameraUp;
-	Core::BaseType::Vec3 m_MousePosition;
-
-	Core::BaseType::Mat4 m_Projection;
 	Core::BaseType::Mat4 m_View;
-	Core::BaseType::Mat4 m_Model;
-	Core::BaseType::Mat4 m_MVP;
+	Core::BaseType::Mat4 m_Projection;
+	Core::BaseType::Vec3 m_Position = { 0.0f, 0.0f, 0.0f };
+	Core::BaseType::Vec3 m_FocalPoint = { 0.0f, 0.0f, 0.0f };
+
+	Core::BaseType::Vec2 m_InitialMousePosition = { 0.0f, 0.0f };
+
+	Core::BaseType::Vec2 m_Translation = { 0.0f, 0.0f };
+
+	float m_Distance = 10.0f;
+	float m_Pitch = 0.0f, m_Yaw = 0.0f;
+
+	float m_ViewportWidth = 1280, m_ViewportHeight = 720;
 };
+
 } // namespace Core

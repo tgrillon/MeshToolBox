@@ -27,11 +27,17 @@ bool Input::IsMouseButtonPressed(const MouseCode button)
 	return state == GLFW_PRESS;
 }
 
-glm::vec2 Input::GetMousePosition()
+bool Input::IsMouseButtonReleased(const MouseCode button)
 {
 	auto window = static_cast<GLFWwindow*>(Application::GetWindow());
+	auto state = glfwGetMouseButton(window, static_cast<int32_t>(button));
+	return state == GLFW_RELEASE;
+}
+
+BaseType::Vec2 Input::GetMousePosition()
+{
 	double xpos, ypos;
-	glfwGetCursorPos(window, &xpos, &ypos);
+	glfwGetCursorPos(Application::GetWindow(), &xpos, &ypos);
 
 	return { (float)xpos, (float)ypos };
 }

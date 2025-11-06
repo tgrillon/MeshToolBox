@@ -32,6 +32,7 @@ Texture LoadTexture(const std::filesystem::path& path)
 {
 	int width, height, channels;
 	std::string filepath = path.string();
+	stbi_set_flip_vertically_on_load(true);
 	unsigned char* data = stbi_load(filepath.c_str(), &width, &height, &channels, 0);
 
 	if(!data)
