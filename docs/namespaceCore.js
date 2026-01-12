@@ -13,11 +13,21 @@ var namespaceCore =
       [ "VertexIndex", "namespaceCore_1_1BaseType.html#aa586354031c5be69706612b5c5e20f62", null ],
       [ "VertexLocalIndex", "namespaceCore_1_1BaseType.html#a9990eeb2c3ef00920ed2ce4e564a7686", null ]
     ] ],
+    [ "Container", "namespaceCore_1_1Container.html", [
+      [ "DynamicArray", "namespaceCore_1_1Container.html#a2d8b5e62b1d983bfdec5d2118eeebaf2", null ],
+      [ "StaticArray", "namespaceCore_1_1Container.html#a44ef5f469950721f652f0f4a049ecd0f", null ]
+    ] ],
+    [ "Input", "namespaceCore_1_1Input.html", [
+      [ "GetStrFromInput", "namespaceCore_1_1Input.html#a41626f40a48baad59b57bcf012e38bfc", null ],
+      [ "GetStrFromInput", "namespaceCore_1_1Input.html#a0a4c1f675e8c1d5733d489a7f224a5bc", null ],
+      [ "MapToQWERTY", "namespaceCore_1_1Input.html#a7b91cd6021ca6e05c65d417b0a3d67b5", null ]
+    ] ],
     [ "Key", "namespaceCore_1_1Key.html", null ],
     [ "Math", "namespaceCore_1_1Math.html", "namespaceCore_1_1Math" ],
     [ "Mouse", "namespaceCore_1_1Mouse.html", null ],
     [ "Application", "classCore_1_1Application.html", "classCore_1_1Application" ],
     [ "ApplicationSpecification", "structCore_1_1ApplicationSpecification.html", "structCore_1_1ApplicationSpecification" ],
+    [ "Camera", "classCore_1_1Camera.html", "classCore_1_1Camera" ],
     [ "Event", "classCore_1_1Event.html", "classCore_1_1Event" ],
     [ "EventDispatcher", "classCore_1_1EventDispatcher.html", "classCore_1_1EventDispatcher" ],
     [ "Input", "classCore_1_1Input.html", "classCore_1_1Input" ],
@@ -61,7 +71,6 @@ var namespaceCore =
       [ "MouseScrolled", "namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa50edb169910041bb3c06f6e8322d74c1", null ],
       [ "MouseDoubleClick", "namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa0745b0109e994a11eabc451db3ba43d5", null ]
     ] ],
-    [ "CreateApplication", "namespaceCore.html#a5a6d0eb653b89c7c83a4514c47e58c3b", null ],
     [ "GLFWErrorCallback", "namespaceCore.html#af19588f46bc826fa5f71de79f7ce9d99", null ],
     [ "operator<<", "namespaceCore.html#a1edf4ed7625ee7abaf84831b2b24408e", null ],
     [ "s_Application", "namespaceCore.html#a368c16922eb60842617d97c5a5bc6dcf", null ]

@@ -112,19 +112,22 @@ $(document).ready(function(){initNavTree('classCore_1_1Layer.html',''); initResi
 <div class="dynheader">
 Inheritance diagram for Core::Layer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classCore_1_1Layer__inherit__graph.svg" width="175" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCore_1_1Layer__inherit__graph.svg" width="127" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab76c3ca5b85a75ef8eb49159ebb87d71" id="r_ab76c3ca5b85a75ef8eb49159ebb87d71"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html#ab76c3ca5b85a75ef8eb49159ebb87d71">~Layer</a> ()=default</td></tr>
 <tr class="separator:ab76c3ca5b85a75ef8eb49159ebb87d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a999e639e3b6234631bfcbde748bb6ec8" id="r_a999e639e3b6234631bfcbde748bb6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html#a999e639e3b6234631bfcbde748bb6ec8">OnEvent</a> (<a class="el" href="classCore_1_1Event.html">Event</a> &amp;)</td></tr>
-<tr class="separator:a999e639e3b6234631bfcbde748bb6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cf4d45b44aeb12d4abbbd934ea66770" id="r_a5cf4d45b44aeb12d4abbbd934ea66770"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html#a5cf4d45b44aeb12d4abbbd934ea66770">OnUpdate</a> (float)</td></tr>
+<tr class="memdesc:a5cf4d45b44aeb12d4abbbd934ea66770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to update things each frame.  <br /></td></tr>
 <tr class="separator:a5cf4d45b44aeb12d4abbbd934ea66770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f4c5ea98b68d8801502938c31eb6e2e" id="r_a1f4c5ea98b68d8801502938c31eb6e2e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html#a1f4c5ea98b68d8801502938c31eb6e2e">OnRender</a> ()</td></tr>
+<tr class="memdesc:a1f4c5ea98b68d8801502938c31eb6e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to render the layer each frame.  <br /></td></tr>
 <tr class="separator:a1f4c5ea98b68d8801502938c31eb6e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999e639e3b6234631bfcbde748bb6ec8" id="r_a999e639e3b6234631bfcbde748bb6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Layer.html#a999e639e3b6234631bfcbde748bb6ec8">OnEvent</a> (<a class="el" href="classCore_1_1Event.html">Event</a> &amp;)</td></tr>
+<tr class="memdesc:a999e639e3b6234631bfcbde748bb6ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to handle an event each frame.  <br /></td></tr>
+<tr class="separator:a999e639e3b6234631bfcbde748bb6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -180,8 +183,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Layer_8h_source.html#l00013">13</a> of file <a class="el" href="Layer_8h_source.html">Layer.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>{}</div>
+<p>Called to handle an event each frame. </p>
+
+<p>Reimplemented in <a class="el" href="classApp_1_1AppLayer.html#acc2f5e008d9c7a2f19ff03587148732a">App::AppLayer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Layer_8h_source.html#l00020">20</a> of file <a class="el" href="Layer_8h_source.html">Layer.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,7 +215,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classApplication_1_1AppLayer.html#a8da2d2fc4ee6fdb51502d95c83481065">Application::AppLayer</a>.</p>
+<p>Called to render the layer each frame. </p>
+
+<p>Reimplemented in <a class="el" href="classApp_1_1AppLayer.html#af8a15e38dd16b8ed07aa4d181b1a1b0d">App::AppLayer</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Layer_8h_source.html#l00017">17</a> of file <a class="el" href="Layer_8h_source.html">Layer.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   17</span>{}</div>
@@ -239,10 +248,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classApplication_1_1AppLayer.html#a89e9cdad6ae5259e94465fa9c9e3b23a">Application::AppLayer</a>.</p>
+<p>Called to update things each frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Layer_8h_source.html#l00015">15</a> of file <a class="el" href="Layer_8h_source.html">Layer.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>{}</div>
+<p>Reimplemented in <a class="el" href="classApp_1_1AppLayer.html#a5b7de09e6577596196e46f9a637ba44d">App::AppLayer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Layer_8h_source.html#l00014">14</a> of file <a class="el" href="Layer_8h_source.html">Layer.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>

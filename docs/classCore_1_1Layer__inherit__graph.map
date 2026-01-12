@@ -1,5 +1,5 @@
 <map id="Core::Layer" name="Core::Layer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="39,5,135,31"/>
-<area shape="rect" id="Node000002" href="$classApplication_1_1AppLayer.html" title="Application layer class." alt="" coords="5,79,169,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,44,90,79,85,79,85,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="15,5,111,31"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1AppLayer.html" title="Application layer class." alt="" coords="5,79,121,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,44,66,79,61,79,61,44"/>
 </map>

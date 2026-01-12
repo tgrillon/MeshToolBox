@@ -146,6 +146,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa7c22907225568c0210b65337d6e6510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea57c03442f35f846f8778bdc6ed675b" id="r_aea57c03442f35f846f8778bdc6ed675b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Window.html#aea57c03442f35f846f8778bdc6ed675b">SetEventCallback</a> (const <a class="el" href="classCore_1_1Window.html#a73444857dfca72313ab2e82aaf45a91a">EventCallbackFn</a> &amp;callback)</td></tr>
 <tr class="separator:aea57c03442f35f846f8778bdc6ed675b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c04c1aa8e9697e2f21fc1d0f871ab0" id="r_ab1c04c1aa8e9697e2f21fc1d0f871ab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Window.html#ab1c04c1aa8e9697e2f21fc1d0f871ab0">GetViewportSize</a> (uint32_t &amp;width, uint32_t &amp;height)</td></tr>
+<tr class="separator:ab1c04c1aa8e9697e2f21fc1d0f871ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -201,98 +203,141 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00017">17</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    : <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>(specification)</div>
-<div class="line"><span class="lineno">   19</span>{</div>
-<div class="line"><span class="lineno">   20</span>    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);</div>
-<div class="line"><span class="lineno">   21</span>    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);</div>
-<div class="line"><span class="lineno">   22</span>    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</div>
-<div class="line"><span class="lineno">   23</span>    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Width</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698">Width</a>;</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Height</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#ac31cb2fec7390c24848dcb6a504788f2">Height</a>;</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">VSync</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a277607057f3142d98ffe3b73c3d062b3">VSync</a>;</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a7f8dc647339ad2e44a59fddc527424ed">IsResizeable</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a626608e069747c6727735b7d75d34976">IsResizeable</a>;</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a> = glfwCreateWindow(<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Width</a>, <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Height</a>, <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#ace4d0633447b96862f039af5e44a0061">Title</a>.c_str(), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>)</div>
-<div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Failed to create GLFW window!&quot;</span>);</div>
-<div class="line"><span class="lineno">   35</span>        assert(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   36</span>    }</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    glfwMakeContextCurrent(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
-<div class="line"><span class="lineno">   39</span>    gladLoadGL(glfwGetProcAddress);</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    glfwSetWindowUserPointer(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>, &amp;<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>);</div>
-<div class="line"><span class="lineno">   42</span>    glfwSwapInterval(<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">VSync</a> ? 1 : 0);</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment">// Set GLFW callbacks</span></div>
-<div class="line"><span class="lineno">   45</span>    glfwSetWindowSizeCallback(</div>
-<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
-<div class="line"><span class="lineno">   47</span>        [](GLFWwindow* window, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)</div>
-<div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
-<div class="line"><span class="lineno">   50</span>            data-&gt;Width = width;</div>
-<div class="line"><span class="lineno">   51</span>            data-&gt;Height = height;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>            WindowResizeEvent event(width, height);</div>
-<div class="line"><span class="lineno">   54</span>            data-&gt;EventCallback(event);</div>
-<div class="line"><span class="lineno">   55</span>        });</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    glfwSetWindowCloseCallback(</div>
-<div class="line"><span class="lineno">   58</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
-<div class="line"><span class="lineno">   59</span>        [](GLFWwindow* window)</div>
-<div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>            WindowCloseEvent event;</div>
-<div class="line"><span class="lineno">   64</span>            data-&gt;EventCallback(event);</div>
-<div class="line"><span class="lineno">   65</span>        });</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    glfwSetKeyCallback(</div>
-<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
-<div class="line"><span class="lineno">   69</span>        [](GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods)</div>
-<div class="line"><span class="lineno">   70</span>        {</div>
-<div class="line"><span class="lineno">   71</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">switch</span>(action)</div>
-<div class="line"><span class="lineno">   74</span>            {</div>
-<div class="line"><span class="lineno">   75</span>                <span class="keywordflow">case</span> GLFW_PRESS:</div>
-<div class="line"><span class="lineno">   76</span>                {</div>
-<div class="line"><span class="lineno">   77</span>                    KeyPressedEvent event(key, 0);</div>
-<div class="line"><span class="lineno">   78</span>                    data-&gt;EventCallback(event);</div>
-<div class="line"><span class="lineno">   79</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   80</span>                }</div>
-<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">case</span> GLFW_RELEASE:</div>
-<div class="line"><span class="lineno">   82</span>                {</div>
-<div class="line"><span class="lineno">   83</span>                    KeyReleasedEvent event(key);</div>
-<div class="line"><span class="lineno">   84</span>                    data-&gt;EventCallback(event);</div>
-<div class="line"><span class="lineno">   85</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   86</span>                }</div>
-<div class="line"><span class="lineno">   87</span>                <span class="keywordflow">case</span> GLFW_REPEAT:</div>
-<div class="line"><span class="lineno">   88</span>                {</div>
-<div class="line"><span class="lineno">   89</span>                    KeyPressedEvent event(key, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   90</span>                    data-&gt;EventCallback(event);</div>
-<div class="line"><span class="lineno">   91</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   92</span>                }</div>
-<div class="line"><span class="lineno">   93</span>            }</div>
-<div class="line"><span class="lineno">   94</span>        });</div>
-<div class="line"><span class="lineno">   95</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00018">18</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>    : <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>(specification)</div>
+<div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);</div>
+<div class="line"><span class="lineno">   22</span>    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);</div>
+<div class="line"><span class="lineno">   23</span>    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</div>
+<div class="line"><span class="lineno">   24</span>    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Width</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698">Width</a>;</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Height</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#ac31cb2fec7390c24848dcb6a504788f2">Height</a>;</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">VSync</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a277607057f3142d98ffe3b73c3d062b3">VSync</a>;</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a7f8dc647339ad2e44a59fddc527424ed">IsResizeable</a> = <a class="code hl_variable" href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">m_Specification</a>.<a class="code hl_variable" href="structCore_1_1WindowSpecification.html#a626608e069747c6727735b7d75d34976">IsResizeable</a>;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a> = glfwCreateWindow(<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Width</a>, <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Height</a>, <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#ace4d0633447b96862f039af5e44a0061">Title</a>.c_str(), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>)</div>
+<div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Failed to create GLFW window!&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>        assert(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    glfwMakeContextCurrent(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
+<div class="line"><span class="lineno">   40</span>    gladLoadGL(glfwGetProcAddress);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    glfwSetWindowUserPointer(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>, &amp;<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>);</div>
+<div class="line"><span class="lineno">   43</span>    glfwSwapInterval(<a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">VSync</a> ? 1 : 0);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// Set GLFW callbacks</span></div>
+<div class="line"><span class="lineno">   46</span>    glfwSetWindowSizeCallback(</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">   48</span>        [](GLFWwindow* window, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)</div>
+<div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">   51</span>            data-&gt;Width = width;</div>
+<div class="line"><span class="lineno">   52</span>            data-&gt;Height = height;</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>            WindowResizeEvent event(width, height);</div>
+<div class="line"><span class="lineno">   55</span>            data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">   56</span>        });</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    glfwSetWindowCloseCallback(</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">   60</span>        [](GLFWwindow* window)</div>
+<div class="line"><span class="lineno">   61</span>        {</div>
+<div class="line"><span class="lineno">   62</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>            WindowCloseEvent event;</div>
+<div class="line"><span class="lineno">   65</span>            data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">   66</span>        });</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    glfwSetKeyCallback(</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">   70</span>        [](GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods)</div>
+<div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">switch</span>(action)</div>
+<div class="line"><span class="lineno">   75</span>            {</div>
+<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">case</span> GLFW_PRESS:</div>
+<div class="line"><span class="lineno">   77</span>                {</div>
+<div class="line"><span class="lineno">   78</span>                    KeyPressedEvent event(key, 0);</div>
+<div class="line"><span class="lineno">   79</span>                    data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">   80</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   81</span>                }</div>
+<div class="line"><span class="lineno">   82</span>                <span class="keywordflow">case</span> GLFW_RELEASE:</div>
+<div class="line"><span class="lineno">   83</span>                {</div>
+<div class="line"><span class="lineno">   84</span>                    KeyReleasedEvent event(key);</div>
+<div class="line"><span class="lineno">   85</span>                    data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   87</span>                }</div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">case</span> GLFW_REPEAT:</div>
+<div class="line"><span class="lineno">   89</span>                {</div>
+<div class="line"><span class="lineno">   90</span>                    KeyPressedEvent event(key, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   91</span>                    data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">   92</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   93</span>                }</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
+<div class="line"><span class="lineno">   95</span>        });</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    glfwSetMouseButtonCallback(</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">   99</span>        [](GLFWwindow* window, <span class="keywordtype">int</span> button, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">switch</span>(action)</div>
+<div class="line"><span class="lineno">  104</span>            {</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">case</span> GLFW_PRESS:</div>
+<div class="line"><span class="lineno">  106</span>                {</div>
+<div class="line"><span class="lineno">  107</span>                    MouseButtonPressedEvent event(button);</div>
+<div class="line"><span class="lineno">  108</span>                    data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  110</span>                }</div>
+<div class="line"><span class="lineno">  111</span>                <span class="keywordflow">case</span> GLFW_RELEASE:</div>
+<div class="line"><span class="lineno">  112</span>                {</div>
+<div class="line"><span class="lineno">  113</span>                    MouseButtonReleasedEvent event(button);</div>
+<div class="line"><span class="lineno">  114</span>                    data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">  115</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  116</span>                }</div>
+<div class="line"><span class="lineno">  117</span>            }</div>
+<div class="line"><span class="lineno">  118</span>        });</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    glfwSetScrollCallback(</div>
+<div class="line"><span class="lineno">  121</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">  122</span>        [](GLFWwindow* window, <span class="keywordtype">double</span> xOffset, <span class="keywordtype">double</span> yOffset)</div>
+<div class="line"><span class="lineno">  123</span>        {</div>
+<div class="line"><span class="lineno">  124</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>            MouseScrolledEvent event((<span class="keywordtype">float</span>)xOffset, (<span class="keywordtype">float</span>)yOffset);</div>
+<div class="line"><span class="lineno">  127</span>            data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">  128</span>        });</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    glfwSetCursorPosCallback(</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>,</div>
+<div class="line"><span class="lineno">  132</span>        [](GLFWwindow* window, <span class="keywordtype">double</span> xPos, <span class="keywordtype">double</span> yPos)</div>
+<div class="line"><span class="lineno">  133</span>        {</div>
+<div class="line"><span class="lineno">  134</span>            WindowData* data = <span class="keyword">static_cast&lt;</span>WindowData*<span class="keyword">&gt;</span>(glfwGetWindowUserPointer(window));</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            MouseMovedEvent event((<span class="keywordtype">float</span>)xPos, (<span class="keywordtype">float</span>)yPos);</div>
+<div class="line"><span class="lineno">  137</span>            data-&gt;EventCallback(event);</div>
+<div class="line"><span class="lineno">  138</span>        });</div>
+<div class="line"><span class="lineno">  139</span>}</div>
 <div class="ttc" id="aPrintHelpers_8h_html_a3820662fa23f7fb1a776c4398eb83c50"><div class="ttname"><a href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a></div><div class="ttdeci">#define Error(...)</div><div class="ttdef"><b>Definition</b> <a href="PrintHelpers_8h_source.html#l00171">PrintHelpers.h:171</a></div></div>
-<div class="ttc" id="aclassCore_1_1Window_html_a356f446c0445c6987afd719e116217e4"><div class="ttname"><a href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">Core::Window::m_Data</a></div><div class="ttdeci">WindowData m_Data</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00059">Window.h:59</a></div></div>
-<div class="ttc" id="aclassCore_1_1Window_html_a7d1bd6bdbdc2b56177eb6b147f039dd4"><div class="ttname"><a href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">Core::Window::m_Specification</a></div><div class="ttdeci">WindowSpecification m_Specification</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00044">Window.h:44</a></div></div>
-<div class="ttc" id="aclassCore_1_1Window_html_ac1910a3828ecf2a9dc682e5d2a1baa95"><div class="ttname"><a href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">Core::Window::m_Handle</a></div><div class="ttdeci">GLFWwindow * m_Handle</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00046">Window.h:46</a></div></div>
+<div class="ttc" id="aclassCore_1_1Window_html_a356f446c0445c6987afd719e116217e4"><div class="ttname"><a href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">Core::Window::m_Data</a></div><div class="ttdeci">WindowData m_Data</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00061">Window.h:61</a></div></div>
+<div class="ttc" id="aclassCore_1_1Window_html_a7d1bd6bdbdc2b56177eb6b147f039dd4"><div class="ttname"><a href="classCore_1_1Window.html#a7d1bd6bdbdc2b56177eb6b147f039dd4">Core::Window::m_Specification</a></div><div class="ttdeci">WindowSpecification m_Specification</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00046">Window.h:46</a></div></div>
+<div class="ttc" id="aclassCore_1_1Window_html_ac1910a3828ecf2a9dc682e5d2a1baa95"><div class="ttname"><a href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">Core::Window::m_Handle</a></div><div class="ttdeci">GLFWwindow * m_Handle</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00048">Window.h:48</a></div></div>
 <div class="ttc" id="astructCore_1_1WindowSpecification_html_a247df0d9e510b48771525b9c4fe7d698"><div class="ttname"><a href="structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698">Core::WindowSpecification::Width</a></div><div class="ttdeci">uint32_t Width</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00017">Window.h:17</a></div></div>
 <div class="ttc" id="astructCore_1_1WindowSpecification_html_a277607057f3142d98ffe3b73c3d062b3"><div class="ttname"><a href="structCore_1_1WindowSpecification.html#a277607057f3142d98ffe3b73c3d062b3">Core::WindowSpecification::VSync</a></div><div class="ttdeci">bool VSync</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00020">Window.h:20</a></div></div>
 <div class="ttc" id="astructCore_1_1WindowSpecification_html_a626608e069747c6727735b7d75d34976"><div class="ttname"><a href="structCore_1_1WindowSpecification.html#a626608e069747c6727735b7d75d34976">Core::WindowSpecification::IsResizeable</a></div><div class="ttdeci">bool IsResizeable</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00019">Window.h:19</a></div></div>
 <div class="ttc" id="astructCore_1_1WindowSpecification_html_ac31cb2fec7390c24848dcb6a504788f2"><div class="ttname"><a href="structCore_1_1WindowSpecification.html#ac31cb2fec7390c24848dcb6a504788f2">Core::WindowSpecification::Height</a></div><div class="ttdeci">uint32_t Height</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00018">Window.h:18</a></div></div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a7f8dc647339ad2e44a59fddc527424ed"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a7f8dc647339ad2e44a59fddc527424ed">Core::Window::WindowData::IsResizeable</a></div><div class="ttdeci">bool IsResizeable</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00053">Window.h:53</a></div></div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a81abac48959c614891c9f6bd6c175d30"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Core::Window::WindowData::Height</a></div><div class="ttdeci">uint32_t Height</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00052">Window.h:52</a></div></div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_aa0777ade9fe400a991a8e9f82edb57f0"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Core::Window::WindowData::Width</a></div><div class="ttdeci">uint32_t Width</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00051">Window.h:51</a></div></div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_abf84f1c24346ba2aca1209ad41970b69"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">Core::Window::WindowData::VSync</a></div><div class="ttdeci">bool VSync</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00054">Window.h:54</a></div></div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_ace4d0633447b96862f039af5e44a0061"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#ace4d0633447b96862f039af5e44a0061">Core::Window::WindowData::Title</a></div><div class="ttdeci">std::string Title</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00050">Window.h:50</a></div></div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a7f8dc647339ad2e44a59fddc527424ed"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a7f8dc647339ad2e44a59fddc527424ed">Core::Window::WindowData::IsResizeable</a></div><div class="ttdeci">bool IsResizeable</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00055">Window.h:55</a></div></div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a81abac48959c614891c9f6bd6c175d30"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Core::Window::WindowData::Height</a></div><div class="ttdeci">uint32_t Height</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00054">Window.h:54</a></div></div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_aa0777ade9fe400a991a8e9f82edb57f0"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Core::Window::WindowData::Width</a></div><div class="ttdeci">uint32_t Width</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00053">Window.h:53</a></div></div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_abf84f1c24346ba2aca1209ad41970b69"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#abf84f1c24346ba2aca1209ad41970b69">Core::Window::WindowData::VSync</a></div><div class="ttdeci">bool VSync</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00056">Window.h:56</a></div></div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_ace4d0633447b96862f039af5e44a0061"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#ace4d0633447b96862f039af5e44a0061">Core::Window::WindowData::Title</a></div><div class="ttdeci">std::string Title</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00052">Window.h:52</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,11 +356,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00097">97</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
-<div class="line"><span class="lineno">   99</span>    <a class="code hl_function" href="classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3">Destroy</a>();</div>
-<div class="line"><span class="lineno">  100</span>}</div>
-<div class="ttc" id="aclassCore_1_1Window_html_abb448f26098fb61a815e21f0c52024e3"><div class="ttname"><a href="classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3">Core::Window::Destroy</a></div><div class="ttdeci">void Destroy()</div><div class="ttdef"><b>Definition</b> <a href="Window_8cpp_source.html#l00102">Window.cpp:102</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00141">141</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3">Destroy</a>();</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="aclassCore_1_1Window_html_abb448f26098fb61a815e21f0c52024e3"><div class="ttname"><a href="classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3">Core::Window::Destroy</a></div><div class="ttdeci">void Destroy()</div><div class="ttdef"><b>Definition</b> <a href="Window_8cpp_source.html#l00152">Window.cpp:152</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,13 +380,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00102">102</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>{</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>)</div>
-<div class="line"><span class="lineno">  105</span>        glfwDestroyWindow(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00152">152</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>)</div>
+<div class="line"><span class="lineno">  155</span>        glfwDestroyWindow(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  158</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,12 +405,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00115">115</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordtype">int</span> width, height;</div>
-<div class="line"><span class="lineno">  118</span>    glfwGetFramebufferSize(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>, &amp;width, &amp;height);</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> { width, height };</div>
-<div class="line"><span class="lineno">  120</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00165">165</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>{</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">int</span> width, height;</div>
+<div class="line"><span class="lineno">  168</span>    glfwGetFramebufferSize(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>, &amp;width, &amp;height);</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> { width, height };</div>
+<div class="line"><span class="lineno">  170</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,6 +442,40 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ab1c04c1aa8e9697e2f21fc1d0f871ab0" name="ab1c04c1aa8e9697e2f21fc1d0f871ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c04c1aa8e9697e2f21fc1d0f871ab0">&#9670;&#160;</a></span>GetViewportSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core::Window::GetViewportSize </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00146">146</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
+<div class="line"><span class="lineno">  148</span>    width = <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0">Width</a>;</div>
+<div class="line"><span class="lineno">  149</span>    height = <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a81abac48959c614891c9f6bd6c175d30">Height</a>;</div>
+<div class="line"><span class="lineno">  150</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aea57c03442f35f846f8778bdc6ed675b" name="aea57c03442f35f846f8778bdc6ed675b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea57c03442f35f846f8778bdc6ed675b">&#9670;&#160;</a></span>SetEventCallback()</h2>
 
@@ -413,11 +492,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00127">127</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
-<div class="line"><span class="lineno">  129</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a93bb1be71dbfbc413a40ce2f5b6f5ffe">EventCallback</a> = callback;</div>
-<div class="line"><span class="lineno">  130</span>}</div>
-<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a93bb1be71dbfbc413a40ce2f5b6f5ffe"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a93bb1be71dbfbc413a40ce2f5b6f5ffe">Core::Window::WindowData::EventCallback</a></div><div class="ttdeci">EventCallbackFn EventCallback</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00056">Window.h:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00177">177</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_variable" href="classCore_1_1Window.html#a356f446c0445c6987afd719e116217e4">m_Data</a>.<a class="code hl_variable" href="structCore_1_1Window_1_1WindowData.html#a93bb1be71dbfbc413a40ce2f5b6f5ffe">EventCallback</a> = callback;</div>
+<div class="line"><span class="lineno">  180</span>}</div>
+<div class="ttc" id="astructCore_1_1Window_1_1WindowData_html_a93bb1be71dbfbc413a40ce2f5b6f5ffe"><div class="ttname"><a href="structCore_1_1Window_1_1WindowData.html#a93bb1be71dbfbc413a40ce2f5b6f5ffe">Core::Window::WindowData::EventCallback</a></div><div class="ttdeci">EventCallbackFn EventCallback</div><div class="ttdef"><b>Definition</b> <a href="Window_8h_source.html#l00058">Window.h:58</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -436,10 +515,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00122">122</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
-<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> glfwWindowShouldClose(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>) != 0;</div>
-<div class="line"><span class="lineno">  125</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00172">172</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>{</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> glfwWindowShouldClose(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>) != 0;</div>
+<div class="line"><span class="lineno">  175</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -458,10 +537,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00110">110</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
-<div class="line"><span class="lineno">  112</span>    glfwSwapBuffers(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
-<div class="line"><span class="lineno">  113</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Window_8cpp_source.html#l00160">160</a> of file <a class="el" href="Window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{</div>
+<div class="line"><span class="lineno">  162</span>    glfwSwapBuffers(<a class="code hl_variable" href="classCore_1_1Window.html#ac1910a3828ecf2a9dc682e5d2a1baa95">m_Handle</a>);</div>
+<div class="line"><span class="lineno">  163</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -486,7 +565,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00059">59</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00061">61</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
 
 </div>
 </div>
@@ -510,7 +589,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00046">46</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00048">48</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +613,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00044">44</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Window_8h_source.html#l00046">46</a> of file <a class="el" href="Window_8h_source.html">Window.h</a>.</p>
 
 </div>
 </div>

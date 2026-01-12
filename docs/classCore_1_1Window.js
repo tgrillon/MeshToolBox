@@ -7,6 +7,7 @@ var classCore_1_1Window =
     [ "Destroy", "classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3", null ],
     [ "GetFramebufferSize", "classCore_1_1Window.html#a55bb4d8e1f155bb75413cf19eaf1e47d", null ],
     [ "GetHandle", "classCore_1_1Window.html#aa7c22907225568c0210b65337d6e6510", null ],
+    [ "GetViewportSize", "classCore_1_1Window.html#ab1c04c1aa8e9697e2f21fc1d0f871ab0", null ],
     [ "SetEventCallback", "classCore_1_1Window.html#aea57c03442f35f846f8778bdc6ed675b", null ],
     [ "ShouldClose", "classCore_1_1Window.html#abd889864b76a33fcdfed8488e1de7c37", null ],
     [ "Update", "classCore_1_1Window.html#a15a5757f30d9af37cf4ef3f41cddb4d1", null ],

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['window_0',['Window',['../classCore_1_1Window.html',1,'Core']]],
-  ['windowcloseevent_1',['WindowCloseEvent',['../classCore_1_1WindowCloseEvent.html',1,'Core']]],
-  ['windowdata_2',['WindowData',['../structCore_1_1Window_1_1WindowData.html',1,'Core::Window']]],
-  ['windowresizeevent_3',['WindowResizeEvent',['../classCore_1_1WindowResizeEvent.html',1,'Core']]],
-  ['windowspecification_4',['WindowSpecification',['../structCore_1_1WindowSpecification.html',1,'Core']]]
+  ['vertex_0',['Vertex',['../structData_1_1Primitive_1_1Vertex.html',1,'Data::Primitive']]],
+  ['vertexpair_1',['VertexPair',['../classData_1_1Primitive_1_1VertexPair.html',1,'Data::Primitive']]],
+  ['vertexproxy_2',['VertexProxy',['../classData_1_1Primitive_1_1VertexProxy.html',1,'Data::Primitive']]],
+  ['verticesaroundvertexcirculator_3',['VerticesAroundVertexCirculator',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexCirculator.html',1,'Data::Surface::Mesh']]],
+  ['verticesaroundvertexrange_4',['VerticesAroundVertexRange',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html',1,'Data::Surface::Mesh']]],
+  ['verticestexcoordsextradata_5',['VerticesTexCoordsExtraData',['../classData_1_1ExtraData_1_1VerticesTexCoordsExtraData.html',1,'Data::ExtraData']]]
 ];

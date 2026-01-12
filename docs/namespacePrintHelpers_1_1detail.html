@@ -170,7 +170,7 @@ template&lt;typename... Args&gt; </div>
 <div class="line"><span class="lineno">  130</span><span class="preprocessor">#else</span></div>
 <div class="line"><span class="lineno">  131</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">  132</span>    std::cout &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">  133</span>        <span class="stringliteral">&quot;{}[DEBUG]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  133</span>        <span class="stringliteral">&quot;{}[DEBUG]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">  134</span>        Color::Gray,</div>
 <div class="line"><span class="lineno">  135</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">  136</span>        Color::Blue,</div>
@@ -221,7 +221,7 @@ template&lt;typename... Args&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  113</span>{</div>
 <div class="line"><span class="lineno">  114</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">  115</span>    std::cerr &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">  116</span>        <span class="stringliteral">&quot;{}[ERROR]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  116</span>        <span class="stringliteral">&quot;{}[ERROR]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">  117</span>        Color::BrightRed,</div>
 <div class="line"><span class="lineno">  118</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">  119</span>        Color::Blue,</div>
@@ -270,7 +270,7 @@ template&lt;typename... Args&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
 <div class="line"><span class="lineno">   72</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">   73</span>    std::cout &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">   74</span>        <span class="stringliteral">&quot;{}[INFO]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">   74</span>        <span class="stringliteral">&quot;{}[INFO]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">   75</span>        Color::Cyan,</div>
 <div class="line"><span class="lineno">   76</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">   77</span>        Color::Blue,</div>
@@ -319,7 +319,7 @@ template&lt;typename... Args&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
 <div class="line"><span class="lineno">   86</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">   87</span>    std::cout &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">   88</span>        <span class="stringliteral">&quot;{}[SUCCESS]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">   88</span>        <span class="stringliteral">&quot;{}[SUCCESS]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">   89</span>        Color::Green,</div>
 <div class="line"><span class="lineno">   90</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">   91</span>        Color::Blue,</div>
@@ -371,7 +371,7 @@ template&lt;typename... Args&gt; </div>
 <div class="line"><span class="lineno">  148</span><span class="preprocessor">#else</span></div>
 <div class="line"><span class="lineno">  149</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">  150</span>    std::cout &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">  151</span>        <span class="stringliteral">&quot;{}[TRACE]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  151</span>        <span class="stringliteral">&quot;{}[TRACE]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">  152</span>        Color::Magenta,</div>
 <div class="line"><span class="lineno">  153</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">  154</span>        Color::Blue,</div>
@@ -421,7 +421,7 @@ template&lt;typename... Args&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
 <div class="line"><span class="lineno">  100</span>    <span class="keyword">auto</span> func_name = <a class="code hl_function" href="namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd">ExtractFunctionName</a>(loc.function_name());</div>
 <div class="line"><span class="lineno">  101</span>    std::cerr &lt;&lt; std::format(</div>
-<div class="line"><span class="lineno">  102</span>        <span class="stringliteral">&quot;{}[WARNING]{} {}[{}]{} {}\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  102</span>        <span class="stringliteral">&quot;{}[WARNING]{} {}[{}()]{} {}\n&quot;</span>,</div>
 <div class="line"><span class="lineno">  103</span>        Color::Yellow,</div>
 <div class="line"><span class="lineno">  104</span>        Color::Reset,</div>
 <div class="line"><span class="lineno">  105</span>        Color::Blue,</div>

@@ -1,6 +1,9 @@
 var namespaces_dup =
 [
-    [ "Application", "namespaceApplication.html", "namespaceApplication" ],
+    [ "App", "namespaceApp.html", "namespaceApp" ],
+    [ "Application", "namespaceApplication.html", [
+      [ "Run", "namespaceApplication.html#afd3930e7705af94cf318f392e72f1171", null ]
+    ] ],
     [ "Core", "namespaceCore.html", "namespaceCore" ],
     [ "Data", "namespaceData.html", "namespaceData" ],
     [ "IndexHelpers", "namespaceIndexHelpers.html", [

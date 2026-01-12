@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['l_0',['L',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dacb85b9c31b0b8fd95c72325d70a85a54',1,'Core::Key']]],
-  ['left_1',['Left',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dac18b203ca1181a19baeb493898b584c2',1,'Core::Key']]],
-  ['leftalt_2',['LeftAlt',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da0c5a81c37842aae528fc3cb630689bcf',1,'Core::Key']]],
-  ['leftbracket_3',['LeftBracket',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dad1ffdd32a1fc5012fa8b1c51df205145',1,'Core::Key']]],
-  ['leftcontrol_4',['LeftControl',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da54be9b2b7744b3dc77865b81817dd3e3',1,'Core::Key']]],
-  ['leftshift_5',['LeftShift',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da1d5a72e92a2c2ab6ad91a938b1cabe13',1,'Core::Key']]],
-  ['leftsuper_6',['LeftSuper',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da5ffa0bde100cf2fe1991ccb675fedd5f',1,'Core::Key']]]
+  ['l_0',['l',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22ad20caec3b48a1eef164cb4ca81ba2587',1,'Core::Input::L'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dacb85b9c31b0b8fd95c72325d70a85a54',1,'Core::Key::L']]],
+  ['left_1',['left',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a945d5e233cf7d6240f6b783b36a374ff',1,'Core::Input::Left'],['../classCore_1_1Input.html#ae7cce9eeb881b29919cc647369ba4fe9a945d5e233cf7d6240f6b783b36a374ff',1,'Core::Input::Left'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dac18b203ca1181a19baeb493898b584c2',1,'Core::Key::Left']]],
+  ['leftalt_2',['leftalt',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a96f9c4eb595a467d02e35c723f63ebf7',1,'Core::Input::LeftAlt'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da0c5a81c37842aae528fc3cb630689bcf',1,'Core::Key::LeftAlt']]],
+  ['leftbracket_3',['leftbracket',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a481c09f513474b2d31ba5c2992947b17',1,'Core::Input::LeftBracket'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dad1ffdd32a1fc5012fa8b1c51df205145',1,'Core::Key::LeftBracket']]],
+  ['leftcontrol_4',['leftcontrol',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a641642d3718d5db8994a79d51b43e88c',1,'Core::Input::LeftControl'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da54be9b2b7744b3dc77865b81817dd3e3',1,'Core::Key::LeftControl']]],
+  ['leftshift_5',['leftshift',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a982621712db76f723b7bb88b631dc64d',1,'Core::Input::LeftShift'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da1d5a72e92a2c2ab6ad91a938b1cabe13',1,'Core::Key::LeftShift']]],
+  ['leftsuper_6',['leftsuper',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a4bd45bf12e08f60072b6962e9f7794c2',1,'Core::Input::LeftSuper'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da5ffa0bde100cf2fe1991ccb675fedd5f',1,'Core::Key::LeftSuper']]],
+  ['locked_7',['Locked',['../classCore_1_1Input.html#a39677867029d8b143a09115462f3ba79ad0f2e5376298c880665077b565ffd7dd',1,'Core::Input']]]
 ];

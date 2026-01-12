@@ -1,11 +1,12 @@
 var annotated_dup =
 [
-    [ "Application", "namespaceApplication.html", [
-      [ "AppLayer", "classApplication_1_1AppLayer.html", "classApplication_1_1AppLayer" ]
+    [ "App", "namespaceApp.html", [
+      [ "AppLayer", "classApp_1_1AppLayer.html", "classApp_1_1AppLayer" ]
     ] ],
     [ "Core", "namespaceCore.html", [
       [ "Application", "classCore_1_1Application.html", "classCore_1_1Application" ],
       [ "ApplicationSpecification", "structCore_1_1ApplicationSpecification.html", "structCore_1_1ApplicationSpecification" ],
+      [ "Camera", "classCore_1_1Camera.html", "classCore_1_1Camera" ],
       [ "Event", "classCore_1_1Event.html", "classCore_1_1Event" ],
       [ "EventDispatcher", "classCore_1_1EventDispatcher.html", "classCore_1_1EventDispatcher" ],
       [ "Input", "classCore_1_1Input.html", "classCore_1_1Input" ],

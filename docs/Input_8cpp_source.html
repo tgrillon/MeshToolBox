@@ -118,16 +118,16 @@ $(document).ready(function(){initNavTree('Input_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceCore.html">Core</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9">    9</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9">Input::IsKeyPressed</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">KeyCode</a> key)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9">    9</a></span><span class="keywordtype">bool</span> Input::IsKeyPressed(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">KeyCode</a> key)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">auto</span>* window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">auto</span> window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">auto</span> state = glfwGetKey(window, <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(key));</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> state == GLFW_PRESS;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">   16</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">Input::IsKeyReleased</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">KeyCode</a> key)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">   16</a></span><span class="keywordtype">bool</span> Input::IsKeyReleased(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">KeyCode</a> key)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">auto</span>* window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">auto</span> state = glfwGetKey(window, <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(key));</div>
@@ -136,50 +136,54 @@ $(document).ready(function(){initNavTree('Input_8cpp_source.html',''); initResiz
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8">   23</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8">Input::IsMouseButtonPressed</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">MouseCode</a> button)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8">   23</a></span><span class="keywordtype">bool</span> Input::IsMouseButtonPressed(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">MouseCode</a> button)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span>* window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> state = glfwGetMouseButton(window, <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(button));</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> state == GLFW_PRESS;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a5c233cfeb278efeda8e1f0e9dc9c9b05">   30</a></span>glm::vec2 <a class="code hl_function" href="classCore_1_1Input.html#a5c233cfeb278efeda8e1f0e9dc9c9b05">Input::GetMousePosition</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#ad93a5bd9823d51037e9791cd238e37b8">   30</a></span><span class="keywordtype">bool</span> Input::IsMouseButtonReleased(<span class="keyword">const</span> <a class="code hl_typedef" href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">MouseCode</a> button)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span>* window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">double</span> xpos, ypos;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    glfwGetCursorPos(window, &amp;xpos, &amp;ypos);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> { (float)xpos, (<span class="keywordtype">float</span>)ypos };</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span> window = <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>());</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">auto</span> state = glfwGetMouseButton(window, <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(button));</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> state == GLFW_RELEASE;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a6da8522166291dc48b69d1bb26da2996">   39</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="classCore_1_1Input.html#a6da8522166291dc48b69d1bb26da2996">Input::GetMouseX</a>()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Input.html#a5c233cfeb278efeda8e1f0e9dc9c9b05">GetMousePosition</a>().x;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a6bcb0d767ba4a3caffcb933721bcda06">   37</a></span><a class="code hl_typedef" href="namespaceCore_1_1BaseType.html#aa254ecd93b2ff29ddc3fc1eef5599c0b">BaseType::Vec2</a> Input::GetMousePosition()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">double</span> xpos, ypos;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    glfwGetCursorPos(<a class="code hl_function" href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Application::GetWindow</a>(), &amp;xpos, &amp;ypos);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> { (float)xpos, (<span class="keywordtype">float</span>)ypos };</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a4762c7f42ca1560c8a33ada0dccdc18d">   44</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="classCore_1_1Input.html#a4762c7f42ca1560c8a33ada0dccdc18d">Input::GetMouseY</a>()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Input.html#a5c233cfeb278efeda8e1f0e9dc9c9b05">GetMousePosition</a>().y;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a6da8522166291dc48b69d1bb26da2996">   45</a></span><span class="keywordtype">float</span> Input::GetMouseX()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Input.html#a6bcb0d767ba4a3caffcb933721bcda06">GetMousePosition</a>().x;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <span class="comment">// namespace Core</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classCore_1_1Input.html#a4762c7f42ca1560c8a33ada0dccdc18d">   50</a></span><span class="keywordtype">float</span> Input::GetMouseY()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classCore_1_1Input.html#a6bcb0d767ba4a3caffcb933721bcda06">GetMousePosition</a>().y;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>} <span class="comment">// namespace Core</span></div>
 <div class="ttc" id="aApplication_8h_html"><div class="ttname"><a href="Application_8h.html">Application.h</a></div></div>
 <div class="ttc" id="aInput_8h_html"><div class="ttname"><a href="Input_8h.html">Input.h</a></div></div>
-<div class="ttc" id="aclassCore_1_1Application_html_a1d45622e2278b641d9950e0d087e157c"><div class="ttname"><a href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Core::Application::GetWindow</a></div><div class="ttdeci">static GLFWwindow * GetWindow()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00215">Application.cpp:215</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_a219b42ce5ed9dc8ac7353100703a30f9"><div class="ttname"><a href="classCore_1_1Input.html#a219b42ce5ed9dc8ac7353100703a30f9">Core::Input::IsKeyPressed</a></div><div class="ttdeci">static bool IsKeyPressed(KeyCode key)</div><div class="ttdoc">Checks if the specified key is currently pressed.</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00009">Input.cpp:9</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_a30655a6f7dddfbb8f10030e3d3e87dc8"><div class="ttname"><a href="classCore_1_1Input.html#a30655a6f7dddfbb8f10030e3d3e87dc8">Core::Input::IsMouseButtonPressed</a></div><div class="ttdeci">static bool IsMouseButtonPressed(MouseCode button)</div><div class="ttdoc">Checks if the specified mouse button is currently pressed.</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00023">Input.cpp:23</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_a4762c7f42ca1560c8a33ada0dccdc18d"><div class="ttname"><a href="classCore_1_1Input.html#a4762c7f42ca1560c8a33ada0dccdc18d">Core::Input::GetMouseY</a></div><div class="ttdeci">static float GetMouseY()</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00044">Input.cpp:44</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_a5c233cfeb278efeda8e1f0e9dc9c9b05"><div class="ttname"><a href="classCore_1_1Input.html#a5c233cfeb278efeda8e1f0e9dc9c9b05">Core::Input::GetMousePosition</a></div><div class="ttdeci">static BaseType::Vec2 GetMousePosition()</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00030">Input.cpp:30</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_a6da8522166291dc48b69d1bb26da2996"><div class="ttname"><a href="classCore_1_1Input.html#a6da8522166291dc48b69d1bb26da2996">Core::Input::GetMouseX</a></div><div class="ttdeci">static float GetMouseX()</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00039">Input.cpp:39</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_html_aa3669ad89e6984e7ebf112f455e40a32"><div class="ttname"><a href="classCore_1_1Input.html#aa3669ad89e6984e7ebf112f455e40a32">Core::Input::IsKeyReleased</a></div><div class="ttdeci">static bool IsKeyReleased(KeyCode key)</div><div class="ttdoc">Checks if the specified key is currently released.</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00016">Input.cpp:16</a></div></div>
+<div class="ttc" id="aclassCore_1_1Application_html_a1d45622e2278b641d9950e0d087e157c"><div class="ttname"><a href="classCore_1_1Application.html#a1d45622e2278b641d9950e0d087e157c">Core::Application::GetWindow</a></div><div class="ttdeci">static GLFWwindow * GetWindow()</div><div class="ttdef"><b>Definition</b> <a href="Application_8cpp_source.html#l00217">Application.cpp:217</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_html_a6bcb0d767ba4a3caffcb933721bcda06"><div class="ttname"><a href="classCore_1_1Input.html#a6bcb0d767ba4a3caffcb933721bcda06">Core::Input::GetMousePosition</a></div><div class="ttdeci">static BaseType::Vec2 GetMousePosition()</div><div class="ttdef"><b>Definition</b> <a href="Input_8cpp_source.html#l00037">Input.cpp:37</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1BaseType_html_aa254ecd93b2ff29ddc3fc1eef5599c0b"><div class="ttname"><a href="namespaceCore_1_1BaseType.html#aa254ecd93b2ff29ddc3fc1eef5599c0b">Core::BaseType::Vec2</a></div><div class="ttdeci">glm::vec2 Vec2</div><div class="ttdef"><b>Definition</b> <a href="BaseTypes_8h_source.html#l00027">BaseTypes.h:27</a></div></div>
 <div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition</b> <a href="Application_8h_source.html#l00014">Application.h:15</a></div></div>
-<div class="ttc" id="anamespaceCore_html_a6b35b59efae3c574e0dbaa9bd50163a4"><div class="ttname"><a href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">Core::KeyCode</a></div><div class="ttdeci">uint16_t KeyCode</div><div class="ttdef"><b>Definition</b> <a href="KeyCodes_8h_source.html#l00007">KeyCodes.h:7</a></div></div>
+<div class="ttc" id="anamespaceCore_html_a6b35b59efae3c574e0dbaa9bd50163a4"><div class="ttname"><a href="namespaceCore.html#a6b35b59efae3c574e0dbaa9bd50163a4">Core::KeyCode</a></div><div class="ttdeci">uint16_t KeyCode</div><div class="ttdef"><b>Definition</b> <a href="Event_2KeyCodes_8h_source.html#l00007">KeyCodes.h:7</a></div></div>
 <div class="ttc" id="anamespaceCore_html_af9654679101a927f0b936a8e40422e92"><div class="ttname"><a href="namespaceCore.html#af9654679101a927f0b936a8e40422e92">Core::MouseCode</a></div><div class="ttdeci">uint16_t MouseCode</div><div class="ttdef"><b>Definition</b> <a href="MouseCodes_8h_source.html#l00005">MouseCodes.h:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -138,7 +138,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dispatches events to the appropriate handler based on their type. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00088">88</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00096">96</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab17288d67b1b01e602d41fd24294b263" name="ab17288d67b1b01e602d41fd24294b263"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab17288d67b1b01e602d41fd24294b263">&#9670;&#160;</a></span>EventDispatcher()</h2>
@@ -166,10 +166,10 @@ Private Attributes</h2></td></tr>
 
 <p>Constructs an <a class="el" href="classCore_1_1EventDispatcher.html" title="Dispatches events to the appropriate handler based on their type.">EventDispatcher</a> for a given event. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00092">92</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>        : <a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>(event)</div>
-<div class="line"><span class="lineno">   94</span>    {}</div>
-<div class="ttc" id="aclassCore_1_1EventDispatcher_html_af81d35189ea6c3483aafae7a615f094f"><div class="ttname"><a href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">Core::EventDispatcher::m_Event</a></div><div class="ttdeci">Event &amp; m_Event</div><div class="ttdoc">The event to dispatch.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00114">Event.h:114</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00100">100</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>        : <a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>(event)</div>
+<div class="line"><span class="lineno">  102</span>    {}</div>
+<div class="ttc" id="aclassCore_1_1EventDispatcher_html_af81d35189ea6c3483aafae7a615f094f"><div class="ttname"><a href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">Core::EventDispatcher::m_Event</a></div><div class="ttdeci">Event &amp; m_Event</div><div class="ttdoc">The event to dispatch.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00125">Event.h:125</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,18 +216,23 @@ template&lt;typename T , typename F &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the event was dispatched, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00102">102</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>.<a class="code hl_function" href="classCore_1_1Event.html#a3f4a4c3fa98ff69a9def8afc3f18da20">GetEventType</a>() == T::GetStaticType())</div>
-<div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            <a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>.<a class="code hl_variable" href="classCore_1_1Event.html#a7a26648c85c0e328ccfe62777bca5d1e">Handled</a> |= func(<span class="keyword">static_cast&lt;</span><a class="code hl_enumvalue" href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">T</a>&amp;<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>));</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  108</span>        }</div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  110</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00110">110</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>.<a class="code hl_function" href="classCore_1_1Event.html#a3f4a4c3fa98ff69a9def8afc3f18da20">GetEventType</a>() == T::GetStaticType())</div>
+<div class="line"><span class="lineno">  113</span>        {</div>
+<div class="line"><span class="lineno">  114</span>            <a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>.<a class="code hl_variable" href="classCore_1_1Event.html#a7a26648c85c0e328ccfe62777bca5d1e">Handled</a> |= func(<span class="keyword">static_cast&lt;</span><a class="code hl_enumvalue" href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">T</a>&amp;<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>));</div>
+<div class="line"><span class="lineno">  115</span><span class="preprocessor">#if 0</span></div>
+<div class="line"><span class="lineno">  116</span>            <a class="code hl_define" href="PrintHelpers_8h.html#a2a4e39c9a80ae13ec99ed1c379498227">Trace</a>(<span class="stringliteral">&quot;{} event triggered&quot;</span>, <a class="code hl_variable" href="classCore_1_1EventDispatcher.html#af81d35189ea6c3483aafae7a615f094f">m_Event</a>.<a class="code hl_function" href="classCore_1_1Event.html#a9d848b82a94086575d869a7fb0819339">GetName</a>());</div>
+<div class="line"><span class="lineno">  117</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="ttc" id="aPrintHelpers_8h_html_a2a4e39c9a80ae13ec99ed1c379498227"><div class="ttname"><a href="PrintHelpers_8h.html#a2a4e39c9a80ae13ec99ed1c379498227">Trace</a></div><div class="ttdeci">#define Trace(...)</div><div class="ttdef"><b>Definition</b> <a href="PrintHelpers_8h_source.html#l00175">PrintHelpers.h:175</a></div></div>
 <div class="ttc" id="aclassCore_1_1Event_html_a3f4a4c3fa98ff69a9def8afc3f18da20"><div class="ttname"><a href="classCore_1_1Event.html#a3f4a4c3fa98ff69a9def8afc3f18da20">Core::Event::GetEventType</a></div><div class="ttdeci">virtual EventType GetEventType() const =0</div><div class="ttdoc">Gets the type of the event.</div></div>
-<div class="ttc" id="aclassCore_1_1Event_html_a7a26648c85c0e328ccfe62777bca5d1e"><div class="ttname"><a href="classCore_1_1Event.html#a7a26648c85c0e328ccfe62777bca5d1e">Core::Event::Handled</a></div><div class="ttdeci">bool Handled</div><div class="ttdoc">Indicates whether the event has been handled.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00071">Event.h:71</a></div></div>
-<div class="ttc" id="anamespaceCore_1_1Key_html_a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca"><div class="ttname"><a href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">Core::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> <a href="KeyCodes_8h_source.html#l00054">KeyCodes.h:54</a></div></div>
+<div class="ttc" id="aclassCore_1_1Event_html_a7a26648c85c0e328ccfe62777bca5d1e"><div class="ttname"><a href="classCore_1_1Event.html#a7a26648c85c0e328ccfe62777bca5d1e">Core::Event::Handled</a></div><div class="ttdeci">bool Handled</div><div class="ttdoc">Indicates whether the event has been handled.</div><div class="ttdef"><b>Definition</b> <a href="Event_8h_source.html#l00079">Event.h:79</a></div></div>
+<div class="ttc" id="aclassCore_1_1Event_html_a9d848b82a94086575d869a7fb0819339"><div class="ttname"><a href="classCore_1_1Event.html#a9d848b82a94086575d869a7fb0819339">Core::Event::GetName</a></div><div class="ttdeci">virtual const char * GetName() const =0</div><div class="ttdoc">Gets the name of the event.</div></div>
+<div class="ttc" id="anamespaceCore_1_1Key_html_a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca"><div class="ttname"><a href="namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da054857822b43d5a880e615893677dbca">Core::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> <a href="Event_2KeyCodes_8h_source.html#l00054">KeyCodes.h:54</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -254,7 +259,7 @@ template&lt;typename T , typename F &gt; </div>
 
 <p>The event to dispatch. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00114">114</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00125">125</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
 
 </div>
 </div>

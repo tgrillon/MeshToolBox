@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['w_0',['W',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da491abe4238dc5e3f0157149f71604d97',1,'Core::Key']]],
+  ['w_0',['w',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da491abe4238dc5e3f0157149f71604d97',1,'Core::Key::W'],['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a61e9c06ea9a85a5088a499df6458d276',1,'Core::Input::W']]],
   ['warning_1',['Warning',['../PrintHelpers_8h.html#aec0f6f11ac6f3ae92a3091fe890d0d60',1,'PrintHelpers.h']]],
   ['warningimpl_2',['WarningImpl',['../namespacePrintHelpers_1_1detail.html#a4fd9828f8f01feeb51451a7ac4517bd8',1,'PrintHelpers::detail']]],
-  ['width_3',['width',['../structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce',1,'Renderer::Texture::Width'],['../structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698',1,'Core::WindowSpecification::Width'],['../structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0',1,'Core::Window::WindowData::Width']]],
+  ['width_3',['width',['../structCore_1_1Window_1_1WindowData.html#aa0777ade9fe400a991a8e9f82edb57f0',1,'Core::Window::WindowData::Width'],['../structCore_1_1WindowSpecification.html#a247df0d9e510b48771525b9c4fe7d698',1,'Core::WindowSpecification::Width'],['../structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce',1,'Renderer::Texture::Width']]],
   ['window_4',['window',['../classCore_1_1Window.html#a2ac97d0baf6dbde85f4ae15258e389c9',1,'Core::Window::Window()'],['../classCore_1_1Window.html',1,'Core::Window']]],
   ['window_2ecpp_5',['Window.cpp',['../Window_8cpp.html',1,'']]],
   ['window_2eh_6',['Window.h',['../Window_8h.html',1,'']]],
   ['windowclose_7',['WindowClose',['../namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaac984201d37197ab297a14d19efee4b07',1,'Core']]],
-  ['windowcloseevent_8',['windowcloseevent',['../classCore_1_1WindowCloseEvent.html',1,'Core::WindowCloseEvent'],['../classCore_1_1WindowCloseEvent.html#ada343415cd2d7dcce8ab2c508daedc3e',1,'Core::WindowCloseEvent::WindowCloseEvent()']]],
+  ['windowcloseevent_8',['windowcloseevent',['../classCore_1_1WindowCloseEvent.html#ada343415cd2d7dcce8ab2c508daedc3e',1,'Core::WindowCloseEvent::WindowCloseEvent()'],['../classCore_1_1WindowCloseEvent.html',1,'Core::WindowCloseEvent']]],
   ['windowdata_9',['WindowData',['../structCore_1_1Window_1_1WindowData.html',1,'Core::Window']]],
   ['windowfocus_10',['WindowFocus',['../namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c68d5453b28d52622bf5486a5fd95ca',1,'Core']]],
   ['windowlostfocus_11',['WindowLostFocus',['../namespaceCore.html#ac2acc0f2f1350d38961a94d0e1a26afaa1c2119b9d61e623975f13f1029f1d97c',1,'Core']]],
@@ -17,6 +17,6 @@ var searchData=
   ['windowresizeevent_14',['windowresizeevent',['../classCore_1_1WindowResizeEvent.html#ac76d3d4b22a05cdb3c91b65c259d1d44',1,'Core::WindowResizeEvent::WindowResizeEvent()'],['../classCore_1_1WindowResizeEvent.html',1,'Core::WindowResizeEvent']]],
   ['windowspec_15',['WindowSpec',['../structCore_1_1ApplicationSpecification.html#add62b89091536372c15c095c61e9efce',1,'Core::ApplicationSpecification']]],
   ['windowspecification_16',['WindowSpecification',['../structCore_1_1WindowSpecification.html',1,'Core']]],
-  ['world1_17',['World1',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dabc807d088f8bd57ed15a0589f18fc054',1,'Core::Key']]],
-  ['world2_18',['World2',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da4d0fb0d58527a50b2be62e73c1a89bda',1,'Core::Key']]]
+  ['world1_17',['world1',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a74c7c1760efb02a127a01f7d7457b61d',1,'Core::Input::World1'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dabc807d088f8bd57ed15a0589f18fc054',1,'Core::Key::World1']]],
+  ['world2_18',['world2',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a8bf6b1dbf5254c134b06997c602799a3',1,'Core::Input::World2'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da4d0fb0d58527a50b2be62e73c1a89bda',1,'Core::Key::World2']]]
 ];

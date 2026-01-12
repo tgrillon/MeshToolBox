@@ -14,6 +14,7 @@ var classData_1_1Surface_1_1Mesh =
     [ "Clone", "classData_1_1Surface_1_1Mesh.html#aaa536140f461bc514bef21971c627e87", null ],
     [ "ComputeSmoothVertexNormals", "classData_1_1Surface_1_1Mesh.html#a98572b6dfcd272c716cec3ba7066d399", null ],
     [ "ComputeTriangleNormals", "classData_1_1Surface_1_1Mesh.html#a7b55749521e3153afc6b300f14b821be", null ],
+    [ "GetBoundingBox", "classData_1_1Surface_1_1Mesh.html#a11a9f2c0a131c6f488bc7c4509619d5e", null ],
     [ "GetTriangle", "classData_1_1Surface_1_1Mesh.html#a171d533abee8ba8a1a4a9ebcc69d2a2d", null ],
     [ "GetTriangleCount", "classData_1_1Surface_1_1Mesh.html#a9d4db90c57313ad2dc6662a765660b6c", null ],
     [ "GetTriangleData", "classData_1_1Surface_1_1Mesh.html#a96d6dc5cf1e9cd228f173f032fffe39d", null ],

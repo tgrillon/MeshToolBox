@@ -1,4 +1,4 @@
 var AppLayer_8h =
 [
-    [ "Application::AppLayer", "classApplication_1_1AppLayer.html", "classApplication_1_1AppLayer" ]
+    [ "App::AppLayer", "classApp_1_1AppLayer.html", "classApp_1_1AppLayer" ]
 ];

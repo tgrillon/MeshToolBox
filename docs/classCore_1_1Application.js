@@ -10,7 +10,7 @@ var classCore_1_1Application =
     [ "IsDarkModeEnabled", "classCore_1_1Application.html#a1b5b50442d3986a5009e364739147e9c", null ],
     [ "OnCloseEvent", "classCore_1_1Application.html#af9e1aa7fcc68859d8c9f9072d27668ad", null ],
     [ "OnEvent", "classCore_1_1Application.html#a14340d8fbf8295472bec26f1584620b4", null ],
-    [ "OnKeyReleasedEvent", "classCore_1_1Application.html#a88871a2b32de6485279ad49097260f79", null ],
+    [ "OnKeyPressedEvent", "classCore_1_1Application.html#a9f7bcb3aa13b1310c05bd165c132b328", null ],
     [ "OnResizeEvent", "classCore_1_1Application.html#ab5f53c368eea1a1dbe9c0050a0d8a2da", null ],
     [ "PushLayer", "classCore_1_1Application.html#a5b100b03bd0ebb07febac1877dafe9e9", null ],
     [ "Run", "classCore_1_1Application.html#a073563ab83ba295eb366975f55a9d20f", null ],

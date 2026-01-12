@@ -15,6 +15,7 @@ var namespaceRenderer =
     [ "CreateFramebufferWithTexture", "namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de", null ],
     [ "CreateGraphicsShader", "namespaceRenderer.html#a107c944959e6d2cf38b4f8e0fe2d4d17", null ],
     [ "CreateTexture", "namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e", null ],
+    [ "GetUniformLocation", "namespaceRenderer.html#ac1c178b9ba21fd270e627ed1ffd59ed7", null ],
     [ "LoadBuffer", "namespaceRenderer.html#aa202a7c1277299c55a9fa3081e4647fe", null ],
     [ "LoadBuffer", "namespaceRenderer.html#a0c13a9778f01dc859158329c7941307c", null ],
     [ "LoadBufferInstance", "namespaceRenderer.html#ac5ce171f66197a91d17a55f8e361ccdc", null ],

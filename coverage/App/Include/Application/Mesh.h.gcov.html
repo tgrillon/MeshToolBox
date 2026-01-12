@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-11-04 12:52:51</td>
+            <td class="headerValue">2026-01-12 14:52:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -174,196 +174,198 @@
 <span id="L104"><span class="lineNum">     104</span>              :         /// @brief Update the boundary status stored on each vertex as an extra data (true = boundary vertex, false = interrior vertex)</span>
 <span id="L105"><span class="lineNum">     105</span>              :         void UpdateVerticesBoundaryStatus();</span>
 <span id="L106"><span class="lineNum">     106</span>              : </span>
-<span id="L107"><span class="lineNum">     107</span>              : public:</span>
-<span id="L108"><span class="lineNum">     108</span>              :         /// @brief Circulator to iterate over the vertices around a given vertex.</span>
-<span id="L109"><span class="lineNum">     109</span>              :         /// @note The circulator will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
-<span id="L110"><span class="lineNum">     110</span>              :         /// @image html Docs/Images/VerticesAroundVertexClosedRing.svg &quot;Case where the one-ring neighborhood is closed.&quot;</span>
-<span id="L111"><span class="lineNum">     111</span>              :         /// @image html Docs/Images/VerticesAroundVertexOpenedRing.svg &quot;Case where the one-ring neighborhood is opened.&quot;</span>
-<span id="L112"><span class="lineNum">     112</span>              :         class VerticesAroundVertexCirculator</span>
-<span id="L113"><span class="lineNum">     113</span>              :         {</span>
-<span id="L114"><span class="lineNum">     114</span>              :         public:</span>
-<span id="L115"><span class="lineNum">     115</span>              :                 using iterator_category = std::input_iterator_tag;</span>
-<span id="L116"><span class="lineNum">     116</span>              :                 using value_type = Core::BaseType::VertexIndex;</span>
-<span id="L117"><span class="lineNum">     117</span>              :                 using difference_type = std::ptrdiff_t;</span>
-<span id="L118"><span class="lineNum">     118</span>              :                 using pointer = Core::BaseType::VertexIndex*;</span>
-<span id="L119"><span class="lineNum">     119</span>              :                 using reference = Core::BaseType::VertexIndex&amp;;</span>
-<span id="L120"><span class="lineNum">     120</span>              : </span>
-<span id="L121"><span class="lineNum">     121</span>              :         public:</span>
-<span id="L122"><span class="lineNum">     122</span>              :                 /// @brief Construct a circulator to iterate over the vertices around a given vertex in the mesh.</span>
-<span id="L123"><span class="lineNum">     123</span>              :                 /// @param mesh The mesh containing the vertex.</span>
-<span id="L124"><span class="lineNum">     124</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
-<span id="L125"><span class="lineNum">     125</span>              :                 VerticesAroundVertexCirculator(const Data::Surface::Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
-<span id="L126"><span class="lineNum">     126</span>              : </span>
-<span id="L127"><span class="lineNum">     127</span>              :                 /// @brief Equality operator.</span>
-<span id="L128"><span class="lineNum">     128</span>              :                 bool operator==(const VerticesAroundVertexCirculator&amp; rhs) const;</span>
-<span id="L129"><span class="lineNum">     129</span>              :                 /// @brief Inequality operator.</span>
-<span id="L130"><span class="lineNum">     130</span>              :                 bool operator!=(const VerticesAroundVertexCirculator&amp; rhs) const;</span>
-<span id="L131"><span class="lineNum">     131</span>              : </span>
-<span id="L132"><span class="lineNum">     132</span>              :                 /// @brief Pre-increment operator.</span>
-<span id="L133"><span class="lineNum">     133</span>              :                 VerticesAroundVertexCirculator&amp; operator++();</span>
-<span id="L134"><span class="lineNum">     134</span>              : </span>
-<span id="L135"><span class="lineNum">     135</span>              :                 /// @brief Dereference operator to get the current vertex index.</span>
-<span id="L136"><span class="lineNum">     136</span>              :                 Core::BaseType::VertexIndex operator*() const;</span>
-<span id="L137"><span class="lineNum">     137</span>              : </span>
-<span id="L138"><span class="lineNum">     138</span>              :                 /// @brief Set whether the circulator is active or not.</span>
-<span id="L139"><span class="lineNum">     139</span>              :                 void SetIsActive(bool value);</span>
-<span id="L140"><span class="lineNum">     140</span>              : </span>
-<span id="L141"><span class="lineNum">     141</span>              :         private:</span>
-<span id="L142"><span class="lineNum">     142</span>              :                 /// @brief Update the current vertex index in counter-clock-wise direction.</span>
-<span id="L143"><span class="lineNum">     143</span>              :                 void UpdateCurVertexIndexInCCWOrder();</span>
-<span id="L144"><span class="lineNum">     144</span>              :                 /// @brief Update the current vertex index in clock-wise direction.</span>
-<span id="L145"><span class="lineNum">     145</span>              :                 void UpdateCurVertexIndexInCWOrder();</span>
-<span id="L146"><span class="lineNum">     146</span>              : </span>
-<span id="L147"><span class="lineNum">     147</span>              :         private:</span>
-<span id="L148"><span class="lineNum">     148</span>              :                 /// @brief Reference to the mesh.</span>
-<span id="L149"><span class="lineNum">     149</span>              :                 const Mesh&amp; m_Mesh;</span>
-<span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
-<span id="L152"><span class="lineNum">     152</span>              :                 Core::BaseType::VertexIndex m_CentralVertexIdx;</span>
-<span id="L153"><span class="lineNum">     153</span>              : </span>
-<span id="L154"><span class="lineNum">     154</span>              :                 /// @brief Current triangle index in the circulation.</span>
-<span id="L155"><span class="lineNum">     155</span>              :                 int m_CurTriangleIdx;</span>
-<span id="L156"><span class="lineNum">     156</span>              :                 /// @brief Previous triangle index in the circulation.</span>
-<span id="L157"><span class="lineNum">     157</span>              :                 int m_PrevTriangleIdx;</span>
-<span id="L158"><span class="lineNum">     158</span>              : </span>
-<span id="L159"><span class="lineNum">     159</span>              :                 /// @brief Current vertex local index in the current triangle.</span>
-<span id="L160"><span class="lineNum">     160</span>              :                 Core::BaseType::EdgeIndex m_CurVertexLocalIdx;</span>
-<span id="L161"><span class="lineNum">     161</span>              :                 /// @brief Current vertex index in the circulation.</span>
-<span id="L162"><span class="lineNum">     162</span>              :                 Core::BaseType::VertexIndex m_CurVertexIdx;</span>
-<span id="L163"><span class="lineNum">     163</span>              : </span>
-<span id="L164"><span class="lineNum">     164</span>              :                 /// @brief Number of jumps made in the circulation (used to detect boundaries).</span>
-<span id="L165"><span class="lineNum">     165</span>              :                 uint8_t m_JumpCount{ 0 };</span>
-<span id="L166"><span class="lineNum">     166</span>              :                 /// @brief Whether we are currently circulating in counter-clockwise direction.</span>
-<span id="L167"><span class="lineNum">     167</span>              :                 bool m_IsInCCWOrder{ true };</span>
-<span id="L168"><span class="lineNum">     168</span>              :                 /// @brief Whether the circulator is active (to detect the end of the circulation).</span>
-<span id="L169"><span class="lineNum">     169</span>              :                 bool m_IsActive{ true };</span>
-<span id="L170"><span class="lineNum">     170</span>              :         };</span>
-<span id="L171"><span class="lineNum">     171</span>              : </span>
-<span id="L172"><span class="lineNum">     172</span>              :         /// @brief Range to iterate over the vertices around a given vertex.</span>
-<span id="L173"><span class="lineNum">     173</span>              :         /// @note The range will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
-<span id="L174"><span class="lineNum">     174</span>              :         class VerticesAroundVertexRange</span>
-<span id="L175"><span class="lineNum">     175</span>              :         {</span>
-<span id="L176"><span class="lineNum">     176</span>              :         public:</span>
-<span id="L177"><span class="lineNum">     177</span>              :                 friend VerticesAroundVertexCirculator;</span>
-<span id="L178"><span class="lineNum">     178</span>              : </span>
-<span id="L179"><span class="lineNum">     179</span>              :         public:</span>
-<span id="L180"><span class="lineNum">     180</span>              :                 /// @brief Construct a range to iterate over the vertices around a given vertex in the mesh.</span>
-<span id="L181"><span class="lineNum">     181</span>              :                 /// @param mesh The mesh containing the vertex.</span>
-<span id="L182"><span class="lineNum">     182</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
-<span id="L183"><span class="lineNum">     183</span>              :                 VerticesAroundVertexRange(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
-<span id="L184"><span class="lineNum">     184</span>              : </span>
-<span id="L185"><span class="lineNum">     185</span>              :                 /// @brief Get the begin circulator.</span>
-<span id="L186"><span class="lineNum">     186</span>              :                 VerticesAroundVertexCirculator begin() const;</span>
-<span id="L187"><span class="lineNum">     187</span>              :                 /// @brief Get the end circulator.</span>
-<span id="L188"><span class="lineNum">     188</span>              :                 VerticesAroundVertexCirculator end() const;</span>
-<span id="L189"><span class="lineNum">     189</span>              : </span>
-<span id="L190"><span class="lineNum">     190</span>              :         private:</span>
-<span id="L191"><span class="lineNum">     191</span>              :                 /// @brief Reference to the mesh.</span>
-<span id="L192"><span class="lineNum">     192</span>              :                 const Mesh&amp; m_Mesh;</span>
-<span id="L193"><span class="lineNum">     193</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
-<span id="L194"><span class="lineNum">     194</span>              :                 Core::BaseType::VertexIndex m_VertexIdx;</span>
-<span id="L195"><span class="lineNum">     195</span>              :         };</span>
-<span id="L196"><span class="lineNum">     196</span>              : </span>
-<span id="L197"><span class="lineNum">     197</span>              :         /// @brief Get a range to iterate over the vertices around a given vertex.</span>
-<span id="L198"><span class="lineNum">     198</span>              :         /// @param index The index of the vertex around which to circulate.</span>
-<span id="L199"><span class="lineNum">     199</span>              :         /// @return A range to iterate over the vertices around the given vertex.</span>
-<span id="L200"><span class="lineNum">     200</span>              :         VerticesAroundVertexRange GetVerticesAroundVertex(const Core::BaseType::VertexIndex index) const;</span>
-<span id="L201"><span class="lineNum">     201</span>              : </span>
-<span id="L202"><span class="lineNum">     202</span>              :         /// @brief Circulator to iterate over the triangles around a given vertex.</span>
-<span id="L203"><span class="lineNum">     203</span>              :         /// @note The circulator will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
-<span id="L204"><span class="lineNum">     204</span>              :         /// @image html Docs/Images/FacesAroundVertexClosedRing.svg &quot;Case where the one-ring neighborhood is closed.&quot;</span>
-<span id="L205"><span class="lineNum">     205</span>              :         /// @image html Docs/Images/FacesAroundVertexOpenedRing.svg &quot;Case where the one-ring neighborhood is opened.&quot;</span>
-<span id="L206"><span class="lineNum">     206</span>              :         class TrianglesAroundVertexCirculator</span>
-<span id="L207"><span class="lineNum">     207</span>              :         {</span>
-<span id="L208"><span class="lineNum">     208</span>              :         public:</span>
-<span id="L209"><span class="lineNum">     209</span>              :                 using iterator_category = std::forward_iterator_tag;</span>
-<span id="L210"><span class="lineNum">     210</span>              :                 using value_type = Core::BaseType::TriangleIndex;</span>
-<span id="L211"><span class="lineNum">     211</span>              :                 using difference_type = std::ptrdiff_t;</span>
-<span id="L212"><span class="lineNum">     212</span>              :                 using pointer = const Core::BaseType::TriangleIndex*;</span>
-<span id="L213"><span class="lineNum">     213</span>              :                 using reference = const Core::BaseType::TriangleIndex&amp;;</span>
-<span id="L214"><span class="lineNum">     214</span>              : </span>
-<span id="L215"><span class="lineNum">     215</span>              :         public:</span>
-<span id="L216"><span class="lineNum">     216</span>              :                 /// @brief Construct a circulator to iterate over the triangles around a given vertex in the mesh.</span>
-<span id="L217"><span class="lineNum">     217</span>              :                 /// @param mesh The mesh containing the vertex.</span>
-<span id="L218"><span class="lineNum">     218</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
-<span id="L219"><span class="lineNum">     219</span>              :                 TrianglesAroundVertexCirculator(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
-<span id="L220"><span class="lineNum">     220</span>              : </span>
-<span id="L221"><span class="lineNum">     221</span>              :                 /// @brief Equality operator.</span>
-<span id="L222"><span class="lineNum">     222</span>              :                 bool operator==(const TrianglesAroundVertexCirculator&amp; rhs) const;</span>
-<span id="L223"><span class="lineNum">     223</span>              :                 /// @brief Inequality operator.</span>
-<span id="L224"><span class="lineNum">     224</span>              :                 bool operator!=(const TrianglesAroundVertexCirculator&amp; rhs) const;</span>
-<span id="L225"><span class="lineNum">     225</span>              : </span>
-<span id="L226"><span class="lineNum">     226</span>              :                 /// @brief Pre-increment operator.</span>
-<span id="L227"><span class="lineNum">     227</span>              :                 TrianglesAroundVertexCirculator&amp; operator++();</span>
-<span id="L228"><span class="lineNum">     228</span>              : </span>
-<span id="L229"><span class="lineNum">     229</span>              :                 /// @brief Dereference operator to get the current triangle index.</span>
-<span id="L230"><span class="lineNum">     230</span>              :                 Core::BaseType::TriangleIndex operator*() const;</span>
-<span id="L231"><span class="lineNum">     231</span>              : </span>
-<span id="L232"><span class="lineNum">     232</span>              :                 /// @brief Set whether the circulator is active or not.</span>
-<span id="L233"><span class="lineNum">     233</span>              :                 void SetIsActive(bool value);</span>
-<span id="L234"><span class="lineNum">     234</span>              : </span>
-<span id="L235"><span class="lineNum">     235</span>              :         private:</span>
-<span id="L236"><span class="lineNum">     236</span>              :                 /// @brief Reference to the mesh.</span>
-<span id="L237"><span class="lineNum">     237</span>              :                 const Mesh&amp; m_Mesh;</span>
-<span id="L238"><span class="lineNum">     238</span>              : </span>
-<span id="L239"><span class="lineNum">     239</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
-<span id="L240"><span class="lineNum">     240</span>              :                 Core::BaseType::VertexIndex m_CentralVertexIdx;</span>
-<span id="L241"><span class="lineNum">     241</span>              : </span>
-<span id="L242"><span class="lineNum">     242</span>              :                 /// @brief Current triangle index in the circulation.</span>
-<span id="L243"><span class="lineNum">     243</span>              :                 int m_CurTriangleIdx;</span>
-<span id="L244"><span class="lineNum">     244</span>              :                 /// @brief Previous triangle index in the circulation.</span>
-<span id="L245"><span class="lineNum">     245</span>              :                 int m_PrevTriangleIdx;</span>
-<span id="L246"><span class="lineNum">     246</span>              : </span>
-<span id="L247"><span class="lineNum">     247</span>              :                 /// @brief Number of jumps made in the circulation (used to detect boundaries).</span>
-<span id="L248"><span class="lineNum">     248</span>              :                 uint8_t m_JumpCount{ 0 };</span>
-<span id="L249"><span class="lineNum">     249</span>              :                 /// @brief Whether we are currently circulating in counter-clockwise direction.</span>
-<span id="L250"><span class="lineNum">     250</span>              :                 bool m_IsInCCWOrder{ true };</span>
-<span id="L251"><span class="lineNum">     251</span>              :                 /// @brief Whether the circulator is active (to detect the end of the circulation).</span>
-<span id="L252"><span class="lineNum">     252</span>              :                 bool m_IsActive{ true };</span>
-<span id="L253"><span class="lineNum">     253</span>              :         };</span>
-<span id="L254"><span class="lineNum">     254</span>              : </span>
-<span id="L255"><span class="lineNum">     255</span>              :         /// @brief Range to iterate over the triangles around a given vertex.</span>
-<span id="L256"><span class="lineNum">     256</span>              :         /// @note The range will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
-<span id="L257"><span class="lineNum">     257</span>              :         class TrianglesAroundVertexRange</span>
-<span id="L258"><span class="lineNum">     258</span>              :         {</span>
-<span id="L259"><span class="lineNum">     259</span>              :         public:</span>
-<span id="L260"><span class="lineNum">     260</span>              :                 friend TrianglesAroundVertexCirculator;</span>
-<span id="L261"><span class="lineNum">     261</span>              : </span>
-<span id="L262"><span class="lineNum">     262</span>              :         public:</span>
-<span id="L263"><span class="lineNum">     263</span>              :                 /// @brief Construct a range to iterate over the triangles around a given vertex in the mesh.</span>
-<span id="L264"><span class="lineNum">     264</span>              :                 /// @param mesh The mesh containing the vertex.</span>
-<span id="L265"><span class="lineNum">     265</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
-<span id="L266"><span class="lineNum">     266</span>              :                 TrianglesAroundVertexRange(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
-<span id="L267"><span class="lineNum">     267</span>              : </span>
-<span id="L268"><span class="lineNum">     268</span>              :                 /// @brief Get the begin circulator.</span>
-<span id="L269"><span class="lineNum">     269</span>              :                 TrianglesAroundVertexCirculator begin() const;</span>
-<span id="L270"><span class="lineNum">     270</span>              :                 /// @brief Get the end circulator.</span>
-<span id="L271"><span class="lineNum">     271</span>              :                 TrianglesAroundVertexCirculator end() const;</span>
-<span id="L272"><span class="lineNum">     272</span>              : </span>
-<span id="L273"><span class="lineNum">     273</span>              :         private:</span>
-<span id="L274"><span class="lineNum">     274</span>              :                 /// @brief Reference to the mesh.</span>
-<span id="L275"><span class="lineNum">     275</span>              :                 const Mesh&amp; m_Mesh;</span>
-<span id="L276"><span class="lineNum">     276</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
-<span id="L277"><span class="lineNum">     277</span>              :                 Core::BaseType::VertexIndex m_VertexIdx;</span>
-<span id="L278"><span class="lineNum">     278</span>              :         };</span>
-<span id="L279"><span class="lineNum">     279</span>              : </span>
-<span id="L280"><span class="lineNum">     280</span>              :         /// @brief Get a range to iterate over the triangles around a given vertex.</span>
-<span id="L281"><span class="lineNum">     281</span>              :         /// @param index The index of the vertex around which to circulate.</span>
-<span id="L282"><span class="lineNum">     282</span>              :         /// @return A range to iterate over the triangles around the given vertex.</span>
-<span id="L283"><span class="lineNum">     283</span>              :         TrianglesAroundVertexRange GetTrianglesAroundVertex(const Core::BaseType::VertexIndex index) const;</span>
-<span id="L284"><span class="lineNum">     284</span>              : </span>
-<span id="L285"><span class="lineNum">     285</span>              : private:</span>
-<span id="L286"><span class="lineNum">     286</span>              :         /// @brief List of vertices.</span>
-<span id="L287"><span class="lineNum">     287</span>              :         std::vector&lt;Data::Primitive::Vertex&gt; m_Vertices{};</span>
-<span id="L288"><span class="lineNum">     288</span>              :         /// @brief List of triangles.</span>
-<span id="L289"><span class="lineNum">     289</span>              :         std::vector&lt;Data::Primitive::Triangle&gt; m_Triangles{};</span>
-<span id="L290"><span class="lineNum">     290</span>              : </span>
-<span id="L291"><span class="lineNum">     291</span>              :         /// @brief Extra data containers for each vertex.</span>
-<span id="L292"><span class="lineNum">     292</span>              :         std::vector&lt;Data::ExtraData::ExtraDataContainer&gt; m_VerticesExtraDataContainer{};</span>
-<span id="L293"><span class="lineNum">     293</span>              :         /// @brief Extra data containers for each triangle.</span>
-<span id="L294"><span class="lineNum">     294</span>              :         std::vector&lt;Data::ExtraData::ExtraDataContainer&gt; m_TrianglesExtraDataContainer{};</span>
-<span id="L295"><span class="lineNum">     295</span>              : };</span>
-<span id="L296"><span class="lineNum">     296</span>              : } // namespace Data::Surface</span>
+<span id="L107"><span class="lineNum">     107</span>              :         void GetBoundingBox(Core::BaseType::Vec3&amp; pMin, Core::BaseType::Vec3&amp; pMax);</span>
+<span id="L108"><span class="lineNum">     108</span>              : </span>
+<span id="L109"><span class="lineNum">     109</span>              : public:</span>
+<span id="L110"><span class="lineNum">     110</span>              :         /// @brief Circulator to iterate over the vertices around a given vertex.</span>
+<span id="L111"><span class="lineNum">     111</span>              :         /// @note The circulator will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
+<span id="L112"><span class="lineNum">     112</span>              :         /// @image html Docs/Images/VerticesAroundVertexClosedRing.svg &quot;Case where the one-ring neighborhood is closed.&quot;</span>
+<span id="L113"><span class="lineNum">     113</span>              :         /// @image html Docs/Images/VerticesAroundVertexOpenedRing.svg &quot;Case where the one-ring neighborhood is opened.&quot;</span>
+<span id="L114"><span class="lineNum">     114</span>              :         class VerticesAroundVertexCirculator</span>
+<span id="L115"><span class="lineNum">     115</span>              :         {</span>
+<span id="L116"><span class="lineNum">     116</span>              :         public:</span>
+<span id="L117"><span class="lineNum">     117</span>              :                 using iterator_category = std::input_iterator_tag;</span>
+<span id="L118"><span class="lineNum">     118</span>              :                 using value_type = Core::BaseType::VertexIndex;</span>
+<span id="L119"><span class="lineNum">     119</span>              :                 using difference_type = std::ptrdiff_t;</span>
+<span id="L120"><span class="lineNum">     120</span>              :                 using pointer = Core::BaseType::VertexIndex*;</span>
+<span id="L121"><span class="lineNum">     121</span>              :                 using reference = Core::BaseType::VertexIndex&amp;;</span>
+<span id="L122"><span class="lineNum">     122</span>              : </span>
+<span id="L123"><span class="lineNum">     123</span>              :         public:</span>
+<span id="L124"><span class="lineNum">     124</span>              :                 /// @brief Construct a circulator to iterate over the vertices around a given vertex in the mesh.</span>
+<span id="L125"><span class="lineNum">     125</span>              :                 /// @param mesh The mesh containing the vertex.</span>
+<span id="L126"><span class="lineNum">     126</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
+<span id="L127"><span class="lineNum">     127</span>              :                 VerticesAroundVertexCirculator(const Data::Surface::Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
+<span id="L128"><span class="lineNum">     128</span>              : </span>
+<span id="L129"><span class="lineNum">     129</span>              :                 /// @brief Equality operator.</span>
+<span id="L130"><span class="lineNum">     130</span>              :                 bool operator==(const VerticesAroundVertexCirculator&amp; rhs) const;</span>
+<span id="L131"><span class="lineNum">     131</span>              :                 /// @brief Inequality operator.</span>
+<span id="L132"><span class="lineNum">     132</span>              :                 bool operator!=(const VerticesAroundVertexCirculator&amp; rhs) const;</span>
+<span id="L133"><span class="lineNum">     133</span>              : </span>
+<span id="L134"><span class="lineNum">     134</span>              :                 /// @brief Pre-increment operator.</span>
+<span id="L135"><span class="lineNum">     135</span>              :                 VerticesAroundVertexCirculator&amp; operator++();</span>
+<span id="L136"><span class="lineNum">     136</span>              : </span>
+<span id="L137"><span class="lineNum">     137</span>              :                 /// @brief Dereference operator to get the current vertex index.</span>
+<span id="L138"><span class="lineNum">     138</span>              :                 Core::BaseType::VertexIndex operator*() const;</span>
+<span id="L139"><span class="lineNum">     139</span>              : </span>
+<span id="L140"><span class="lineNum">     140</span>              :                 /// @brief Set whether the circulator is active or not.</span>
+<span id="L141"><span class="lineNum">     141</span>              :                 void SetIsActive(bool value);</span>
+<span id="L142"><span class="lineNum">     142</span>              : </span>
+<span id="L143"><span class="lineNum">     143</span>              :         private:</span>
+<span id="L144"><span class="lineNum">     144</span>              :                 /// @brief Update the current vertex index in counter-clock-wise direction.</span>
+<span id="L145"><span class="lineNum">     145</span>              :                 void UpdateCurVertexIndexInCCWOrder();</span>
+<span id="L146"><span class="lineNum">     146</span>              :                 /// @brief Update the current vertex index in clock-wise direction.</span>
+<span id="L147"><span class="lineNum">     147</span>              :                 void UpdateCurVertexIndexInCWOrder();</span>
+<span id="L148"><span class="lineNum">     148</span>              : </span>
+<span id="L149"><span class="lineNum">     149</span>              :         private:</span>
+<span id="L150"><span class="lineNum">     150</span>              :                 /// @brief Reference to the mesh.</span>
+<span id="L151"><span class="lineNum">     151</span>              :                 const Mesh&amp; m_Mesh;</span>
+<span id="L152"><span class="lineNum">     152</span>              : </span>
+<span id="L153"><span class="lineNum">     153</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
+<span id="L154"><span class="lineNum">     154</span>              :                 Core::BaseType::VertexIndex m_CentralVertexIdx;</span>
+<span id="L155"><span class="lineNum">     155</span>              : </span>
+<span id="L156"><span class="lineNum">     156</span>              :                 /// @brief Current triangle index in the circulation.</span>
+<span id="L157"><span class="lineNum">     157</span>              :                 int m_CurTriangleIdx;</span>
+<span id="L158"><span class="lineNum">     158</span>              :                 /// @brief Previous triangle index in the circulation.</span>
+<span id="L159"><span class="lineNum">     159</span>              :                 int m_PrevTriangleIdx;</span>
+<span id="L160"><span class="lineNum">     160</span>              : </span>
+<span id="L161"><span class="lineNum">     161</span>              :                 /// @brief Current vertex local index in the current triangle.</span>
+<span id="L162"><span class="lineNum">     162</span>              :                 Core::BaseType::EdgeIndex m_CurVertexLocalIdx;</span>
+<span id="L163"><span class="lineNum">     163</span>              :                 /// @brief Current vertex index in the circulation.</span>
+<span id="L164"><span class="lineNum">     164</span>              :                 Core::BaseType::VertexIndex m_CurVertexIdx;</span>
+<span id="L165"><span class="lineNum">     165</span>              : </span>
+<span id="L166"><span class="lineNum">     166</span>              :                 /// @brief Number of jumps made in the circulation (used to detect boundaries).</span>
+<span id="L167"><span class="lineNum">     167</span>              :                 uint8_t m_JumpCount{ 0 };</span>
+<span id="L168"><span class="lineNum">     168</span>              :                 /// @brief Whether we are currently circulating in counter-clockwise direction.</span>
+<span id="L169"><span class="lineNum">     169</span>              :                 bool m_IsInCCWOrder{ true };</span>
+<span id="L170"><span class="lineNum">     170</span>              :                 /// @brief Whether the circulator is active (to detect the end of the circulation).</span>
+<span id="L171"><span class="lineNum">     171</span>              :                 bool m_IsActive{ true };</span>
+<span id="L172"><span class="lineNum">     172</span>              :         };</span>
+<span id="L173"><span class="lineNum">     173</span>              : </span>
+<span id="L174"><span class="lineNum">     174</span>              :         /// @brief Range to iterate over the vertices around a given vertex.</span>
+<span id="L175"><span class="lineNum">     175</span>              :         /// @note The range will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
+<span id="L176"><span class="lineNum">     176</span>              :         class VerticesAroundVertexRange</span>
+<span id="L177"><span class="lineNum">     177</span>              :         {</span>
+<span id="L178"><span class="lineNum">     178</span>              :         public:</span>
+<span id="L179"><span class="lineNum">     179</span>              :                 friend VerticesAroundVertexCirculator;</span>
+<span id="L180"><span class="lineNum">     180</span>              : </span>
+<span id="L181"><span class="lineNum">     181</span>              :         public:</span>
+<span id="L182"><span class="lineNum">     182</span>              :                 /// @brief Construct a range to iterate over the vertices around a given vertex in the mesh.</span>
+<span id="L183"><span class="lineNum">     183</span>              :                 /// @param mesh The mesh containing the vertex.</span>
+<span id="L184"><span class="lineNum">     184</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
+<span id="L185"><span class="lineNum">     185</span>              :                 VerticesAroundVertexRange(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
+<span id="L186"><span class="lineNum">     186</span>              : </span>
+<span id="L187"><span class="lineNum">     187</span>              :                 /// @brief Get the begin circulator.</span>
+<span id="L188"><span class="lineNum">     188</span>              :                 VerticesAroundVertexCirculator begin() const;</span>
+<span id="L189"><span class="lineNum">     189</span>              :                 /// @brief Get the end circulator.</span>
+<span id="L190"><span class="lineNum">     190</span>              :                 VerticesAroundVertexCirculator end() const;</span>
+<span id="L191"><span class="lineNum">     191</span>              : </span>
+<span id="L192"><span class="lineNum">     192</span>              :         private:</span>
+<span id="L193"><span class="lineNum">     193</span>              :                 /// @brief Reference to the mesh.</span>
+<span id="L194"><span class="lineNum">     194</span>              :                 const Mesh&amp; m_Mesh;</span>
+<span id="L195"><span class="lineNum">     195</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
+<span id="L196"><span class="lineNum">     196</span>              :                 Core::BaseType::VertexIndex m_VertexIdx;</span>
+<span id="L197"><span class="lineNum">     197</span>              :         };</span>
+<span id="L198"><span class="lineNum">     198</span>              : </span>
+<span id="L199"><span class="lineNum">     199</span>              :         /// @brief Get a range to iterate over the vertices around a given vertex.</span>
+<span id="L200"><span class="lineNum">     200</span>              :         /// @param index The index of the vertex around which to circulate.</span>
+<span id="L201"><span class="lineNum">     201</span>              :         /// @return A range to iterate over the vertices around the given vertex.</span>
+<span id="L202"><span class="lineNum">     202</span>              :         VerticesAroundVertexRange GetVerticesAroundVertex(const Core::BaseType::VertexIndex index) const;</span>
+<span id="L203"><span class="lineNum">     203</span>              : </span>
+<span id="L204"><span class="lineNum">     204</span>              :         /// @brief Circulator to iterate over the triangles around a given vertex.</span>
+<span id="L205"><span class="lineNum">     205</span>              :         /// @note The circulator will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
+<span id="L206"><span class="lineNum">     206</span>              :         /// @image html Docs/Images/FacesAroundVertexClosedRing.svg &quot;Case where the one-ring neighborhood is closed.&quot;</span>
+<span id="L207"><span class="lineNum">     207</span>              :         /// @image html Docs/Images/FacesAroundVertexOpenedRing.svg &quot;Case where the one-ring neighborhood is opened.&quot;</span>
+<span id="L208"><span class="lineNum">     208</span>              :         class TrianglesAroundVertexCirculator</span>
+<span id="L209"><span class="lineNum">     209</span>              :         {</span>
+<span id="L210"><span class="lineNum">     210</span>              :         public:</span>
+<span id="L211"><span class="lineNum">     211</span>              :                 using iterator_category = std::forward_iterator_tag;</span>
+<span id="L212"><span class="lineNum">     212</span>              :                 using value_type = Core::BaseType::TriangleIndex;</span>
+<span id="L213"><span class="lineNum">     213</span>              :                 using difference_type = std::ptrdiff_t;</span>
+<span id="L214"><span class="lineNum">     214</span>              :                 using pointer = const Core::BaseType::TriangleIndex*;</span>
+<span id="L215"><span class="lineNum">     215</span>              :                 using reference = const Core::BaseType::TriangleIndex&amp;;</span>
+<span id="L216"><span class="lineNum">     216</span>              : </span>
+<span id="L217"><span class="lineNum">     217</span>              :         public:</span>
+<span id="L218"><span class="lineNum">     218</span>              :                 /// @brief Construct a circulator to iterate over the triangles around a given vertex in the mesh.</span>
+<span id="L219"><span class="lineNum">     219</span>              :                 /// @param mesh The mesh containing the vertex.</span>
+<span id="L220"><span class="lineNum">     220</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
+<span id="L221"><span class="lineNum">     221</span>              :                 TrianglesAroundVertexCirculator(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
+<span id="L222"><span class="lineNum">     222</span>              : </span>
+<span id="L223"><span class="lineNum">     223</span>              :                 /// @brief Equality operator.</span>
+<span id="L224"><span class="lineNum">     224</span>              :                 bool operator==(const TrianglesAroundVertexCirculator&amp; rhs) const;</span>
+<span id="L225"><span class="lineNum">     225</span>              :                 /// @brief Inequality operator.</span>
+<span id="L226"><span class="lineNum">     226</span>              :                 bool operator!=(const TrianglesAroundVertexCirculator&amp; rhs) const;</span>
+<span id="L227"><span class="lineNum">     227</span>              : </span>
+<span id="L228"><span class="lineNum">     228</span>              :                 /// @brief Pre-increment operator.</span>
+<span id="L229"><span class="lineNum">     229</span>              :                 TrianglesAroundVertexCirculator&amp; operator++();</span>
+<span id="L230"><span class="lineNum">     230</span>              : </span>
+<span id="L231"><span class="lineNum">     231</span>              :                 /// @brief Dereference operator to get the current triangle index.</span>
+<span id="L232"><span class="lineNum">     232</span>              :                 Core::BaseType::TriangleIndex operator*() const;</span>
+<span id="L233"><span class="lineNum">     233</span>              : </span>
+<span id="L234"><span class="lineNum">     234</span>              :                 /// @brief Set whether the circulator is active or not.</span>
+<span id="L235"><span class="lineNum">     235</span>              :                 void SetIsActive(bool value);</span>
+<span id="L236"><span class="lineNum">     236</span>              : </span>
+<span id="L237"><span class="lineNum">     237</span>              :         private:</span>
+<span id="L238"><span class="lineNum">     238</span>              :                 /// @brief Reference to the mesh.</span>
+<span id="L239"><span class="lineNum">     239</span>              :                 const Mesh&amp; m_Mesh;</span>
+<span id="L240"><span class="lineNum">     240</span>              : </span>
+<span id="L241"><span class="lineNum">     241</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
+<span id="L242"><span class="lineNum">     242</span>              :                 Core::BaseType::VertexIndex m_CentralVertexIdx;</span>
+<span id="L243"><span class="lineNum">     243</span>              : </span>
+<span id="L244"><span class="lineNum">     244</span>              :                 /// @brief Current triangle index in the circulation.</span>
+<span id="L245"><span class="lineNum">     245</span>              :                 int m_CurTriangleIdx;</span>
+<span id="L246"><span class="lineNum">     246</span>              :                 /// @brief Previous triangle index in the circulation.</span>
+<span id="L247"><span class="lineNum">     247</span>              :                 int m_PrevTriangleIdx;</span>
+<span id="L248"><span class="lineNum">     248</span>              : </span>
+<span id="L249"><span class="lineNum">     249</span>              :                 /// @brief Number of jumps made in the circulation (used to detect boundaries).</span>
+<span id="L250"><span class="lineNum">     250</span>              :                 uint8_t m_JumpCount{ 0 };</span>
+<span id="L251"><span class="lineNum">     251</span>              :                 /// @brief Whether we are currently circulating in counter-clockwise direction.</span>
+<span id="L252"><span class="lineNum">     252</span>              :                 bool m_IsInCCWOrder{ true };</span>
+<span id="L253"><span class="lineNum">     253</span>              :                 /// @brief Whether the circulator is active (to detect the end of the circulation).</span>
+<span id="L254"><span class="lineNum">     254</span>              :                 bool m_IsActive{ true };</span>
+<span id="L255"><span class="lineNum">     255</span>              :         };</span>
+<span id="L256"><span class="lineNum">     256</span>              : </span>
+<span id="L257"><span class="lineNum">     257</span>              :         /// @brief Range to iterate over the triangles around a given vertex.</span>
+<span id="L258"><span class="lineNum">     258</span>              :         /// @note The range will iterate in counter-clockwise direction first, then in clock-wise direction if it reaches a boundary.</span>
+<span id="L259"><span class="lineNum">     259</span>              :         class TrianglesAroundVertexRange</span>
+<span id="L260"><span class="lineNum">     260</span>              :         {</span>
+<span id="L261"><span class="lineNum">     261</span>              :         public:</span>
+<span id="L262"><span class="lineNum">     262</span>              :                 friend TrianglesAroundVertexCirculator;</span>
+<span id="L263"><span class="lineNum">     263</span>              : </span>
+<span id="L264"><span class="lineNum">     264</span>              :         public:</span>
+<span id="L265"><span class="lineNum">     265</span>              :                 /// @brief Construct a range to iterate over the triangles around a given vertex in the mesh.</span>
+<span id="L266"><span class="lineNum">     266</span>              :                 /// @param mesh The mesh containing the vertex.</span>
+<span id="L267"><span class="lineNum">     267</span>              :                 /// @param index The index of the vertex around which to circulate.</span>
+<span id="L268"><span class="lineNum">     268</span>              :                 TrianglesAroundVertexRange(const Mesh&amp; mesh, const Core::BaseType::VertexIndex index);</span>
+<span id="L269"><span class="lineNum">     269</span>              : </span>
+<span id="L270"><span class="lineNum">     270</span>              :                 /// @brief Get the begin circulator.</span>
+<span id="L271"><span class="lineNum">     271</span>              :                 TrianglesAroundVertexCirculator begin() const;</span>
+<span id="L272"><span class="lineNum">     272</span>              :                 /// @brief Get the end circulator.</span>
+<span id="L273"><span class="lineNum">     273</span>              :                 TrianglesAroundVertexCirculator end() const;</span>
+<span id="L274"><span class="lineNum">     274</span>              : </span>
+<span id="L275"><span class="lineNum">     275</span>              :         private:</span>
+<span id="L276"><span class="lineNum">     276</span>              :                 /// @brief Reference to the mesh.</span>
+<span id="L277"><span class="lineNum">     277</span>              :                 const Mesh&amp; m_Mesh;</span>
+<span id="L278"><span class="lineNum">     278</span>              :                 /// @brief Index of the central vertex around which we circulate.</span>
+<span id="L279"><span class="lineNum">     279</span>              :                 Core::BaseType::VertexIndex m_VertexIdx;</span>
+<span id="L280"><span class="lineNum">     280</span>              :         };</span>
+<span id="L281"><span class="lineNum">     281</span>              : </span>
+<span id="L282"><span class="lineNum">     282</span>              :         /// @brief Get a range to iterate over the triangles around a given vertex.</span>
+<span id="L283"><span class="lineNum">     283</span>              :         /// @param index The index of the vertex around which to circulate.</span>
+<span id="L284"><span class="lineNum">     284</span>              :         /// @return A range to iterate over the triangles around the given vertex.</span>
+<span id="L285"><span class="lineNum">     285</span>              :         TrianglesAroundVertexRange GetTrianglesAroundVertex(const Core::BaseType::VertexIndex index) const;</span>
+<span id="L286"><span class="lineNum">     286</span>              : </span>
+<span id="L287"><span class="lineNum">     287</span>              : private:</span>
+<span id="L288"><span class="lineNum">     288</span>              :         /// @brief List of vertices.</span>
+<span id="L289"><span class="lineNum">     289</span>              :         std::vector&lt;Data::Primitive::Vertex&gt; m_Vertices{};</span>
+<span id="L290"><span class="lineNum">     290</span>              :         /// @brief List of triangles.</span>
+<span id="L291"><span class="lineNum">     291</span>              :         std::vector&lt;Data::Primitive::Triangle&gt; m_Triangles{};</span>
+<span id="L292"><span class="lineNum">     292</span>              : </span>
+<span id="L293"><span class="lineNum">     293</span>              :         /// @brief Extra data containers for each vertex.</span>
+<span id="L294"><span class="lineNum">     294</span>              :         std::vector&lt;Data::ExtraData::ExtraDataContainer&gt; m_VerticesExtraDataContainer{};</span>
+<span id="L295"><span class="lineNum">     295</span>              :         /// @brief Extra data containers for each triangle.</span>
+<span id="L296"><span class="lineNum">     296</span>              :         std::vector&lt;Data::ExtraData::ExtraDataContainer&gt; m_TrianglesExtraDataContainer{};</span>
+<span id="L297"><span class="lineNum">     297</span>              : };</span>
+<span id="L298"><span class="lineNum">     298</span>              : } // namespace Data::Surface</span>
         </pre>
               </td>
             </tr>

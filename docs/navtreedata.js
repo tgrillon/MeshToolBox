@@ -58,10 +58,11 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -81,11 +82,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AppLayer_8cpp.html",
-"Renderer_8cpp.html#aa14b819ddb2596867be3f191fdaf3f6f",
-"classCore_1_1Window.html#abb448f26098fb61a815e21f0c52024e3",
-"classData_1_1Surface_1_1Mesh.html#a7c25e22f9f5bb5216fbe039fef6dd962",
-"namespaceCore.html#af9654679101a927f0b936a8e40422e92",
-"structUtilitary_1_1Surface_1_1MeshIntegrity.html#acb2dec07341118e8e633ddc8824125ac"
+"PrintHelpers_8h.html#a2e5db617b9f03b1c33285ae441753e07",
+"classCore_1_1Event.html",
+"classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22ae1e1d3d40573127e9ee0480caf1283d6",
+"classData_1_1ExtraData_1_1FlatVertexNormalsExtraData.html",
+"classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexCirculator.html#aac627f7eea7e4c1ead232f1e6f5b18f8",
+"namespaceCore_1_1Math_1_1Geometry.html#a7f07646acd75b4439c52292453807fb2",
+"structUtilitary_1_1Surface_1_1MeshLoader.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

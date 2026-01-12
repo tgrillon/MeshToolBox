@@ -1,7 +1,9 @@
 <map id="Core/Include/Core/Event/Input.h" name="Core/Include/Core/Event/Input.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="122,5,301,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,414,45"/>
 <area shape="rect" id="Node000002" href="$Application_8cpp.html" title=" " alt="" coords="5,93,209,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,56,125,95,121,91,174,51"/>
-<area shape="rect" id="Node000003" href="$Input_8cpp.html" title=" " alt="" coords="233,93,397,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,51,301,91,298,95,246,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,53,140,96,139,91,259,48"/>
+<area shape="rect" id="Node000003" href="$Camera_8cpp.html" title=" " alt="" coords="233,93,416,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="327,59,327,93,322,93,322,59"/>
+<area shape="rect" id="Node000004" href="$Input_8cpp.html" title=" " alt="" coords="440,93,604,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="386,48,494,91,492,96,384,53"/>
 </map>

@@ -22,6 +22,7 @@ var hierarchy =
       [ "Data::ExtraData::ObjectMaterialData", "classData_1_1ExtraData_1_1ObjectMaterialData.html", null ],
       [ "Data::ExtraData::SingleDataExtraData< T >", "classData_1_1ExtraData_1_1SingleDataExtraData.html", null ]
     ] ],
+    [ "Core::Camera", "classCore_1_1Camera.html", null ],
     [ "Core::Event", "classCore_1_1Event.html", [
       [ "Core::KeyEvent", "classCore_1_1KeyEvent.html", [
         [ "Core::KeyPressedEvent", "classCore_1_1KeyPressedEvent.html", null ],
@@ -45,7 +46,7 @@ var hierarchy =
     [ "std::hash< Data::Primitive::VertexPair >", "structstd_1_1hash_3_01Data_1_1Primitive_1_1VertexPair_01_4.html", null ],
     [ "Core::Input", "classCore_1_1Input.html", null ],
     [ "Core::Layer", "classCore_1_1Layer.html", [
-      [ "Application::AppLayer", "classApplication_1_1AppLayer.html", null ]
+      [ "App::AppLayer", "classApp_1_1AppLayer.html", null ]
     ] ],
     [ "Data::Surface::Mesh", "classData_1_1Surface_1_1Mesh.html", null ],
     [ "Utilitary::Surface::MeshExporter", "structUtilitary_1_1Surface_1_1MeshExporter.html", null ],

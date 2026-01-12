@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['e_0',['E',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dabac11ea4d22182331373eadeba949f07',1,'Core::Key']]],
+  ['e_0',['e',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dabac11ea4d22182331373eadeba949f07',1,'Core::Key::E'],['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a3a3ea00cfc35332cedf6e5e9a32e94da',1,'Core::Input::E']]],
   ['edgeindex_1',['EdgeIndex',['../namespaceCore_1_1BaseType.html#a04432526a19f9e98e60663874200fce7',1,'Core::BaseType']]],
-  ['end_2',['end',['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html#a60bf1dbfe6b82a1214b114a7be73dd6b',1,'Data::Surface::Mesh::VerticesAroundVertexRange::end()'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexRange.html#a105958ccc1840fcbafb23b6f93853431',1,'Data::Surface::Mesh::TrianglesAroundVertexRange::end()'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da6476c8a5db938cc7386faf3eb875e73f',1,'Core::Key::End']]],
-  ['enter_3',['Enter',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da23ac0e4906f1bcd703b90d7e309ac041',1,'Core::Key']]],
+  ['end_2',['end',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da6476c8a5db938cc7386faf3eb875e73f',1,'Core::Key::End'],['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a87557f11575c0ad78e4e28abedc13b6e',1,'Core::Input::End'],['../classData_1_1Surface_1_1Mesh_1_1VerticesAroundVertexRange.html#a60bf1dbfe6b82a1214b114a7be73dd6b',1,'Data::Surface::Mesh::VerticesAroundVertexRange::end()'],['../classData_1_1Surface_1_1Mesh_1_1TrianglesAroundVertexRange.html#a105958ccc1840fcbafb23b6f93853431',1,'Data::Surface::Mesh::TrianglesAroundVertexRange::end()']]],
+  ['enter_3',['enter',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22af1851d5600eae616ee802a31ac74701b',1,'Core::Input::Enter'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da23ac0e4906f1bcd703b90d7e309ac041',1,'Core::Key::Enter']]],
   ['eof_4',['eof',['../structstbi__io__callbacks.html#a319639db2f76e715eed7a7a974136832',1,'stbi_io_callbacks']]],
-  ['equal_5',['Equal',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dad32f7ed62bfe58f051ca3dd7f4dd2866',1,'Core::Key']]],
+  ['equal_5',['equal',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22af5f286e73bda105e538310b3190f75c5',1,'Core::Input::Equal'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233dad32f7ed62bfe58f051ca3dd7f4dd2866',1,'Core::Key::Equal']]],
   ['equalnear_6',['equalnear',['../namespaceCore_1_1Math_1_1Compare.html#a02864a58af7ac9b21e6dbe5bc1b58f2d',1,'Core::Math::Compare::EqualNear(BaseType::Vec3 lhs, BaseType::Vec3 rhs, float eps=1e-6)'],['../namespaceCore_1_1Math_1_1Compare.html#aba8bc0eadec9c13d112294799dc1ec63',1,'Core::Math::Compare::EqualNear(BaseType::Vec2 lhs, BaseType::Vec2 rhs, float eps=1e-6)'],['../namespaceCore_1_1Math_1_1Compare.html#ab07a5c1a96f2f945e113e02829bfd4d4',1,'Core::Math::Compare::EqualNear(float lhs, float rhs, float eps=1e-6)']]],
   ['erase_7',['Erase',['../classData_1_1ExtraData_1_1ExtraDataContainer.html#aac69df26bd1606d2d177c91710cfe988',1,'Data::ExtraData::ExtraDataContainer']]],
-  ['eraseextradata_8',['eraseextradata',['../classData_1_1Primitive_1_1TriangleProxy.html#a3d419aa7542b58ec76a6c3f545ac4d75',1,'Data::Primitive::TriangleProxy::EraseExtraData()'],['../classData_1_1Primitive_1_1VertexProxy.html#a9b46dcf86adb6ee9944d94f99fcba6ed',1,'Data::Primitive::VertexProxy::EraseExtraData()']]],
+  ['eraseextradata_8',['eraseextradata',['../classData_1_1Primitive_1_1VertexProxy.html#a9b46dcf86adb6ee9944d94f99fcba6ed',1,'Data::Primitive::VertexProxy::EraseExtraData()'],['../classData_1_1Primitive_1_1TriangleProxy.html#a3d419aa7542b58ec76a6c3f545ac4d75',1,'Data::Primitive::TriangleProxy::EraseExtraData()']]],
   ['error_9',['Error',['../PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50',1,'PrintHelpers.h']]],
   ['errorimpl_10',['ErrorImpl',['../namespacePrintHelpers_1_1detail.html#a5ddaaeb95e8c32e14e897870fe52b91d',1,'PrintHelpers::detail']]],
-  ['escape_11',['Escape',['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c',1,'Core::Key']]],
+  ['escape_11',['escape',['../classCore_1_1Input.html#aa125acc8816748cd8b889eadf2b99e22a013ec032d3460d4be4431c6ab1f8f224',1,'Core::Input::Escape'],['../namespaceCore_1_1Key.html#a1a9b20c0131a19cab6bf6ddc4830233da2da992f22e1a39568889584c6985589c',1,'Core::Key::Escape']]],
   ['event_12',['Event',['../classCore_1_1Event.html',1,'Core']]],
   ['event_2eh_13',['Event.h',['../Event_8h.html',1,'']]],
   ['event_5fclass_5fcategory_14',['EVENT_CLASS_CATEGORY',['../Event_8h.html#abd52deea587a36ef619e596a0c691839',1,'Event.h']]],
@@ -32,5 +32,5 @@ var searchData=
   ['extractfunctionname_29',['ExtractFunctionName',['../namespacePrintHelpers.html#ade7454ab5ebd8868910d6edb26b4a9dd',1,'PrintHelpers']]],
   ['extradatacontainer_30',['extradatacontainer',['../classData_1_1ExtraData_1_1ExtraDataContainer.html#ac64cd50c707e2ed212d9cd11fd62e230',1,'Data::ExtraData::ExtraDataContainer::ExtraDataContainer(ExtraDataContainer &amp;&amp;)=default'],['../classData_1_1ExtraData_1_1ExtraDataContainer.html#a918171a22bc2f525412915be260d3e9d',1,'Data::ExtraData::ExtraDataContainer::ExtraDataContainer(const ExtraDataContainer &amp;)=default'],['../classData_1_1ExtraData_1_1ExtraDataContainer.html#ac189d77a8e225878a50028eb07053eab',1,'Data::ExtraData::ExtraDataContainer::ExtraDataContainer()=default'],['../classData_1_1ExtraData_1_1ExtraDataContainer.html',1,'Data::ExtraData::ExtraDataContainer']]],
   ['extradatacontainer_2eh_31',['ExtraDataContainer.h',['../ExtraDataContainer_8h.html',1,'']]],
-  ['extradatatype_2eh_32',['ExtraDataType.h',['../ExtraDataType_8h.html',1,'']]]
+  ['extradatatypes_2eh_32',['ExtraDataTypes.h',['../ExtraDataTypes_8h.html',1,'']]]
 ];

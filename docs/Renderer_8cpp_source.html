@@ -146,93 +146,94 @@ $(document).ready(function(){initNavTree('Renderer_8cpp_source.html',''); initRe
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">int</span> width, height, channels;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::string filepath = path.string();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data = <a class="code hl_function" href="stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab">stbi_load</a>(filepath.c_str(), &amp;width, &amp;height, &amp;channels, 0);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span>(!data)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Failed to load texture: {}&quot;</span>, filepath);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    GLenum format = channels == 4 ? GL_RGBA : channels == 3 ? GL_RGB : channels == 1 ? GL_RED : 0;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> result;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a> = width;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a> = height;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    glCreateTextures(GL_TEXTURE_2D, 1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    glTextureStorage2D(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 1, (format == GL_RGBA ? GL_RGBA8 : GL_RGB8), width, height);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    glTextureSubImage2D(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 0, 0, 0, width, height, format, GL_UNSIGNED_BYTE, data);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_MIN_FILTER, GL_LINEAR);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_MAG_FILTER, GL_LINEAR);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_WRAP_S, GL_REPEAT);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_WRAP_T, GL_REPEAT);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    glGenerateTextureMipmap(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb">stbi_image_free</a>(data);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="stb__image_8h.html#ab89c177fc52f1bb2dc1c05e48129a0a4">stbi_set_flip_vertically_on_load</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data = <a class="code hl_function" href="stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab">stbi_load</a>(filepath.c_str(), &amp;width, &amp;height, &amp;channels, 0);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span>(!data)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Failed to load texture: {}&quot;</span>, filepath);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    GLenum format = channels == 4 ? GL_RGBA : channels == 3 ? GL_RGB : channels == 1 ? GL_RED : 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> result;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a> = width;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a> = height;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    glCreateTextures(GL_TEXTURE_2D, 1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    glTextureStorage2D(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 1, (format == GL_RGBA ? GL_RGBA8 : GL_RGB8), width, height);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    glTextureSubImage2D(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 0, 0, 0, width, height, format, GL_UNSIGNED_BYTE, data);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_MIN_FILTER, GL_LINEAR);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_MAG_FILTER, GL_LINEAR);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_WRAP_S, GL_REPEAT);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    glTextureParameteri(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, GL_TEXTURE_WRAP_T, GL_REPEAT);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    glGenerateTextureMipmap(result.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb">stbi_image_free</a>(data);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">   67</a></span><a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> <a class="code hl_function" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">CreateFramebufferWithTexture</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> texture)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> result;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    glCreateFramebuffers(1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">AttachTextureToFramebuffer</a>(result, texture))</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        glDeleteFramebuffers(1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">   68</a></span><a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> <a class="code hl_function" href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">CreateFramebufferWithTexture</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> texture)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> result;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    glCreateFramebuffers(1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">AttachTextureToFramebuffer</a>(result, texture))</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        glDeleteFramebuffers(1, &amp;result.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">   82</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">AttachTextureToFramebuffer</a>(<a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a>&amp; framebuffer, <span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> texture)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    glNamedFramebufferTexture(framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>, GL_COLOR_ATTACHMENT0, texture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 0);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span>(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Framebuffer is not complete!&quot;</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a> = texture;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">   83</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">AttachTextureToFramebuffer</a>(<a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a>&amp; framebuffer, <span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Texture.html">Texture</a> texture)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    glNamedFramebufferTexture(framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>, GL_COLOR_ATTACHMENT0, texture.<a class="code hl_variable" href="structRenderer_1_1Texture.html#ace023cb4b20404ad6414fe18f5d68a8c">Handle</a>, 0);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span>(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_define" href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a>(<span class="stringliteral">&quot;Framebuffer is not complete!&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a> = texture;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">BlitFramebufferToSwapchain</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> framebuffer)</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); <span class="comment">// swapchain</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    glBlitFramebuffer(</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        0,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">BlitFramebufferToSwapchain</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structRenderer_1_1Framebuffer.html">Framebuffer</a> framebuffer)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#abebd44dc030559185a890115adda53bb">Handle</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); <span class="comment">// swapchain</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    glBlitFramebuffer(</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        0,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a>,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a>, <span class="comment">// Source rect</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        0,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        0,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a>,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a>, <span class="comment">// Source rect</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        0,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a>,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a>, <span class="comment">// Destination rect</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        GL_COLOR_BUFFER_BIT,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        GL_NEAREST);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        0,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#af5a0208e16398b46fcebce671cee46ce">Width</a>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        framebuffer.<a class="code hl_variable" href="structRenderer_1_1Framebuffer.html#adbdb3b51fd0818e4568b1fddd39f3da5">ColorAttachment</a>.<a class="code hl_variable" href="structRenderer_1_1Texture.html#a9b7eca9be4dc767738c4efd2172f1cb2">Height</a>, <span class="comment">// Destination rect</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        GL_COLOR_BUFFER_BIT,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        GL_NEAREST);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <span class="comment">// namespace Renderer</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>} <span class="comment">// namespace Renderer</span></div>
 <div class="ttc" id="aGLUtils_8h_html"><div class="ttname"><a href="GLUtils_8h.html">GLUtils.h</a></div></div>
 <div class="ttc" id="aPrintHelpers_8h_html"><div class="ttname"><a href="PrintHelpers_8h.html">PrintHelpers.h</a></div></div>
 <div class="ttc" id="aPrintHelpers_8h_html_a3820662fa23f7fb1a776c4398eb83c50"><div class="ttname"><a href="PrintHelpers_8h.html#a3820662fa23f7fb1a776c4398eb83c50">Error</a></div><div class="ttdeci">#define Error(...)</div><div class="ttdef"><b>Definition</b> <a href="PrintHelpers_8h_source.html#l00171">PrintHelpers.h:171</a></div></div>
@@ -240,10 +241,11 @@ $(document).ready(function(){initNavTree('Renderer_8cpp_source.html',''); initRe
 <div class="ttc" id="anamespaceRenderer_html"><div class="ttname"><a href="namespaceRenderer.html">Renderer</a></div><div class="ttdef"><b>Definition</b> <a href="Buffer_8h_source.html#l00007">Buffer.h:8</a></div></div>
 <div class="ttc" id="anamespaceRenderer_html_a05f14254a77c68383e67f33c6cda9fde"><div class="ttname"><a href="namespaceRenderer.html#a05f14254a77c68383e67f33c6cda9fde">Renderer::LoadTexture</a></div><div class="ttdeci">Texture LoadTexture(const std::filesystem::path &amp;path)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00031">Renderer.cpp:31</a></div></div>
 <div class="ttc" id="anamespaceRenderer_html_a2670a736242f0fa3bbdec5429911548e"><div class="ttname"><a href="namespaceRenderer.html#a2670a736242f0fa3bbdec5429911548e">Renderer::CreateTexture</a></div><div class="ttdeci">Texture CreateTexture(int width, int height)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00012">Renderer.cpp:12</a></div></div>
-<div class="ttc" id="anamespaceRenderer_html_a654bf3251c6d71aed815123bd59a2949"><div class="ttname"><a href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">Renderer::AttachTextureToFramebuffer</a></div><div class="ttdeci">bool AttachTextureToFramebuffer(Framebuffer &amp;framebuffer, const Texture texture)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00082">Renderer.cpp:82</a></div></div>
-<div class="ttc" id="anamespaceRenderer_html_aa14b819ddb2596867be3f191fdaf3f6f"><div class="ttname"><a href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">Renderer::BlitFramebufferToSwapchain</a></div><div class="ttdeci">void BlitFramebufferToSwapchain(const Framebuffer framebuffer)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00096">Renderer.cpp:96</a></div></div>
-<div class="ttc" id="anamespaceRenderer_html_acb6c48b4b663045037faf5d4777eb5de"><div class="ttname"><a href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">Renderer::CreateFramebufferWithTexture</a></div><div class="ttdeci">Framebuffer CreateFramebufferWithTexture(const Texture texture)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00067">Renderer.cpp:67</a></div></div>
+<div class="ttc" id="anamespaceRenderer_html_a654bf3251c6d71aed815123bd59a2949"><div class="ttname"><a href="namespaceRenderer.html#a654bf3251c6d71aed815123bd59a2949">Renderer::AttachTextureToFramebuffer</a></div><div class="ttdeci">bool AttachTextureToFramebuffer(Framebuffer &amp;framebuffer, const Texture texture)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00083">Renderer.cpp:83</a></div></div>
+<div class="ttc" id="anamespaceRenderer_html_aa14b819ddb2596867be3f191fdaf3f6f"><div class="ttname"><a href="namespaceRenderer.html#aa14b819ddb2596867be3f191fdaf3f6f">Renderer::BlitFramebufferToSwapchain</a></div><div class="ttdeci">void BlitFramebufferToSwapchain(const Framebuffer framebuffer)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00097">Renderer.cpp:97</a></div></div>
+<div class="ttc" id="anamespaceRenderer_html_acb6c48b4b663045037faf5d4777eb5de"><div class="ttname"><a href="namespaceRenderer.html#acb6c48b4b663045037faf5d4777eb5de">Renderer::CreateFramebufferWithTexture</a></div><div class="ttdeci">Framebuffer CreateFramebufferWithTexture(const Texture texture)</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8cpp_source.html#l00068">Renderer.cpp:68</a></div></div>
 <div class="ttc" id="astb__image_8h_html"><div class="ttname"><a href="stb__image_8h.html">stb_image.h</a></div></div>
+<div class="ttc" id="astb__image_8h_html_ab89c177fc52f1bb2dc1c05e48129a0a4"><div class="ttname"><a href="stb__image_8h.html#ab89c177fc52f1bb2dc1c05e48129a0a4">stbi_set_flip_vertically_on_load</a></div><div class="ttdeci">STBIDEF void stbi_set_flip_vertically_on_load(int flag_true_if_should_flip)</div></div>
 <div class="ttc" id="astb__image_8h_html_ad3e11bb44412a7ba348acfbad09caacb"><div class="ttname"><a href="stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb">stbi_image_free</a></div><div class="ttdeci">STBIDEF void stbi_image_free(void *retval_from_stbi_load)</div></div>
 <div class="ttc" id="astb__image_8h_html_ad3fc296ba0778df0a8094e20da82deab"><div class="ttname"><a href="stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab">stbi_load</a></div><div class="ttdeci">STBIDEF stbi_uc * stbi_load(char const *filename, int *x, int *y, int *channels_in_file, int desired_channels)</div></div>
 <div class="ttc" id="astructRenderer_1_1Framebuffer_html"><div class="ttname"><a href="structRenderer_1_1Framebuffer.html">Renderer::Framebuffer</a></div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00018">Renderer.h:19</a></div></div>
