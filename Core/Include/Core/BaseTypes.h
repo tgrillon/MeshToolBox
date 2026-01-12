@@ -32,6 +32,16 @@ using Mat4 = glm::mat4;
 using Quat = glm::quat;
 } // namespace Core::BaseType
 
+namespace Core::Container
+{
+template<typename T>
+using DynamicArray = std::vector<T>;
+
+template<class T, size_t N>
+using StaticArray = std::array<T, N>;
+
+} // namespace Core::Container
+
 namespace std
 {
 /// @brief Hash function for Vec2 to be used in unordered containers.
