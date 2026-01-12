@@ -90,6 +90,7 @@ inline BaseType::Vec3 Rotate(const BaseType::Quat& q, const BaseType::Vec3& v)
 }
 
 /// @brief Creates a matrix for a symetric perspective-view frustum based on the default handedness and default near and far clip planes definition.
+/// @note fov must be expressed in radians.
 inline BaseType::Mat4 Perspective(
 	const BaseType::ScalarValue fov,
 	const BaseType::ScalarValue aspect,
@@ -115,5 +116,87 @@ inline BaseType::Mat4 Ortho(
 	const BaseType::ScalarValue zFar)
 {
 	return glm::ortho(left, right, bottom, top, zNear, zFar);
+}
+
+/// @brief Get the center of the segment AB.
+inline BaseType::Vec3 Center(const BaseType::Vec3& a, const BaseType::Vec3& b)
+{
+	const BaseType::ScalarValue x = (a.x + b.x) * 0.5;
+	const BaseType::ScalarValue y = (a.y + b.y) * 0.5;
+	const BaseType::ScalarValue z = (a.z + b.z) * 0.5;
+	return BaseType::Vec3{ x, y, z };
+}
+
+/// @brief Get the distance between two points A and B.
+inline BaseType::ScalarValue Distance(const BaseType::Vec3& a, const BaseType::Vec3& b)
+{
+	return Length(b - a);
+}
+
+inline BaseType::Mat4 GetTranslationMatrix(const BaseType::Vec3& t)
+{
+	return glm::translate(t);
+}
+
+inline BaseType::Mat4 GetTranslationMatrix(
+	const BaseType::ScalarValue x, const BaseType::ScalarValue y, const BaseType::ScalarValue z)
+{
+	return GetTranslationMatrix(BaseType::Vec3{ x, y, z });
+}
+
+inline BaseType::ScalarValue Radians(const BaseType::ScalarValue value)
+{
+	return glm::radians(value);
+}
+
+inline BaseType::Mat4 IdentityMat4()
+{
+	return glm::mat4(1);
+}
+
+inline BaseType::Mat4 GetRotationXMatrix(const BaseType::ScalarValue angle)
+{
+	BaseType::Vec3 axis{ 1.0, 0.0, 0.0 };
+	return glm::rotate(Radians(angle), axis);
+}
+
+inline BaseType::Mat4 GetRotationYMatrix(const BaseType::ScalarValue angle)
+{
+	BaseType::Vec3 axis{ 0.0, 1.0, 0.0 };
+	return glm::rotate(Radians(angle), axis);
+}
+
+inline BaseType::Mat4 GetRotationZMatrix(const BaseType::ScalarValue angle)
+{
+	BaseType::Vec3 axis{ 0.0, 0.0, 1.0 };
+	return glm::rotate(Radians(angle), axis);
+}
+
+inline BaseType::Mat4 Viewport(const float width, const float height)
+{
+	float w = width / 2.f;
+	float h = height / 2.f;
+
+	return BaseType::Mat4(
+		BaseType::Vec4(w, 0, 0, 0), // col 0
+		BaseType::Vec4(0, h, 0, 0), // col 1
+		BaseType::Vec4(0, 0, 0.5f, 0), // col 2
+		BaseType::Vec4(w, h, 0.5f, 1) // col 3
+	);
+}
+
+inline BaseType::Mat4 Inverse(const BaseType::Mat4& m)
+{
+	return glm::inverse(m);
+}
+
+inline BaseType::Mat4 Translate(const BaseType::Mat4& m, const BaseType::Vec3& v)
+{
+	return glm::translate(m, v);
+}
+
+inline BaseType::Mat4 ToMat4(const BaseType::Quat& q)
+{
+	return glm::toMat4(q);
 }
 } // namespace Core::Math::Geometry

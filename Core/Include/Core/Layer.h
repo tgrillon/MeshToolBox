@@ -10,11 +10,14 @@ class Layer
 public:
 	virtual ~Layer() = default;
 
-	virtual void OnEvent(Event&) {}
-
+	/// @brief Called to update things each frame.
 	virtual void OnUpdate(float) {}
 
+	/// @brief Called to render the layer each frame.
 	virtual void OnRender() {}
+
+	/// @brief Called to handle an event each frame.
+	virtual void OnEvent(Event&) {}
 };
 
 } // namespace Core

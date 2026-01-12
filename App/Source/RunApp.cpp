@@ -16,7 +16,7 @@ std::unique_ptr<Core::Application> CreateApplication(int argc, char** argv)
 	appSpec.WindowSpec.Height = (argc > 3) ? std::stoi(argv[3]) : 500;
 
 	auto app = std::make_unique<Core::Application>(appSpec);
-	app->PushLayer<Application::AppLayer>();
+	app->PushLayer<App::AppLayer>();
 	app->SetMenubarCallback(
 		[&app]()
 		{
