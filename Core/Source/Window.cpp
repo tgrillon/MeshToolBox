@@ -2,6 +2,7 @@
 
 #include "Core/Event/ApplicationEvent.h"
 #include "Core/Event/KeyEvents.h"
+#include "Core/Event/MouseEvents.h"
 #include "Core/PrintHelpers.h"
 
 #include <assert.h>
@@ -92,11 +93,60 @@ Window::Window(const WindowSpecification& specification)
 				}
 			}
 		});
+
+	glfwSetMouseButtonCallback(
+		m_Handle,
+		[](GLFWwindow* window, int button, int action, int mods)
+		{
+			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+			switch(action)
+			{
+				case GLFW_PRESS:
+				{
+					MouseButtonPressedEvent event(button);
+					data->EventCallback(event);
+					break;
+				}
+				case GLFW_RELEASE:
+				{
+					MouseButtonReleasedEvent event(button);
+					data->EventCallback(event);
+					break;
+				}
+			}
+		});
+
+	glfwSetScrollCallback(
+		m_Handle,
+		[](GLFWwindow* window, double xOffset, double yOffset)
+		{
+			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+			MouseScrolledEvent event((float)xOffset, (float)yOffset);
+			data->EventCallback(event);
+		});
+
+	glfwSetCursorPosCallback(
+		m_Handle,
+		[](GLFWwindow* window, double xPos, double yPos)
+		{
+			WindowData* data = static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+			MouseMovedEvent event((float)xPos, (float)yPos);
+			data->EventCallback(event);
+		});
 }
 
 Window::~Window()
 {
 	Destroy();
+}
+
+void Window::GetViewportSize(uint32_t& width, uint32_t& height)
+{
+	width = m_Data.Width;
+	height = m_Data.Height;
 }
 
 void Window::Destroy()
